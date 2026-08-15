@@ -25,16 +25,17 @@ const galleryImages = [
     { src: 'assets/img/0151.png', alt: 'Proyecto Agencia Arena' },
     { src: 'assets/img/0155.png', alt: 'Proyecto Agencia Arena' },
 ];
+
 // Cuántas fotos mostrar por lote
 const FOTOS_POR_LOTE = 13;
-let fotosVisibles = 13; // 4 arriba, 5 al medio, 4 abajo (+ el botón = 5)
-
+let fotosVisibles = 13;
 
 // =============================================
 // RENDERIZADO DE LA GALERÍA
 // =============================================
 function renderGaleria() {
     const grid = document.getElementById('galeria-grid');
+    if (!grid) return;
     grid.innerHTML = '';
 
     const limite = Math.min(fotosVisibles, galleryImages.length);
@@ -42,7 +43,7 @@ function renderGaleria() {
         const item = document.createElement('div');
         item.className = 'grid-item';
 
-        // 🟢 LA MAGIA: Le da una clase a la foto 1 para que salte un espacio
+        // Primer elemento desplazado en pantallas grandes
         if (i === 0) item.classList.add('first-item');
 
         item.setAttribute('data-index', i);
@@ -72,49 +73,75 @@ function renderGaleria() {
 
 // Abrir el Lightbox directamente al hacer clic en VER MÁS
 function mostrarMasFotos() {
-    abrirLightbox(13); // Comienza en la foto oculta n° 14
+    abrirLightbox(13);
 }
 
-
-
 // =============================================
-// LIGHTBOX — Array global unificado
-// Toda la galería es un único conjunto continuo.
-// Las flechas recorren TODAS las fotos sin bucles por grupos.
+// LIGHTBOX — Array global unificado y soporte táctil
 // =============================================
 let lightboxIndex = 0;
 
 function abrirLightbox(index) {
     lightboxIndex = index;
     actualizarLightbox();
-    document.getElementById('lightbox').classList.add('active');
+    const modal = document.getElementById('lightbox');
+    if (modal) modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Evita scroll de fondo cuando el modal está abierto
 }
 
 function actualizarLightbox() {
-    document.getElementById('lightbox-img').src = galleryImages[lightboxIndex].src;
-    document.getElementById('lightbox-img').alt = galleryImages[lightboxIndex].alt;
+    const img = document.getElementById('lightbox-img');
+    if (img && galleryImages[lightboxIndex]) {
+        img.src = galleryImages[lightboxIndex].src;
+        img.alt = galleryImages[lightboxIndex].alt;
+    }
 }
 
 function navigateLightbox(direccion) {
     lightboxIndex += direccion;
-    // Navegación circular continua entre TODAS las fotos
     if (lightboxIndex < 0) lightboxIndex = galleryImages.length - 1;
     if (lightboxIndex >= galleryImages.length) lightboxIndex = 0;
     actualizarLightbox();
 }
 
 function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
+    const modal = document.getElementById('lightbox');
+    if (modal) modal.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
 // Cerrar al hacer clic en el fondo del modal
-document.getElementById('lightbox').addEventListener('click', function (e) {
-    if (e.target === this) closeLightbox();
-});
+const lightboxEl = document.getElementById('lightbox');
+if (lightboxEl) {
+    lightboxEl.addEventListener('click', function (e) {
+        if (e.target === this) closeLightbox();
+    });
+
+    // Soporte táctil (Swipe) en celulares para cambiar de foto
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightboxEl.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxEl.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diffX = touchStartX - touchEndX;
+        if (Math.abs(diffX) > 45) {
+            if (diffX > 0) {
+                navigateLightbox(1); // Deslizar izquierda -> siguiente
+            } else {
+                navigateLightbox(-1); // Deslizar derecha -> anterior
+            }
+        }
+    }, { passive: true });
+}
 
 // Navegación con teclado
 document.addEventListener('keydown', function (e) {
-    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    const modal = document.getElementById('lightbox');
+    if (!modal || !modal.classList.contains('active')) return;
     if (e.key === 'ArrowRight') navigateLightbox(1);
     if (e.key === 'ArrowLeft') navigateLightbox(-1);
     if (e.key === 'Escape') closeLightbox();
@@ -125,23 +152,39 @@ document.addEventListener('keydown', function (e) {
 // =============================================
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('.nav-link');
+const headerEl = document.getElementById('header');
 
-window.addEventListener('scroll', () => {
+function updateActiveNav() {
+    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    const headerHeight = headerEl ? headerEl.offsetHeight : 90;
     let current = '';
+
     sections.forEach(section => {
-        if (pageYOffset >= (section.offsetTop - 120)) {
+        const top = section.offsetTop - headerHeight - 40;
+        const height = section.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
             current = section.getAttribute('id');
         }
     });
+
+    // Si estamos en el fondo de la página, activa Contacto
+    if ((window.innerHeight + scrollPos) >= document.documentElement.scrollHeight - 60) {
+        current = 'contacto';
+    }
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').slice(1) === current) {
             link.classList.add('active');
         }
     });
-});
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+window.addEventListener('resize', updateActiveNav, { passive: true });
 
 // =============================================
 // INICIALIZACIÓN
 // =============================================
 renderGaleria();
+updateActiveNav();
