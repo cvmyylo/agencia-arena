@@ -13,8 +13,20 @@
         content="publicidad, marketing, branding, diseño web, editorial, redes sociales, agencia, chile">
     <meta name="author" content="Agencia Arena">
 
-    <!-- Fuentes locales DINPro (archivos .otf de la carpeta fonts) -->
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agencia Arena - Creatividad desde lo simple">
+    <meta property="og:description"
+        content="Agencia de publicidad y marketing enfocada en la creatividad desde lo simple. Branding, diseño web, redes sociales y campañas 360.">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta property="og:locale" content="es_CL">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agencia Arena - Creatividad desde lo simple">
+    <meta name="twitter:description"
+        content="Agencia de publicidad y marketing enfocada en la creatividad desde lo simple. Branding, diseño web, redes sociales y campañas 360.">
+    <meta name="twitter:image" content="assets/img/logo.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/img/PUNTOS-AGENCIARENA-%23ffdd00.png">
@@ -212,6 +224,37 @@
         </div>
     </section>
 
+    <!-- 7. FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/img/logo.png" alt="Agencia Arena" class="footer-logo">
+                <p class="footer-tagline">Creatividad desde lo simple</p>
+            </div>
+            <div class="footer-center">
+                <p class="footer-copyright">&copy; 2026 Agencia Arena. Todos los derechos reservados.</p>
+                <p class="footer-country">Santiago · La Serena, Chile</p>
+            </div>
+            <div class="footer-legal-links">
+                <button type="button" class="legal-btn" onclick="openLegalModal('privacidad')">Política de Privacidad</button>
+                <span class="legal-separator">·</span>
+                <button type="button" class="legal-btn" onclick="openLegalModal('terminos')">Términos de Uso</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE POLÍTICAS Y TÉRMINOS LEGALES (CHILE - LEY 19.628) -->
+    <div class="legal-modal-overlay" id="legal-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="legal-modal-card">
+            <div class="legal-modal-header">
+                <h2 id="legal-modal-title">Política de Privacidad</h2>
+                <button type="button" class="legal-modal-close" onclick="closeLegalModal()" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="legal-modal-body" id="legal-modal-body">
+                <!-- Contenido inyectado por JS -->
+            </div>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script src="assets/js/main.js"></script>

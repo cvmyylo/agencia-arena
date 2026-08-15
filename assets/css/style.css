@@ -821,6 +821,216 @@ body::before {
     right: 25px;
 }
 
+/* =========================================================================
+   11. MAIN FOOTER
+   ========================================================================= */
+.main-footer {
+    width: 100%;
+    background-color: #141412;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 35px 6%;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.footer-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-tagline {
+    font-size: 13px;
+    color: var(--color-gray);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+}
+
+.footer-copyright {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+}
+
+.footer-country {
+    font-size: 12px;
+    color: var(--color-yellow);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legal-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'DINPro', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    padding: 4px 0;
+}
+
+.legal-btn:hover {
+    color: var(--color-yellow);
+    text-decoration: underline;
+}
+
+.legal-separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================================
+   12. LEGAL MODAL (POLÍTICAS Y TÉRMINOS)
+   ========================================================================= */
+.legal-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2500;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.legal-modal-overlay.active {
+    display: flex;
+}
+
+.legal-modal-card {
+    background-color: #1e1e1b;
+    border: 1px solid rgba(255, 221, 0, 0.3);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    animation: modalFadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.legal-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #161614;
+}
+
+.legal-modal-header h2 {
+    font-size: 22px;
+    color: var(--color-yellow);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legal-modal-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.25s ease;
+    padding: 0 4px;
+}
+
+.legal-modal-close:hover {
+    color: var(--color-yellow);
+}
+
+.legal-modal-body {
+    padding: 25px 28px 35px 28px;
+    overflow-y: auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14.5px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.legal-modal-body h3 {
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.legal-modal-body h3:first-child {
+    margin-top: 0;
+}
+
+.legal-modal-body p {
+    margin-bottom: 12px;
+}
+
+.legal-modal-body ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.legal-modal-body li {
+    margin-bottom: 6px;
+}
+
+.legal-modal-body a {
+    color: var(--color-yellow);
+    text-decoration: underline;
+}
+
 /* ==========================================================================
    11. BREAKPOINT: LAPTOPS Y PANTALLAS MEDIANAS (1025px a 1280px)
    ========================================================================== */
@@ -1411,6 +1621,49 @@ body::before {
     .lightbox-content img {
         max-width: 88vw;
         max-height: 70vh;
+    }
+
+    /* Footer & Modal en Móviles */
+    .main-footer {
+        padding: 25px 4%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .footer-logo {
+        height: 36px;
+    }
+
+    .footer-legal-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .legal-modal-card {
+        max-height: 90vh;
+        border-radius: 10px;
+    }
+
+    .legal-modal-header {
+        padding: 16px 20px;
+    }
+
+    .legal-modal-header h2 {
+        font-size: 18px;
+    }
+
+    .legal-modal-body {
+        padding: 18px 20px 25px 20px;
+        font-size: 13.5px;
     }
 }
 
