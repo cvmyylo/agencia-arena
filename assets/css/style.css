@@ -50,17 +50,32 @@
 html {
     scroll-behavior: smooth;
     font-family: 'DINPro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #121212;
+    background-color: var(--color-bg);
     color: #ffffff;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 body {
     min-height: 100vh;
+    background-color: var(--color-bg);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fondo-arena.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% 30vh;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* Color Variables */
@@ -151,22 +166,15 @@ body {
     display: flex;
     position: relative;
     overflow: hidden;
-    background-color: var(--color-bg);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: 100% 30vh;
+    background-color: transparent;
+    z-index: 1;
 }
 
 #inicio {
-    background-image: url('../img/fondo-arena.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-
-.section:not(#inicio) {
-    background-image: url('../img/fondo-arena.png');
 }
 
 .section-title {
@@ -1180,6 +1188,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    body::before {
+        background-size: 100% 20vh;
+    }
+
     .main-header {
         height: 90px;
     }
