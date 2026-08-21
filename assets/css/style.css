@@ -99,14 +99,14 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 130px;
+    height: 85px;
     background-color: var(--color-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 8.5%;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
 }
 
@@ -115,14 +115,28 @@ body::before {
     display: flex;
     align-items: center;
     margin-left: 0;
-    margin-top: 15px;
+    margin-top: 0;
+    overflow: visible;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
 }
 
 .logo-container img {
-    height: 180px;
-    max-height: 180px;
+    height: 135px;
+    max-height: 135px;
     width: auto;
     object-fit: contain;
+    transform: translateY(2px);
+    transition: transform 0.25s ease;
+}
+
+.logo-container a:hover img {
+    transform: translateY(2px) scale(1.05);
 }
 
 .nav-container {
@@ -137,6 +151,8 @@ body::before {
     height: 100%;
     align-items: center;
     gap: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-item {
@@ -149,42 +165,43 @@ body::before {
     font-family: 'DINPro', sans-serif;
     color: var(--color-yellow);
     text-decoration: none;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: clamp(12px, 0.9vw, 14px);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 0 16px;
-    padding-top: 55px;
+    padding: 0 clamp(16px, 1.6vw, 28px);
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 1.2;
-    transition: all 0.3s ease;
+    line-height: 1;
+    transition: background-color 0.25s ease, color 0.25s ease;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .nav-link:hover {
     color: var(--color-white);
+    background-color: rgba(255, 221, 0, 0.08);
 }
 
 .nav-link.active {
     background-color: var(--color-yellow);
     color: #000000;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 /* 4. SECTION LAYOUTS */
 .section {
     min-height: 100vh;
-    padding: 140px 8.5% 80px 8.5%;
+    padding: 125px 8.5% 80px 8.5%;
     display: flex;
     position: relative;
     overflow: hidden;
     background-color: transparent;
     z-index: 1;
-    scroll-margin-top: 90px;
+    scroll-margin-top: 85px;
     box-sizing: border-box;
     width: 100%;
 }
@@ -536,7 +553,7 @@ body::before {
     background-color: var(--color-yellow);
     color: #000000;
     bottom: 55px;
-    left: -20%;
+    left: -16%;
     z-index: 2;
 }
 
@@ -1066,7 +1083,7 @@ body::before {
 
 .legal-main-content {
     flex: 1;
-    padding-top: 170px;
+    padding-top: 130px;
     padding-bottom: 90px;
     position: relative;
     z-index: 2;
@@ -1322,22 +1339,23 @@ body::before {
    ========================================================================== */
 @media (max-width: 1280px) {
     .main-header {
-        height: 110px;
+        height: 80px;
         padding: 0 6.5%;
     }
 
     .logo-container img {
-        height: 145px;
+        height: 120px;
+        max-height: 120px;
     }
 
     .nav-link {
-        padding: 0 12px;
-        padding-top: 45px;
-        font-size: 11px;
+        padding: 0 16px;
+        font-size: 11.5px;
     }
 
     .section {
-        padding: 130px 6.5% 60px 6.5%;
+        padding: 115px 6.5% 60px 6.5%;
+        scroll-margin-top: 80px;
     }
 
     #quienes-somos .section-title,
@@ -1382,7 +1400,7 @@ body::before {
     .circle-diseno {
         width: 350px;
         height: 350px;
-        left: -110px;
+        left: -75px;
         bottom: 45px;
     }
 
@@ -1413,25 +1431,26 @@ body::before {
    ========================================================================== */
 @media (max-width: 1024px) {
     .main-header {
-        height: 95px;
+        height: 75px;
         padding: 0 5.5%;
     }
 
     .logo-container img {
-        height: 120px;
-        margin-top: 5px;
+        height: 105px;
+        max-height: 105px;
+        margin-top: 0;
     }
 
     .nav-link {
-        padding: 0 10px;
-        padding-top: 35px;
-        font-size: 10px;
+        padding: 0 12px;
+        font-size: 10.5px;
     }
 
     .section {
-        padding: 110px 5.5% 50px 5.5%;
+        padding: 105px 5.5% 50px 5.5%;
         height: auto !important;
         min-height: auto !important;
+        scroll-margin-top: 75px;
     }
 
     .section-title {
@@ -1700,8 +1719,8 @@ body::before {
     }
 
     .main-header {
-        height: 75px;
-        padding: 0 12px;
+        height: 62px;
+        padding: 0 10px;
     }
 
     .logo-container {
@@ -1711,19 +1730,20 @@ body::before {
 
     .logo-container img {
         height: 85px;
-        margin-top: 2px;
+        max-height: 85px;
+        margin-top: 0;
     }
 
     .nav-link {
-        padding: 0 7px;
-        font-size: 9.5px;
-        padding-top: 26px;
+        padding: 0 8px;
+        font-size: 9px;
         line-height: 1.1;
         letter-spacing: 0.2px;
     }
 
     .section {
-        padding: 95px 4% 45px 4%;
+        padding: 85px 4% 45px 4%;
+        scroll-margin-top: 62px;
     }
 
     .section-title {
@@ -1949,22 +1969,23 @@ body::before {
    ========================================================================== */
 @media (max-width: 400px) {
     .main-header {
-        height: 68px;
-        padding: 0 6px;
+        height: 54px;
+        padding: 0 5px;
     }
 
     .logo-container img {
-        height: 72px;
+        height: 68px;
+        max-height: 68px;
     }
 
     .nav-link {
         padding: 0 4px;
-        font-size: 8.5px;
-        padding-top: 22px;
+        font-size: 8px;
     }
 
     .section {
-        padding: 85px 3% 40px 3%;
+        padding: 75px 3% 40px 3%;
+        scroll-margin-top: 54px;
     }
 
     .section-title {
