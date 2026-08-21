@@ -104,7 +104,7 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6%;
+    padding: 0 8.5%;
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
@@ -178,7 +178,7 @@ body::before {
 /* 4. SECTION LAYOUTS */
 .section {
     min-height: 100vh;
-    padding: 140px 6% 80px 6%;
+    padding: 140px 8.5% 80px 8.5%;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -514,8 +514,8 @@ body::before {
 }
 
 .circle-360 {
-    width: clamp(320px, 25vw, 400px);
-    height: clamp(320px, 25vw, 400px);
+    width: clamp(300px, 23vw, 380px);
+    height: clamp(300px, 23vw, 380px);
     background-color: var(--color-white);
     color: #000000;
     top: -155px;
@@ -531,12 +531,12 @@ body::before {
 }
 
 .circle-diseno {
-    width: clamp(370px, 30vw, 470px);
-    height: clamp(370px, 30vw, 470px);
+    width: clamp(350px, 27vw, 440px);
+    height: clamp(350px, 27vw, 440px);
     background-color: var(--color-yellow);
     color: #000000;
     bottom: 55px;
-    left: -22%;
+    left: -20%;
     z-index: 2;
 }
 
@@ -547,8 +547,8 @@ body::before {
 }
 
 .circle-rrss {
-    width: clamp(400px, 34vw, 530px);
-    height: clamp(400px, 34vw, 530px);
+    width: clamp(380px, 30vw, 490px);
+    height: clamp(380px, 30vw, 490px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
     bottom: -15px;
@@ -958,7 +958,7 @@ body::before {
     width: 100%;
     background-color: #141412;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 22px 6%;
+    padding: 24px 8.5%;
     position: relative;
     z-index: 10;
     box-sizing: border-box;
@@ -1076,7 +1076,7 @@ body::before {
 .legal-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 6%;
+    padding: 0 8.5%;
     box-sizing: border-box;
 }
 
@@ -1323,7 +1323,7 @@ body::before {
 @media (max-width: 1280px) {
     .main-header {
         height: 110px;
-        padding: 0 4%;
+        padding: 0 6.5%;
     }
 
     .logo-container img {
@@ -1337,7 +1337,7 @@ body::before {
     }
 
     .section {
-        padding: 130px 5% 60px 5%;
+        padding: 130px 6.5% 60px 6.5%;
     }
 
     #quienes-somos .section-title,
@@ -1414,7 +1414,7 @@ body::before {
 @media (max-width: 1024px) {
     .main-header {
         height: 95px;
-        padding: 0 4%;
+        padding: 0 5.5%;
     }
 
     .logo-container img {
@@ -1429,7 +1429,7 @@ body::before {
     }
 
     .section {
-        padding: 110px 5% 50px 5%;
+        padding: 110px 5.5% 50px 5.5%;
         height: auto !important;
         min-height: auto !important;
     }
