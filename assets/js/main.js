@@ -1,29 +1,141 @@
 // =============================================
 // CONFIGURACIÓN DE GALERÍA
-// Imágenes válidas de la carpeta IMG
-// (excluye: logo.png, background-dots.png, ARENA-#ffdd00-AGENCIARENA.png)
+// Imágenes con datos de proyecto en orden exacto
 // =============================================
 const galleryImages = [
-    { src: 'assets/img/project3.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/015.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/017.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/019.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0110.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0112.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0113.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0115.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0117.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0124.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0132.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0137.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0139.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0140.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0141.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0144.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0145.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0150.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0151.png', alt: 'Proyecto Agencia Arena' },
-    { src: 'assets/img/0155.png', alt: 'Proyecto Agencia Arena' },
+    {
+        src: 'assets/img/019.png',
+        alt: 'Nicolaides',
+        category: 'BRANDING',
+        title: 'Nicolaides',
+        desc: 'Diseño de identidad corporativa.'
+    },
+    {
+        src: 'assets/img/0150.png',
+        alt: 'Nissan',
+        category: 'TRADE MARKETING',
+        title: 'Nissan',
+        desc: 'Activación Stand y POP.'
+    },
+    {
+        src: 'assets/img/015.png',
+        alt: 'European Windows',
+        category: 'TRADE MARKETING',
+        title: 'European Windows',
+        desc: 'Diseño y desarrollo de stand para feria.'
+    },
+    {
+        src: 'assets/img/0117.png',
+        alt: 'BCI',
+        category: 'RRSS',
+        title: 'BCI',
+        desc: 'Diseño de campañas para redes sociales.'
+    },
+    {
+        src: 'assets/img/0113.png',
+        alt: 'Jerry IP',
+        category: 'BRANDING',
+        title: 'Jerry IP',
+        desc: 'Desarrollo de identidad visual y naming.'
+    },
+    {
+        src: 'assets/img/017.png',
+        alt: 'KGIUN+',
+        category: 'BRANDING',
+        title: 'KGIUN+',
+        desc: 'Rediseño de identidad visual y aplicaciones corporativas.'
+    },
+    {
+        src: 'assets/img/0145.png',
+        alt: 'WANKALODGE',
+        category: 'BRANDING',
+        title: 'WANKALODGE',
+        desc: 'Diseño de experiencia de usuario.'
+    },
+    {
+        src: 'assets/img/0140.png',
+        alt: 'Shara',
+        category: 'BRANDING',
+        title: 'Shara',
+        desc: 'Diseño publicitario impreso.'
+    },
+    {
+        src: 'assets/img/0132.png',
+        alt: 'AGRALIA',
+        category: 'PUBLICIDAD',
+        title: 'AGRALIA',
+        desc: 'Creatividad y vía pública.'
+    },
+    {
+        src: 'assets/img/0144.png',
+        alt: 'PACX',
+        category: 'BRANDING',
+        title: 'PACX',
+        desc: 'Imagen corporativa y flota.'
+    },
+    {
+        src: 'assets/img/0151.png',
+        alt: 'INNOVACOLLEGE',
+        category: 'EDITORIAL',
+        title: 'INNOVACOLLEGE',
+        desc: 'Diseño editorial corporativo.'
+    },
+    {
+        src: 'assets/img/0141.png',
+        alt: 'Clínica IRAM',
+        category: 'PACKAGING',
+        title: 'Clínica IRAM',
+        desc: 'Diseño y desarrollo sustentable.'
+    },
+    {
+        src: 'assets/img/0139.png',
+        alt: 'VAI TEA',
+        category: 'PACKAGING',
+        title: 'VAI TEA',
+        desc: 'Línea de envases y etiquetas.'
+    },
+    {
+        src: 'assets/img/0110.png',
+        alt: 'Aptar Eco',
+        category: 'PACKAGING',
+        title: 'Aptar Eco',
+        desc: 'Diseño y desarrollo sustentable.'
+    },
+    {
+        src: 'assets/img/0112.png',
+        alt: 'Campaña Vial',
+        category: 'PUBLICIDAD',
+        title: 'Campaña Vial',
+        desc: 'Creatividad y vía pública.'
+    },
+    {
+        src: 'assets/img/0115.png',
+        alt: 'Gestión Calidad',
+        category: 'BRANDING',
+        title: 'Gestión Calidad',
+        desc: 'Imagen corporativa y flota.'
+    },
+    {
+        src: 'assets/img/0124.png',
+        alt: 'Manual de Marca',
+        category: 'BRANDING',
+        title: 'Manual de Marca',
+        desc: 'Identidad corporativa y aplicaciones.'
+    },
+    {
+        src: 'assets/img/0137.png',
+        alt: 'UV-TEX',
+        category: 'PACKAGING',
+        title: 'UV-TEX',
+        desc: 'Línea de envases y etiquetas.'
+    },
+    {
+        src: 'assets/img/0155.png',
+        alt: 'Diseño Editorial',
+        category: 'EDITORIAL',
+        title: 'Diseño Editorial',
+        desc: 'Publicaciones y material impreso.'
+    }
 ];
 
 // Cuántas fotos mostrar por lote
@@ -31,7 +143,7 @@ const FOTOS_POR_LOTE = 13;
 let fotosVisibles = 13;
 
 // =============================================
-// RENDERIZADO DE LA GALERÍA
+// RENDERIZADO DE LA GALERÍA (FORMATO TARJETA)
 // =============================================
 function renderGaleria() {
     const grid = document.getElementById('galeria-grid');
@@ -40,32 +152,37 @@ function renderGaleria() {
 
     const limite = Math.min(fotosVisibles, galleryImages.length);
     for (let i = 0; i < limite; i++) {
+        const data = galleryImages[i];
         const item = document.createElement('div');
-        item.className = 'grid-item';
-
-        // Primer elemento desplazado en pantallas grandes
+        item.className = 'grid-item gallery-card';
         if (i === 0) item.classList.add('first-item');
-
         item.setAttribute('data-index', i);
         item.onclick = () => abrirLightbox(i);
 
-        const img = document.createElement('img');
-        img.src = galleryImages[i].src;
-        img.alt = galleryImages[i].alt;
-        img.loading = 'lazy';
+        item.innerHTML = `
+            <div class="card-img-wrap">
+                <img src="${data.src}" alt="${data.alt}" loading="lazy">
+            </div>
+            <div class="card-info">
+                <span class="card-category">${data.category || 'PROYECTO'}</span>
+                <h3 class="card-title">${data.title || data.alt}</h3>
+                <p class="card-desc">${data.desc || ''}</p>
+            </div>
+        `;
 
-        item.appendChild(img);
         grid.appendChild(item);
     }
 
     if (fotosVisibles < galleryImages.length) {
         const verMas = document.createElement('div');
-        verMas.className = 'grid-item ver-mas-btn';
+        verMas.className = 'grid-item gallery-card ver-mas-btn';
         verMas.id = 'ver-mas-btn';
         verMas.onclick = mostrarMasFotos;
         verMas.innerHTML = `
-            <span>VER MÁS</span>
-            <span><i class="fa-solid fa-chevron-right"></i></span>
+            <div class="ver-mas-content">
+                <span>VER MÁS</span>
+                <span><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
         `;
         grid.appendChild(verMas);
     }
@@ -187,6 +304,59 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 window.addEventListener('resize', updateActiveNav, { passive: true });
+
+// =============================================
+// CAPTCHA MATEMÁTICO ANTI-SPAM (FORMULARIO CONTACTO)
+// =============================================
+let captchaAnswerCorrect = 0;
+
+function generarCaptchaMatematico() {
+    const questionEl = document.getElementById('captcha-question');
+    const answerInput = document.getElementById('captcha-answer');
+    const errorEl = document.getElementById('captcha-error');
+
+    if (!questionEl || !answerInput) return;
+
+    const num1 = Math.floor(Math.random() * 8) + 2;
+    const num2 = Math.floor(Math.random() * 7) + 1;
+    captchaAnswerCorrect = num1 + num2;
+
+    questionEl.textContent = `¿Cuánto es ${num1} + ${num2}?`;
+    answerInput.value = '';
+    if (errorEl) errorEl.style.display = 'none';
+}
+
+const contactForm = document.getElementById('contacto-form');
+if (contactForm) {
+    generarCaptchaMatematico();
+
+    contactForm.addEventListener('submit', function (e) {
+        const answerInput = document.getElementById('captcha-answer');
+        const errorEl = document.getElementById('captcha-error');
+        const submitBtn = document.getElementById('contacto-submit-btn');
+
+        if (!answerInput) return;
+
+        const userVal = parseInt(answerInput.value.trim(), 10);
+        if (userVal !== captchaAnswerCorrect) {
+            e.preventDefault();
+            if (errorEl) {
+                errorEl.style.display = 'block';
+                errorEl.textContent = 'Respuesta de seguridad incorrecta. Inténtalo de nuevo.';
+            }
+            answerInput.focus();
+            generarCaptchaMatematico();
+            return false;
+        }
+
+        // Si es correcto, permitimos que FormSubmit procese el envío
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Enviando consulta...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+        }
+    });
+}
+
 
 // =============================================
 // INICIALIZACIÓN

@@ -70,7 +70,8 @@
                 desde lo <br>
                 <span class="bold">simple</span>
             </h1>
-            <a href="https://www.instagram.com/p/DaiWSB1P_lP/" target="_blank" rel="noopener noreferrer" class="hero-btn-presentacion" aria-label="Ver presentación en Instagram">
+            <a href="https://www.instagram.com/p/DaiWSB1P_lP/" target="_blank" rel="noopener noreferrer"
+                class="hero-btn-presentacion" aria-label="Ver presentación en Instagram">
                 <span class="hero-btn-bold">VER</span> <span class="hero-btn-regular">PRESENTACIÓN</span>
             </a>
         </div>
@@ -164,7 +165,7 @@
 
     <!-- 5. SECCIÓN: GALERÍA / EXPERIENCIA -->
     <section id="galeria" class="section">
-        <h2 class="section-title">EXPE<br>RIENCIA</h2>
+        <h2 class="section-title">GALE<br>RÍA</h2>
         <div class="galeria-container">
             <div class="galeria-grid-view" id="galeria-grid">
                 <!-- Fotografías inyectadas por JavaScript -->
@@ -193,8 +194,13 @@
         </div>
 
         <div class="contacto-right-col">
-            <form class="contacto-form" id="contacto-form"
-                onsubmit="event.preventDefault(); alert('¡Gracias por contactarnos! Te responderemos a la brevedad.');">
+            <form class="contacto-form" id="contacto-form" action="https://formsubmit.co/pgonzalez@agenciarena.cl" method="POST">
+                <!-- Configuración FormSubmit (Listo para activación) -->
+                <input type="hidden" name="_subject" value="Nuevo requerimiento web - Agencia Arena">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+
                 <div class="form-group">
                     <input type="text" class="contacto-input" placeholder="NOMRE" id="contacto-nombre" name="nombre"
                         required>
@@ -209,8 +215,23 @@
                 </div>
                 <div class="form-group">
                     <textarea class="contacto-textarea" placeholder="CUENTANOS" id="contacto-mensaje" name="mensaje"
-                        rows="4"></textarea>
+                        rows="4" required></textarea>
                 </div>
+
+                <!-- SEGURIDAD: CAPTCHA MATEMÁTICO ANTI-SPAM -->
+                <div class="contacto-captcha-group">
+                    <label class="contacto-captcha-label" for="captcha-answer">Seguridad *</label>
+                    <div class="contacto-captcha-row">
+                        <div class="contacto-captcha-question" id="captcha-question">¿Cuánto es 3 + 4?</div>
+                        <input type="number" class="contacto-captcha-input" id="captcha-answer" name="captcha_respuesta" placeholder="Respuesta" required>
+                    </div>
+                    <span class="contacto-captcha-error" id="captcha-error" style="display: none;">Respuesta incorrecta. Inténtalo de nuevo.</span>
+                </div>
+
+                <!-- BOTÓN DE ENVÍO -->
+                <button type="submit" class="contacto-submit-btn" id="contacto-submit-btn">
+                    <span class="submit-btn-bold">ENVIAR</span> <span class="submit-btn-regular">CONSULTA</span>
+                </button>
             </form>
 
             <div class="contacto-team-row">
@@ -218,8 +239,9 @@
                     <div class="contacto-member-icons">
                         <a href="mailto:pgonzalez@agenciarena.cl" class="contacto-icon-link"
                             aria-label="Email Pamela"><i class="fa-regular fa-envelope"></i></a>
-                        <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer" class="contacto-icon-link"
-                            aria-label="Instagram Agencia Arena"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer"
+                            class="contacto-icon-link" aria-label="Instagram Agencia Arena"><i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://wa.me/56971888564" target="_blank" class="contacto-icon-link"
                             aria-label="WhatsApp Pamela"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
@@ -242,8 +264,9 @@
                     <div class="contacto-member-icons">
                         <a href="mailto:agana@agenciarena.cl" class="contacto-icon-link" aria-label="Email Andrés"><i
                                 class="fa-regular fa-envelope"></i></a>
-                        <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer" class="contacto-icon-link"
-                            aria-label="Instagram Agencia Arena"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer"
+                            class="contacto-icon-link" aria-label="Instagram Agencia Arena"><i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://wa.me/56994371732" target="_blank" class="contacto-icon-link"
                             aria-label="WhatsApp Andrés"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
@@ -283,7 +306,7 @@
     </footer>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/56971888564" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+    <a href="https://wa.me/56971888564?text=Hola!%20Cu%C3%A9ntanos%20%C2%BFen%20qu%C3%A9%20te%20podemos%20apoyar%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
         aria-label="Escríbenos a WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-tooltip">¡Escríbenos!</span>
