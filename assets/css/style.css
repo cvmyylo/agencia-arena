@@ -239,6 +239,41 @@ body::before {
     margin-left: 47%;
 }
 
+.hero-btn-presentacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--color-yellow);
+    color: #000000;
+    font-family: 'DINPro', sans-serif;
+    font-size: clamp(17px, 1.7vw, 25px);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding: clamp(15px, 1.7vh, 22px) clamp(38px, 4vw, 62px);
+    border-radius: 12px;
+    margin-top: clamp(25px, 3.2vh, 42px);
+    margin-left: 47%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn-bold {
+    font-weight: 800;
+}
+
+.hero-btn-regular {
+    font-weight: 500;
+}
+
+.hero-btn-presentacion:hover {
+    transform: scale(1.05) translateY(-2px);
+    background-color: var(--color-white);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+    color: #000000;
+}
+
 /* 6. SECCIÓN: QUIÉNES SOMOS */
 #quienes-somos {
     min-height: 100vh;
@@ -1443,6 +1478,14 @@ body::before {
         letter-spacing: -1px !important;
     }
 
+    .hero-btn-presentacion {
+        margin: 30px auto 0 auto;
+        display: inline-flex;
+        font-size: 20px;
+        padding: 15px 42px;
+        border-radius: 10px;
+    }
+
     /* Quiénes somos */
     #quienes-somos {
         flex-direction: column;
@@ -1707,6 +1750,13 @@ body::before {
         font-size: 52px !important;
     }
 
+    .hero-btn-presentacion {
+        font-size: 16.5px;
+        padding: 13px 34px;
+        margin-top: 22px;
+        border-radius: 8px;
+    }
+
     /* Quiénes somos */
     .quienes-yellow-circle {
         border-radius: 28px;
@@ -1932,6 +1982,12 @@ body::before {
     .hero-text span.bold {
         font-weight: 700;
         font-size: 44px !important;
+    }
+
+    .hero-btn-presentacion {
+        font-size: 14.5px;
+        padding: 11px 24px;
+        margin-top: 18px;
     }
 
     .quienes-yellow-circle {
