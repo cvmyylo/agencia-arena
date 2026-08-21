@@ -74,20 +74,23 @@ body {
     width: 100%;
 }
 
-/* Global Fixed Background (Arena en la parte inferior) */
+/* Global Fixed Background (Fondo SVG Vectorial de Semitonos - AgenciArena) */
+.fondo-global-fijo,
 body::before {
     content: '';
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/fondo-arena.png');
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg);
+    background-image: url('../img/fondo-agenciarena.svg');
     background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: 100% clamp(160px, 28vh, 320px);
+    background-position: center top;
+    background-size: cover;
     pointer-events: none;
     z-index: 0;
+    opacity: 0.95;
 }
 
 /* 3. NAVIGATION HEADER */
@@ -206,6 +209,7 @@ body::before {
 
 .hero-content {
     margin-left: 3%;
+    margin-top: clamp(40px, 6vh, 75px);
     z-index: 2;
 }
 
@@ -225,7 +229,7 @@ body::before {
 }
 
 .hero-text span.bold {
-    font-weight: 400;
+    font-weight: 700;
     font-size: clamp(60px, 9vw, 130px);
     display: block;
     margin-top: -15px;
@@ -242,8 +246,10 @@ body::before {
 
 #quienes-somos .section-title {
     width: 20%;
-    align-self: flex-start;
-    padding-top: 70px;
+    align-self: center;
+    padding-top: 0;
+    margin-top: -200px;
+    margin-left: clamp(25px, 4vw, 70px);
 }
 
 .quienes-content-wrapper {
@@ -256,23 +262,23 @@ body::before {
 }
 
 .quienes-yellow-circle {
-    width: min(720px, 46vw);
-    height: min(720px, 46vw);
-    max-width: 720px;
-    max-height: 720px;
+    width: min(800px, 50vw);
+    height: min(800px, 50vw);
+    max-width: 800px;
+    max-height: 800px;
     background-color: var(--color-yellow);
     border-radius: 50%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: min(70px, 5vw);
+    padding-right: min(75px, 5vw);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+    margin-top: -140px;
 }
 
 .quienes-desc-text {
-    width: min(340px, 23vw);
+    width: min(370px, 24vw);
     color: #000000;
     font-family: 'DINPro', sans-serif;
     font-size: clamp(16px, 1.5vw, 24px);
@@ -291,21 +297,21 @@ body::before {
 
 .quienes-team {
     position: absolute;
-    left: max(-130px, -9vw);
+    left: calc(-0.78 * clamp(180px, 16vw, 250px));
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: clamp(70px, 10vw, 140px);
+    gap: clamp(80px, 11vw, 160px);
     z-index: 5;
 }
 
 .quienes-member:nth-child(1) .quienes-info {
-    transform: translateY(85px);
+    transform: translateY(95px);
 }
 
 .quienes-member:nth-child(2) .quienes-info {
-    transform: translateY(-85px);
+    transform: translateY(-95px);
 }
 
 .quienes-member {
@@ -316,46 +322,52 @@ body::before {
 }
 
 .quienes-photo-circle {
-    width: clamp(130px, 12vw, 190px);
-    height: clamp(130px, 12vw, 190px);
+    width: clamp(180px, 16vw, 250px);
+    height: clamp(180px, 16vw, 250px);
     border-radius: 50%;
     background-color: var(--color-gray);
     flex-shrink: 0;
     border: none;
-    transform: translateX(15px);
+    transform: none;
 }
 
 .quienes-info {
     color: #000000;
     font-family: 'DINPro', sans-serif;
     white-space: nowrap;
+    text-align: right;
 }
 
 .quienes-info h3 {
-    font-size: clamp(16px, 1.35vw, 20px);
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.25;
     margin-bottom: 2px;
 }
 
 .quienes-info p.role {
-    font-size: clamp(14px, 1.25vw, 19px);
+    font-size: clamp(15px, 1.25vw, 19px);
     font-weight: 300;
+    line-height: 1.25;
     margin-bottom: 2px;
 }
 
 .quienes-info a.email {
-    font-size: clamp(13px, 1.2vw, 18px);
+    font-size: clamp(14px, 1.2vw, 18px);
     color: #000000;
     text-decoration: none;
     display: block;
+    line-height: 1.25;
+    margin-bottom: 2px;
 }
 
 .quienes-info p.location {
-    font-size: clamp(13px, 1.2vw, 18px);
+    font-size: clamp(14px, 1.2vw, 18px);
     color: #000000;
+    line-height: 1.25;
 }
 
 .name-bold {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .name-light {
@@ -461,11 +473,11 @@ body::before {
 }
 
 .circle-360 {
-    width: clamp(260px, 21vw, 320px);
-    height: clamp(260px, 21vw, 320px);
+    width: clamp(330px, 26vw, 410px);
+    height: clamp(330px, 26vw, 410px);
     background-color: var(--color-white);
     color: #000000;
-    top: 0;
+    top: -155px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -494,12 +506,12 @@ body::before {
 }
 
 .circle-rrss {
-    width: clamp(350px, 29vw, 450px);
-    height: clamp(350px, 29vw, 450px);
+    width: clamp(430px, 36vw, 560px);
+    height: clamp(430px, 36vw, 560px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
-    bottom: -20px;
-    right: -4%;
+    bottom: -45px;
+    right: -7%;
     z-index: 3;
 }
 
@@ -1072,18 +1084,18 @@ body::before {
     }
 
     .quienes-yellow-circle {
-        width: 520px;
-        height: 520px;
-        padding-right: 40px;
+        width: 580px;
+        height: 580px;
+        padding-right: 45px;
     }
 
     .quienes-team {
-        left: -90px;
-        gap: 70px;
+        left: calc(-0.78 * 200px);
+        gap: 85px;
     }
 
     .quienes-desc-text {
-        width: 260px;
+        width: 290px;
         font-size: 18px;
     }
 
@@ -1097,8 +1109,9 @@ body::before {
     }
 
     .circle-360 {
-        width: 250px;
-        height: 250px;
+        width: 310px;
+        height: 310px;
+        top: -115px;
     }
 
     .circle-diseno {
@@ -1109,10 +1122,10 @@ body::before {
     }
 
     .circle-rrss {
-        width: 340px;
-        height: 340px;
-        right: -20px;
-        bottom: -15px;
+        width: 420px;
+        height: 420px;
+        right: -35px;
+        bottom: -35px;
     }
 
     #galeria .section-title {
@@ -1178,6 +1191,8 @@ body::before {
     .section-title {
         width: 100% !important;
         text-align: center;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
         margin-bottom: 30px;
         font-size: 55px !important;
         position: static !important;
@@ -1210,6 +1225,7 @@ body::before {
     }
 
     .hero-text span.bold {
+        font-weight: 700;
         font-size: 65px !important;
         margin-left: 0 !important;
         margin-top: 10px !important;
@@ -1277,8 +1293,12 @@ body::before {
 
     .quienes-photo-circle {
         transform: none;
-        width: 130px;
-        height: 130px;
+        width: 160px;
+        height: 160px;
+    }
+
+    .quienes-info {
+        text-align: center !important;
     }
 
     .quienes-member:nth-child(1) .quienes-info,
@@ -1441,8 +1461,10 @@ body::before {
    13. BREAKPOINT: SMARTPHONES / CELULARES (<= 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+    .fondo-global-fijo,
     body::before {
-        background-size: 100% clamp(120px, 20vh, 200px);
+        background-size: cover;
+        background-position: center top;
     }
 
     .main-header {
@@ -1492,6 +1514,7 @@ body::before {
     }
 
     .hero-text span.bold {
+        font-weight: 700;
         font-size: 52px !important;
     }
 
@@ -1507,8 +1530,8 @@ body::before {
     }
 
     .quienes-photo-circle {
-        width: 115px;
-        height: 115px;
+        width: 140px;
+        height: 140px;
     }
 
     .quienes-info h3 {
@@ -1733,6 +1756,7 @@ body::before {
     }
 
     .hero-text span.bold {
+        font-weight: 700;
         font-size: 44px !important;
     }
 
