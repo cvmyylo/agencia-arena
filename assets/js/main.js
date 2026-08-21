@@ -107,12 +107,7 @@ function navigateLightbox(direccion) {
 function closeLightbox() {
     const modal = document.getElementById('lightbox');
     if (modal) modal.classList.remove('active');
-    
-    // Si el modal legal no está abierto, restauramos el scroll
-    const legalModal = document.getElementById('legal-modal');
-    if (!legalModal || !legalModal.classList.contains('active')) {
-        document.body.style.overflow = '';
-    }
+    document.body.style.overflow = '';
 }
 
 // Cerrar al hacer clic en el fondo del lightbox
@@ -143,100 +138,11 @@ if (lightboxEl) {
     }, { passive: true });
 }
 
-// =============================================
-// MODAL LEGAL (POLÍTICAS Y TÉRMINOS - CHILE)
-// =============================================
-const legalContent = {
-    privacidad: {
-        title: "Política de Privacidad",
-        body: `
-            <p>En <strong>Agencia Arena</strong>, la privacidad y protección de los datos de nuestros usuarios y clientes es fundamental. La presente Política de Privacidad describe el tratamiento de datos personales conforme a la <strong>Ley N° 19.628 sobre Protección de la Vida Privada</strong> de la República de Chile y sus actualizaciones normativas.</p>
-
-            <h3>1. Información recopilada</h3>
-            <p>Este sitio web tiene un carácter informativo y de presentación de portafolio. No recopilamos datos personales de forma automatizada salvo aquellos que usted nos proporciona voluntariamente al contactarnos mediante correo electrónico (<code>mailto:</code>), llamadas telefónicas o WhatsApp.</p>
-
-            <h3>2. Finalidad del tratamiento</h3>
-            <p>Los datos de contacto que usted nos remite son utilizados exclusivamente para:</p>
-            <ul>
-                <li>Atender cotizaciones, solicitudes de propuesta y consultas comerciales.</li>
-                <li>Coordinar proyectos y servicios de publicidad, branding, diseño y marketing digital.</li>
-            </ul>
-
-            <h3>3. Confidencialidad y no cesión a terceros</h3>
-            <p>Agencia Arena no comercializa, transfiere ni cede datos personales a terceras partes bajo ninguna circunstancia, salvo requerimiento legal de tribunales o autoridades competentes.</p>
-
-            <h3>4. Derechos del titular</h3>
-            <p>Conforme a la legislación chilena, usted tiene derecho al acceso, rectificación, cancelación u oposición respecto a sus datos personales. Para ejercer estos derechos, puede escribir a <a href="mailto:pgonzalez@agenciarena.cl">pgonzalez@agenciarena.cl</a> o <a href="mailto:agana@agenciarena.cl">agana@agenciarena.cl</a>.</p>
-
-            <h3>5. Actualizaciones</h3>
-            <p>Esta política podrá actualizarse periódicamente para reflejar mejoras operativas o adecuaciones normativas. Última actualización: 2026.</p>
-        `
-    },
-    terminos: {
-        title: "Términos y Condiciones de Uso",
-        body: `
-            <p>Bienvenido al sitio web de <strong>Agencia Arena</strong>. Al navegar en este sitio, usted acepta los siguientes Términos y Condiciones de Uso.</p>
-
-            <h3>1. Propiedad Intelectual</h3>
-            <p>Todos los contenidos, piezas gráficas, marcas, logotipos, campañas y proyectos presentados en este portafolio son propiedad intelectual exclusiva de Agencia Arena o de sus respectivos clientes titulares. Queda prohibida su reproducción o uso comercial no autorizado.</p>
-
-            <h3>2. Uso del sitio web</h3>
-            <p>El usuario se compromete a hacer un uso legítimo y adecuado de los contenidos disponibles, respetando los derechos de autor y las normas de convivencia digital.</p>
-
-            <h3>3. Enlaces externos</h3>
-            <p>Este sitio puede incluir enlaces a plataformas externas (como Instagram o WhatsApp). Agencia Arena no se responsabiliza por las políticas o contenidos de dichas aplicaciones de terceros.</p>
-
-            <h3>4. Legislación y jurisdicción</h3>
-            <p>Los presentes términos se rigen por las leyes de la <strong>República de Chile</strong>. Cualquier controversia será sometida a la jurisdicción de los Tribunales Ordinarios de Justicia de Chile.</p>
-        `
-    }
-};
-
-function openLegalModal(type) {
-    const modal = document.getElementById('legal-modal');
-    const title = document.getElementById('legal-modal-title');
-    const body = document.getElementById('legal-modal-body');
-
-    if (!modal || !title || !body) return;
-
-    const data = legalContent[type] || legalContent.privacidad;
-    title.textContent = data.title;
-    body.innerHTML = data.body;
-
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLegalModal() {
-    const modal = document.getElementById('legal-modal');
-    if (modal) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-    }
-    
-    // Si el lightbox no está abierto, restauramos el scroll
-    const lightbox = document.getElementById('lightbox');
-    if (!lightbox || !lightbox.classList.contains('active')) {
-        document.body.style.overflow = '';
-    }
-}
-
-// Cerrar modal legal al hacer clic en el backdrop
-const legalModalEl = document.getElementById('legal-modal');
-if (legalModalEl) {
-    legalModalEl.addEventListener('click', function (e) {
-        if (e.target === this) closeLegalModal();
-    });
-}
-
-// Navegación con teclado común para ambos modales
+// Navegación con teclado para Lightbox
 document.addEventListener('keydown', function (e) {
     const lightboxModal = document.getElementById('lightbox');
-    const legalModal = document.getElementById('legal-modal');
 
     if (e.key === 'Escape') {
-        if (legalModal && legalModal.classList.contains('active')) closeLegalModal();
         if (lightboxModal && lightboxModal.classList.contains('active')) closeLightbox();
     }
 

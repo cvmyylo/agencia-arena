@@ -186,43 +186,77 @@
 
     <!-- 6. SECCIÓN: CONTACTO -->
     <section id="contacto" class="section">
-        <h2 class="section-title">CON<br>TACTO</h2>
-        <div class="contacto-content">
-            <div class="contact-circle circle-pamela">
-                <div class="contact-icons">
-                    <a href="mailto:pgonzalez@agenciarena.cl" class="contact-icon-btn"><i
-                            class="fa-regular fa-envelope"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="contact-icon-btn"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/56971888564" target="_blank" class="contact-icon-btn"><i
-                            class="fa-brands fa-whatsapp"></i></a>
-                </div>
-                <h3><span class="contact-bold">Pamela</span> <span class="contact-light">González R.</span></h3>
-                <p class="role"><span class="contact-light">Directora de Cuentas</span></p>
-                <a href="tel:+56971888564" class="detail-link"><span class="contact-light">+56 9</span> <span
-                        class="contact-bold">7188 8564</span></a>
-                <a href="mailto:pgonzalez@agenciarena.cl" class="detail-link"><span
-                        class="contact-bold">pgonzalez</span><span class="contact-light">@agenciarena.cl</span></a>
-                <p class="location"><span class="contact-bold">La Serena</span><span class="contact-light">,
-                        Chile</span></p>
-            </div>
+        <div class="contacto-left-col">
+            <h2 class="section-title">CON<br>TACTO</h2>
+        </div>
 
-            <div class="contact-circle circle-andres">
-                <div class="contact-icons">
-                    <a href="mailto:agana@agenciarena.cl" class="contact-icon-btn"><i
-                            class="fa-regular fa-envelope"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="contact-icon-btn"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/56994371732" target="_blank" class="contact-icon-btn"><i
-                            class="fa-brands fa-whatsapp"></i></a>
+        <div class="contacto-right-col">
+            <form class="contacto-form" id="contacto-form"
+                onsubmit="event.preventDefault(); alert('¡Gracias por contactarnos! Te responderemos a la brevedad.');">
+                <div class="form-group">
+                    <input type="text" class="contacto-input" placeholder="NOMRE" id="contacto-nombre" name="nombre"
+                        required>
                 </div>
-                <h3><span class="contact-bold">Andrés</span> <span class="contact-light">Gana G. de la T.</span></h3>
-                <p class="role"><span class="contact-light">Director Creativo</span></p>
-                <a href="tel:+56994371732" class="detail-link"><span class="contact-bold">+56 9 9437 1732</span></a>
-                <a href="mailto:agana@agenciarena.cl" class="detail-link"><span class="contact-bold">agana</span><span
-                        class="contact-light">@agenciarena.cl</span></a>
-                <p class="location"><span class="contact-bold">Santiago</span><span class="contact-light">, Chile</span>
-                </p>
+                <div class="form-group">
+                    <input type="email" class="contacto-input" placeholder="CORREO" id="contacto-email" name="email"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="contacto-input" placeholder="TELÉFONO (+56)" id="contacto-telefono"
+                        name="telefono">
+                </div>
+                <div class="form-group">
+                    <textarea class="contacto-textarea" placeholder="CUENTANOS" id="contacto-mensaje" name="mensaje"
+                        rows="4"></textarea>
+                </div>
+            </form>
+
+            <div class="contacto-team-row">
+                <div class="contacto-team-member">
+                    <div class="contacto-member-icons">
+                        <a href="mailto:pgonzalez@agenciarena.cl" class="contacto-icon-link"
+                            aria-label="Email Pamela"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="contacto-icon-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/56971888564" target="_blank" class="contacto-icon-link"
+                            aria-label="WhatsApp Pamela"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="contacto-member-details">
+                        <h3><span class="contact-bold">Pamela</span> <span class="contact-light">González R.</span></h3>
+                        <p class="role"><span class="contact-light">Directora de Cuentas</span></p>
+                        <a href="tel:+56971888564" class="detail-link"><span class="contact-bold">+56 9 7188
+                                8564</span></a>
+                        <a href="mailto:pgonzalez@agenciarena.cl" class="detail-link"><span
+                                class="contact-bold">pgonzalez</span><span
+                                class="contact-light">@agenciarena.cl</span></a>
+                        <p class="location"><span class="contact-bold">La Serena</span><span class="contact-light">,
+                                Chile</span></p>
+                    </div>
+                </div>
+
+                <div class="contacto-divider" aria-hidden="true"></div>
+
+                <div class="contacto-team-member">
+                    <div class="contacto-member-icons">
+                        <a href="mailto:agana@agenciarena.cl" class="contacto-icon-link" aria-label="Email Andrés"><i
+                                class="fa-regular fa-envelope"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="contacto-icon-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/56994371732" target="_blank" class="contacto-icon-link"
+                            aria-label="WhatsApp Andrés"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="contacto-member-details">
+                        <h3><span class="contact-bold">Andrés</span> <span class="contact-light">Gana G. de la T.</span>
+                        </h3>
+                        <p class="role"><span class="contact-light">Director Creativo</span></p>
+                        <a href="tel:+56994371732" class="detail-link"><span class="contact-bold">+56 9 9437
+                                1732</span></a>
+                        <a href="mailto:agana@agenciarena.cl" class="detail-link"><span
+                                class="contact-bold">agana</span><span class="contact-light">@agenciarena.cl</span></a>
+                        <p class="location"><span class="contact-bold">Santiago</span><span class="contact-light">,
+                                Chile</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -235,28 +269,23 @@
                 <span class="footer-tagline">Creatividad desde lo simple</span>
             </div>
             <div class="footer-center">
-                <p class="footer-copyright">&copy; 2026 Agencia Arena · <span class="footer-country">Santiago / La Serena, Chile</span></p>
+                <p class="footer-copyright">&copy; 2026 Agencia Arena · <span class="footer-country">Santiago - La
+                        Serena, Chile</span></p>
             </div>
             <div class="footer-legal-links">
-                <button type="button" class="legal-btn" onclick="openLegalModal('privacidad')">Política de Privacidad</button>
+                <a href="politica-de-privacidad.html" class="legal-btn">Política de Privacidad</a>
                 <span class="legal-separator">·</span>
-                <button type="button" class="legal-btn" onclick="openLegalModal('terminos')">Términos de Uso</button>
+                <a href="terminos-de-uso.html" class="legal-btn">Términos de Uso</a>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL DE POLÍTICAS Y TÉRMINOS LEGALES (CHILE - LEY 19.628) -->
-    <div class="legal-modal-overlay" id="legal-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="legal-modal-card">
-            <div class="legal-modal-header">
-                <h2 id="legal-modal-title">Política de Privacidad</h2>
-                <button type="button" class="legal-modal-close" onclick="closeLegalModal()" aria-label="Cerrar">&times;</button>
-            </div>
-            <div class="legal-modal-body" id="legal-modal-body">
-                <!-- Contenido inyectado por JS -->
-            </div>
-        </div>
-    </div>
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/56971888564" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+        aria-label="Escríbenos a WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Escríbenos!</span>
+    </a>
 
     <!-- JAVASCRIPT -->
     <script src="assets/js/main.js"></script>
