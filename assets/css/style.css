@@ -316,33 +316,33 @@ body::before {
 }
 
 .quienes-yellow-circle {
-    width: min(800px, 50vw);
-    height: min(800px, 50vw);
-    max-width: 800px;
-    max-height: 800px;
+    width: min(730px, 46vw);
+    height: min(730px, 46vw);
+    max-width: 730px;
+    max-height: 730px;
     background-color: var(--color-yellow);
     border-radius: 50%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: min(75px, 5vw);
+    padding-right: min(65px, 4.5vw);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     margin-top: -140px;
 }
 
 .quienes-desc-text {
-    width: min(370px, 24vw);
+    width: min(340px, 22vw);
     color: #000000;
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(16px, 1.5vw, 24px);
+    font-size: clamp(14.5px, 1.35vw, 21.5px);
     line-height: 1.35;
     font-weight: 300;
     transform: translateX(10px);
 }
 
 .creemos-text {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .quienes-desc-text p {
@@ -351,33 +351,33 @@ body::before {
 
 .quienes-team {
     position: absolute;
-    left: calc(-0.78 * clamp(180px, 16vw, 250px));
+    left: calc(-0.78 * clamp(165px, 14.5vw, 230px));
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: clamp(80px, 11vw, 160px);
+    gap: clamp(70px, 10vw, 140px);
     z-index: 5;
 }
 
 .quienes-member:nth-child(1) .quienes-info {
-    transform: translateY(95px);
+    transform: translateY(85px);
 }
 
 .quienes-member:nth-child(2) .quienes-info {
-    transform: translateY(-95px);
+    transform: translateY(-85px);
 }
 
 .quienes-member {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
     position: relative;
 }
 
 .quienes-photo-circle {
-    width: clamp(180px, 16vw, 250px);
-    height: clamp(180px, 16vw, 250px);
+    width: clamp(165px, 14.5vw, 230px);
+    height: clamp(165px, 14.5vw, 230px);
     border-radius: 50%;
     background-color: var(--color-gray);
     flex-shrink: 0;
@@ -393,20 +393,20 @@ body::before {
 }
 
 .quienes-info h3 {
-    font-size: clamp(17px, 1.4vw, 21px);
+    font-size: clamp(15.5px, 1.25vw, 19.5px);
     line-height: 1.25;
     margin-bottom: 2px;
 }
 
 .quienes-info p.role {
-    font-size: clamp(15px, 1.25vw, 19px);
+    font-size: clamp(13.5px, 1.1vw, 17.5px);
     font-weight: 300;
     line-height: 1.25;
     margin-bottom: 2px;
 }
 
 .quienes-info a.email {
-    font-size: clamp(14px, 1.2vw, 18px);
+    font-size: clamp(13px, 1.05vw, 16.5px);
     color: #000000;
     text-decoration: none;
     display: block;
@@ -415,7 +415,7 @@ body::before {
 }
 
 .quienes-info p.location {
-    font-size: clamp(14px, 1.2vw, 18px);
+    font-size: clamp(13px, 1.05vw, 16.5px);
     color: #000000;
     line-height: 1.25;
 }
@@ -1198,14 +1198,15 @@ body::before {
 
 .footer-logo {
     height: 28px;
-    width: auto;
+    width: 28px;
     object-fit: contain;
+    border-radius: 50%;
     display: block;
 }
 
 .footer-tagline {
     font-size: 13px;
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.65);
     font-weight: 300;
     letter-spacing: 0.3px;
     line-height: 1;
@@ -1560,19 +1561,19 @@ body::before {
     }
 
     .quienes-yellow-circle {
-        width: 580px;
-        height: 580px;
-        padding-right: 45px;
+        width: 540px;
+        height: 540px;
+        padding-right: 40px;
     }
 
     .quienes-team {
-        left: calc(-0.78 * 200px);
-        gap: 85px;
+        left: calc(-0.78 * 185px);
+        gap: 75px;
     }
 
     .quienes-desc-text {
-        width: 290px;
-        font-size: 18px;
+        width: 275px;
+        font-size: 16.5px;
     }
 
     .hacemos-left-box {
@@ -1731,7 +1732,8 @@ body::before {
         width: 100%;
         max-width: 480px;
         text-align: center;
-        margin-bottom: 35px;
+        margin-top: 35px;
+        margin-bottom: 10px;
         transform: none;
         font-size: 19px;
     }
@@ -2022,7 +2024,8 @@ body::before {
 
     .quienes-desc-text {
         font-size: 16.5px;
-        margin-bottom: 30px;
+        margin-top: 32px;
+        margin-bottom: 10px;
     }
 
     .quienes-photo-circle {
@@ -2216,7 +2219,9 @@ body::before {
     }
 
     .footer-logo {
-        height: 28px;
+        height: 26px;
+        width: 26px;
+        border-radius: 50%;
     }
 
     .footer-copyright {
@@ -2323,6 +2328,8 @@ body::before {
 
     .quienes-desc-text {
         font-size: 15px;
+        margin-top: 25px;
+        margin-bottom: 8px;
     }
 
     .quienes-photo-circle {
