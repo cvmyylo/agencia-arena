@@ -813,11 +813,36 @@ body::before {
     object-fit: contain;
     padding: 8px;
     box-sizing: border-box;
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease, opacity 0.15s ease;
 }
 
 .grid-item.gallery-card:hover .card-img-wrap img {
     transform: scale(1.06);
+}
+
+.card-multi-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(17, 17, 15, 0.78);
+    color: var(--color-yellow);
+    font-family: 'DINPro', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    z-index: 2;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.grid-item.gallery-card:hover .card-multi-badge {
+    transform: scale(1.08);
+    background: rgba(0, 0, 0, 0.92);
 }
 
 .card-info {
@@ -1141,20 +1166,61 @@ body::before {
 
 .lightbox-content {
     width: 90%;
-    height: 80%;
     max-width: 1000px;
-    max-height: 80vh;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.lightbox-img-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    max-height: 72vh;
 }
 
 .lightbox-content img {
     max-width: 90vw;
-    max-height: 75vh;
+    max-height: 72vh;
     object-fit: contain;
     border-radius: 6px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    transition: opacity 0.15s ease;
+}
+
+.lightbox-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 480px;
+    padding: 6px 16px;
+    background: rgba(17, 17, 15, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    box-sizing: border-box;
+}
+
+.lightbox-title {
+    font-family: 'DINPro', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.lightbox-counter {
+    font-family: 'DINPro', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-yellow);
+    letter-spacing: 0.5px;
 }
 
 .lightbox-close {

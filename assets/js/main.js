@@ -1,222 +1,310 @@
 // =============================================
-// CONFIGURACIÓN DE GALERÍA
-// Imágenes con datos de proyecto en orden exacto
+// CONFIGURACIÓN DE GALERÍA — MARCAS Y MINI LOOPS
+// 13 Marcas ordenadas de 1 a 13 con sus carpetas
 // =============================================
-const galleryImages = [
+const galleryBrands = [
     {
-        src: 'assets/img/019.png',
-        alt: 'Nicolaides',
-        category: 'BRANDING',
+        id: 'nicolaides',
         title: 'Nicolaides',
-        desc: 'Creación de logo, página web, packaging y branding.'
+        desc: 'Creación de logo, página web, packaging y branding.',
+        category: 'BRANDING',
+        images: [
+            'assets/img/1_Nicolaides/019.png',
+            'assets/img/1_Nicolaides/0110.png',
+            'assets/img/1_Nicolaides/0111.png',
+            'assets/img/1_Nicolaides/0112.png'
+        ]
     },
     {
-        src: 'assets/img/0150.png',
-        alt: 'Nissan',
-        category: 'TRADE MARKETING',
+        id: 'nissan',
         title: 'Nissan',
-        desc: 'Revista interna.'
-    },
-    {
-        src: 'assets/img/015.png',
-        alt: 'European Windows',
+        desc: 'Revista interna.',
         category: 'TRADE MARKETING',
+        images: [
+            'assets/img/2_Nissan/0150.png',
+            'assets/img/2_Nissan/0149.png',
+            'assets/img/2_Nissan/0151.png'
+        ]
+    },
+    {
+        id: 'european-windows',
         title: 'European Windows',
-        desc: 'Creación de página web y Stand.'
+        desc: 'Creación de página web y Stand.',
+        category: 'TRADE MARKETING',
+        images: [
+            'assets/img/3_European Windows/015.png',
+            'assets/img/3_European Windows/013.png',
+            'assets/img/3_European Windows/014.png',
+            'assets/img/3_European Windows/016.png'
+        ]
     },
     {
-        src: 'assets/img/0117.png',
-        alt: 'BCI',
-        category: 'RRSS',
+        id: 'bci',
         title: 'BCI',
-        desc: 'Campaña de tránsito.'
+        desc: 'Campaña de tránsito.',
+        category: 'RRSS',
+        images: [
+            'assets/img/4_BCI/0117.png',
+            'assets/img/4_BCI/0116.png'
+        ]
     },
     {
-        src: 'assets/img/0113.png',
-        alt: 'Jerry IP',
+        id: 'jarry-ip',
+        title: 'Jarry IP',
+        desc: 'Creación de página web y branding.',
         category: 'BRANDING',
-        title: 'Jerry IP',
-        desc: 'Creación de página web y branding.'
+        images: [
+            'assets/img/5_Jarry IP/0113.png',
+            'assets/img/5_Jarry IP/0114.png'
+        ]
     },
     {
-        src: 'assets/img/017.png',
-        alt: 'KGIUN+',
-        category: 'BRANDING',
+        id: 'kgiun',
         title: 'KGIUN+',
-        desc: 'Creación de logo, packaging, branding y página web.'
+        desc: 'Creación de logo, packaging, branding y página web.',
+        category: 'BRANDING',
+        images: [
+            'assets/img/6_Kgiun/017.png',
+            'assets/img/6_Kgiun/018.png'
+        ]
     },
     {
-        src: 'assets/img/0145.png',
-        alt: 'WANKALODGE',
+        id: 'hotel-haka-piri-mana',
+        title: 'Hotel Haka Piri Mana',
+        desc: 'Creación de logo, branding.',
         category: 'BRANDING',
-        title: 'WANKALODGE',
-        desc: 'Diseño de experiencia de usuario.'
+        images: [
+            'assets/img/7_Hotel Haka Piri Mana/0124.png',
+            'assets/img/7_Hotel Haka Piri Mana/0125.png'
+        ]
     },
     {
-        src: 'assets/img/0140.png',
-        alt: 'Shara',
-        category: 'BRANDING',
+        id: 'shara',
         title: 'Shara',
-        desc: 'Creación de logo y Packaging.'
+        desc: 'Creación de logo y Packaging.',
+        category: 'BRANDING',
+        images: [
+            'assets/img/8_Shara/0140.png'
+        ]
     },
     {
-        src: 'assets/img/0132.png',
-        alt: 'AGRALIA',
-        category: 'PUBLICIDAD',
+        id: 'agralia',
         title: 'AGRALIA',
-        desc: 'Avisos de prensa y folletería.'
-    },
-    {
-        src: 'assets/img/0144.png',
-        alt: 'PACX',
-        category: 'BRANDING',
-        title: 'PACX',
-        desc: 'Creación de logo, papelería, folletería y branding.'
-    },
-    {
-        src: 'assets/img/0151.png',
-        alt: 'INNOVACOLLEGE',
-        category: 'EDITORIAL',
-        title: 'INNOVACOLLEGE',
-        desc: 'Mails y folletería.'
-    },
-    {
-        src: 'assets/img/0141.png',
-        alt: 'Clínica IRAM',
-        category: 'PACKAGING',
-        title: 'Clínica IRAM',
-        desc: 'Branding.'
-    },
-    {
-        src: 'assets/img/0139.png',
-        alt: 'VAI TEA',
-        category: 'PACKAGING',
-        title: 'VAI TEA',
-        desc: 'Creación de logo y merchandising.'
-    },
-    {
-        src: 'assets/img/0110.png',
-        alt: 'Aptar Eco',
-        category: 'PACKAGING',
-        title: 'Aptar Eco',
-        desc: 'Diseño y desarrollo sustentable.'
-    },
-    {
-        src: 'assets/img/0112.png',
-        alt: 'Campaña Vial',
+        desc: 'Avisos de prensa y folletería.',
         category: 'PUBLICIDAD',
-        title: 'Campaña Vial',
-        desc: 'Creatividad y vía pública.'
+        images: [
+            'assets/img/9_Agralia/0132.png',
+            'assets/img/9_Agralia/0133.png',
+            'assets/img/9_Agralia/0134.png'
+        ]
     },
     {
-        src: 'assets/img/0115.png',
-        alt: 'Gestión Calidad',
+        id: 'pacx',
+        title: 'PACX',
+        desc: 'Creación de logo, papelería, folletería y branding.',
         category: 'BRANDING',
-        title: 'Gestión Calidad',
-        desc: 'Imagen corporativa y flota.'
+        images: [
+            'assets/img/10_PACX/0144.png',
+            'assets/img/10_PACX/0143.png'
+        ]
     },
     {
-        src: 'assets/img/0124.png',
-        alt: 'Manual de Marca',
-        category: 'BRANDING',
-        title: 'Manual de Marca',
-        desc: 'Identidad corporativa y aplicaciones.'
-    },
-    {
-        src: 'assets/img/0137.png',
-        alt: 'UV-TEX',
-        category: 'PACKAGING',
-        title: 'UV-TEX',
-        desc: 'Línea de envases y etiquetas.'
-    },
-    {
-        src: 'assets/img/0155.png',
-        alt: 'Diseño Editorial',
+        id: 'innova-college',
+        title: 'INNOVACOLLEGE',
+        desc: 'Mails y folletería.',
         category: 'EDITORIAL',
-        title: 'Diseño Editorial',
-        desc: 'Publicaciones y material impreso.'
+        images: [
+            'assets/img/11_Innova College/0152.png'
+        ]
+    },
+    {
+        id: 'clinica-iram',
+        title: 'Clínica IRAM',
+        desc: 'Branding.',
+        category: 'PACKAGING',
+        images: [
+            'assets/img/12_Clínica Iram/0141.png',
+            'assets/img/12_Clínica Iram/0142.png'
+        ]
+    },
+    {
+        id: 'vai-tea',
+        title: 'VAI TEA',
+        desc: 'Creación de logo y merchandising.',
+        category: 'PACKAGING',
+        images: [
+            'assets/img/13_Vai Tea/0139.png'
+        ]
+    },
+    {
+        id: 'ver-mas',
+        title: 'VER MÁS',
+        desc: 'Explorar más aplicaciones y proyectos.',
+        category: 'EXPERIENCIA',
+        isVerMas: true,
+        images: [
+            'assets/img/14_Ver mas/01.png',
+            'assets/img/14_Ver mas/0115.png',
+            'assets/img/14_Ver mas/012.png',
+            'assets/img/14_Ver mas/0126.png',
+            'assets/img/14_Ver mas/0127.png',
+            'assets/img/14_Ver mas/0129.png',
+            'assets/img/14_Ver mas/0130.png',
+            'assets/img/14_Ver mas/0131.png',
+            'assets/img/14_Ver mas/0155.png'
+        ]
     }
 ];
 
-// Cuántas fotos mostrar por lote
-const FOTOS_POR_LOTE = 13;
-let fotosVisibles = 13;
+// Pre-cargar imágenes para transiciones instantáneas sin parpadeo
+function preloadAllBrandImages() {
+    galleryBrands.forEach(brand => {
+        brand.images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    });
+}
 
 // =============================================
-// RENDERIZADO DE LA GALERÍA (FORMATO TARJETA)
+// RENDERIZADO DE LA GALERÍA (MINI LOOPS EN HOVER)
 // =============================================
 function renderGaleria() {
     const grid = document.getElementById('galeria-grid');
     if (!grid) return;
     grid.innerHTML = '';
 
-    const limite = Math.min(fotosVisibles, galleryImages.length);
-    for (let i = 0; i < limite; i++) {
-        const data = galleryImages[i];
+    galleryBrands.forEach((brand, brandIndex) => {
         const item = document.createElement('div');
         item.className = 'grid-item gallery-card';
-        if (i === 0) item.classList.add('first-item');
-        item.setAttribute('data-index', i);
-        item.onclick = () => abrirLightbox(i);
+        if (brandIndex === 0) item.classList.add('first-item');
+        item.setAttribute('data-brand-index', brandIndex);
 
-        item.innerHTML = `
-            <div class="card-img-wrap">
-                <img src="${data.src}" alt="${data.alt}" loading="lazy">
-            </div>
-            <div class="card-info">
-                <h3 class="card-title">${data.title || data.alt}</h3>
-                <p class="card-desc">${data.desc || ''}</p>
-            </div>
-        `;
+        if (brand.isVerMas) {
+            item.classList.add('ver-mas-btn');
+            item.id = 'ver-mas-btn';
+            item.innerHTML = `
+                <div class="ver-mas-content">
+                    <span>VER MÁS</span>
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+            `;
+            item.onclick = () => abrirLightbox(brandIndex, 0);
+        } else {
+            const hasMultiple = brand.images.length > 1;
+            item.innerHTML = `
+                <div class="card-img-wrap">
+                    <img src="${brand.images[0]}" alt="${brand.title}" loading="lazy" class="card-thumb-img">
+                    ${hasMultiple ? `<span class="card-multi-badge" title="${brand.images.length} imágenes"><i class="fa-regular fa-images"></i> ${brand.images.length}</span>` : ''}
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">${brand.title}</h3>
+                    <p class="card-desc">${brand.desc || ''}</p>
+                </div>
+            `;
+            item.onclick = () => abrirLightbox(brandIndex, 0);
+
+            // Mini Loop automático al dejar el mouse apoyado sobre la tarjeta
+            if (hasMultiple) {
+                let hoverInterval = null;
+                let currentHoverIdx = 0;
+                const thumbImg = item.querySelector('.card-thumb-img');
+
+                item.addEventListener('mouseenter', () => {
+                    clearInterval(hoverInterval);
+                    hoverInterval = setInterval(() => {
+                        currentHoverIdx = (currentHoverIdx + 1) % brand.images.length;
+                        if (thumbImg) {
+                            thumbImg.style.opacity = '0.35';
+                            setTimeout(() => {
+                                thumbImg.src = brand.images[currentHoverIdx];
+                                thumbImg.style.opacity = '1';
+                            }, 100);
+                        }
+                    }, 1100);
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    clearInterval(hoverInterval);
+                    currentHoverIdx = 0;
+                    if (thumbImg) {
+                        thumbImg.src = brand.images[0];
+                        thumbImg.style.opacity = '1';
+                    }
+                });
+            }
+        }
 
         grid.appendChild(item);
-    }
-
-    if (fotosVisibles < galleryImages.length) {
-        const verMas = document.createElement('div');
-        verMas.className = 'grid-item gallery-card ver-mas-btn';
-        verMas.id = 'ver-mas-btn';
-        verMas.onclick = mostrarMasFotos;
-        verMas.innerHTML = `
-            <div class="ver-mas-content">
-                <span>VER MÁS</span>
-                <span><i class="fa-solid fa-chevron-right"></i></span>
-            </div>
-        `;
-        grid.appendChild(verMas);
-    }
-}
-
-// Abrir el Lightbox directamente al hacer clic en VER MÁS
-function mostrarMasFotos() {
-    abrirLightbox(13);
+    });
 }
 
 // =============================================
-// LIGHTBOX — Array global unificado y soporte táctil
+// LIGHTBOX — MINI LOOPS POR MARCA SELECCIONADA
 // =============================================
-let lightboxIndex = 0;
+let activeBrandIndex = 0;
+let activeBrandImgIndex = 0;
 
-function abrirLightbox(index) {
-    lightboxIndex = index;
+function abrirLightbox(brandIndex, imgIndex = 0) {
+    if (!galleryBrands[brandIndex]) return;
+    activeBrandIndex = brandIndex;
+    activeBrandImgIndex = imgIndex;
     actualizarLightbox();
+
     const modal = document.getElementById('lightbox');
     if (modal) modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 function actualizarLightbox() {
+    const brand = galleryBrands[activeBrandIndex];
+    if (!brand) return;
+
     const img = document.getElementById('lightbox-img');
-    if (img && galleryImages[lightboxIndex]) {
-        img.src = galleryImages[lightboxIndex].src;
-        img.alt = galleryImages[lightboxIndex].alt;
+    const titleEl = document.getElementById('lightbox-title');
+    const counterEl = document.getElementById('lightbox-counter');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    if (img) {
+        img.style.opacity = '0.25';
+        img.src = brand.images[activeBrandImgIndex];
+        img.alt = `${brand.title} - ${activeBrandImgIndex + 1}`;
+        setTimeout(() => {
+            img.style.opacity = '1';
+        }, 100);
+    }
+
+    if (titleEl) {
+        titleEl.textContent = brand.title;
+    }
+
+    if (counterEl) {
+        if (brand.images.length > 1) {
+            counterEl.textContent = `${activeBrandImgIndex + 1} / ${brand.images.length}`;
+            counterEl.style.display = 'inline-block';
+        } else {
+            counterEl.style.display = 'none';
+        }
+    }
+
+    if (prevBtn && nextBtn) {
+        if (brand.images.length > 1) {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        } else {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
     }
 }
 
 function navigateLightbox(direccion) {
-    lightboxIndex += direccion;
-    if (lightboxIndex < 0) lightboxIndex = galleryImages.length - 1;
-    if (lightboxIndex >= galleryImages.length) lightboxIndex = 0;
+    const brand = galleryBrands[activeBrandIndex];
+    if (!brand || brand.images.length <= 1) return;
+
+    // Loop estricto dentro de la marca activa
+    activeBrandImgIndex = (activeBrandImgIndex + direccion + brand.images.length) % brand.images.length;
     actualizarLightbox();
 }
 
@@ -233,7 +321,7 @@ if (lightboxEl) {
         if (e.target === this) closeLightbox();
     });
 
-    // Soporte táctil (Swipe) en celulares para cambiar de foto
+    // Soporte táctil (Swipe) en celulares para cambiar de foto dentro del mini loop
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -254,7 +342,7 @@ if (lightboxEl) {
     }, { passive: true });
 }
 
-// Navegación con teclado para Lightbox
+// Navegación con teclado para Lightbox (Loop y Escape para cerrar)
 document.addEventListener('keydown', function (e) {
     const lightboxModal = document.getElementById('lightbox');
 
@@ -425,5 +513,6 @@ function initMobileNav() {
 // INICIALIZACIÓN
 // =============================================
 renderGaleria();
+preloadAllBrandImages();
 updateActiveNav();
 initMobileNav();

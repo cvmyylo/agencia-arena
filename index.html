@@ -186,16 +186,22 @@
         </div>
     </section>
 
-    <!-- LIGHTBOX MODAL (único, unificado) -->
+    <!-- LIGHTBOX MODAL (Mini loops por marca) -->
     <div class="lightbox-modal" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <button class="lightbox-arrow prev" onclick="navigateLightbox(-1)">
+        <span class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">&times;</span>
+        <button class="lightbox-arrow prev" id="lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Imagen anterior">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="Vista ampliada">
+            <div class="lightbox-img-container">
+                <img id="lightbox-img" src="" alt="Vista ampliada">
+            </div>
+            <div class="lightbox-caption" id="lightbox-caption">
+                <h4 class="lightbox-title" id="lightbox-title"></h4>
+                <span class="lightbox-counter" id="lightbox-counter"></span>
+            </div>
         </div>
-        <button class="lightbox-arrow next" onclick="navigateLightbox(1)">
+        <button class="lightbox-arrow next" id="lightbox-next" onclick="navigateLightbox(1)" aria-label="Siguiente imagen">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
     </div>
