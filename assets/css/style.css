@@ -1,11 +1,12 @@
 /* =========================================================================
-   DINPro Typography Setup
+   DINPro Typography Setup (Con font-display: swap para rendimiento Core Web Vitals)
    ========================================================================= */
 @font-face {
     font-family: 'DINPro';
     src: url('../fonts/DINPro-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -13,6 +14,7 @@
     src: url('../fonts/DINPro-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
     src: url('../fonts/DINPro-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -27,6 +30,7 @@
     src: url('../fonts/DINPro-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -34,6 +38,7 @@
     src: url('../fonts/DINPro-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
 }
 
 /* ==========================================================================
@@ -75,7 +80,6 @@ body {
 }
 
 /* Global Fixed Background (Fondo fijo con fondo-2.png) */
-.fondo-global-fijo,
 body::before {
     content: '';
     position: fixed;
@@ -1024,78 +1028,6 @@ body::before {
 
 .contacto-textarea:focus {
     box-shadow: 0 0 0 3px var(--color-yellow);
-}
-
-/* Captcha Matemático Anti-Spam */
-.contacto-captcha-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 2px;
-}
-
-.contacto-captcha-label {
-    font-family: 'DINPro', sans-serif;
-    font-size: 13.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-yellow);
-    letter-spacing: 0.8px;
-}
-
-.contacto-captcha-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.contacto-captcha-question {
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #ffffff;
-    font-family: 'DINPro', sans-serif;
-    font-size: 14.5px;
-    font-weight: 500;
-    padding: 10px 22px;
-    border-radius: 50px;
-    user-select: none;
-}
-
-.contacto-captcha-input {
-    width: 130px;
-    height: 44px;
-    background-color: #ffffff;
-    color: #000000;
-    font-family: 'DINPro', sans-serif;
-    font-size: 14.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 50px;
-    padding: 0 20px;
-    box-sizing: border-box;
-    outline: none;
-    transition: box-shadow 0.25s ease, transform 0.2s ease;
-}
-
-.contacto-captcha-input::placeholder {
-    color: #888888;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12.5px;
-}
-
-.contacto-captcha-input:focus {
-    box-shadow: 0 0 0 3px var(--color-yellow);
-}
-
-.contacto-captcha-error {
-    color: #ff5555;
-    font-family: 'DINPro', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    margin-top: 2px;
 }
 
 /* Submit Button */
@@ -2186,7 +2118,6 @@ body::before {
    13. BREAKPOINT: SMARTPHONES / CELULARES (<= 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    .fondo-global-fijo,
     body::before {
         background-size: auto 100vh;
         background-size: auto 100dvh;
@@ -2941,21 +2872,6 @@ body::before {
         text-align: center;
     }
 
-    .contacto-captcha-row {
-        gap: 10px;
-    }
-
-    .contacto-captcha-question {
-        font-size: 13px;
-        padding: 8px 16px;
-    }
-
-    .contacto-captcha-input {
-        width: 110px;
-        height: 42px;
-        font-size: 13.5px;
-    }
-
     .contacto-submit-btn {
         width: 100%;
         padding: 14px 20px;
@@ -3134,24 +3050,6 @@ body::before {
         font-size: 12px;
     }
 
-    .legal-modal-card {
-        max-height: 90vh;
-        border-radius: 10px;
-    }
-
-    .legal-modal-header {
-        padding: 16px 20px;
-    }
-
-    .legal-modal-header h2 {
-        font-size: 18px;
-    }
-
-    .legal-modal-body {
-        padding: 18px 20px 25px 20px;
-        font-size: 13.5px;
-    }
-
     .whatsapp-float {
         bottom: 105px;
         right: 5%;
@@ -3302,35 +3200,5 @@ body::before {
 
     .galeria-grid-view {
         gap: 8px;
-    }
-
-    .contacto-captcha-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .contacto-captcha-input {
-        width: 100%;
-        height: 42px;
-        text-align: center;
-    }
-
-    .contacto-captcha-question {
-        text-align: center;
-    }
-
-    .contact-circle.circle-pamela,
-    .contact-circle.circle-andres {
-        max-width: 265px !important;
-        padding: 16px 10px !important;
-    }
-
-    .contact-circle h3 {
-        font-size: 16px !important;
-    }
-
-    .contact-circle a.detail-link {
-        font-size: 13.5px !important;
     }
 }
