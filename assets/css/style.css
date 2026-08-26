@@ -87,7 +87,7 @@ body::before {
     background-color: var(--color-bg);
     background-image: url('../img/fondo-2.png');
     background-repeat: no-repeat;
-    background-position: left bottom -130px;
+    background-position: left bottom -200px;
     background-size: cover;
     pointer-events: none;
     z-index: 0;
@@ -604,25 +604,28 @@ body::before {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-self: center;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-top: -20px;
     margin-left: 0;
 }
 
 .hacemos-left-box .section-title {
-    margin-bottom: 26px;
+    margin-bottom: 20px;
 }
 
 .hacemos-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .hacemos-list li {
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(15px, 1.3vw, 20px);
+    font-size: clamp(14px, 1.22vw, 18px);
     font-weight: 500;
     color: var(--color-yellow);
-    margin-bottom: 13px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     user-select: none;
