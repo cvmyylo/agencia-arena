@@ -22,8 +22,7 @@ const galleryBrands = [
         category: 'TRADE MARKETING',
         images: [
             'assets/img/2_Nissan/0150.png',
-            'assets/img/2_Nissan/0149.png',
-            'assets/img/2_Nissan/0151.png'
+            'assets/img/2_Nissan/0149.png'
         ]
     },
     {
@@ -114,6 +113,7 @@ const galleryBrands = [
         desc: 'Mails y folletería.',
         category: 'EDITORIAL',
         images: [
+            'assets/img/11_Innova College/0151.png',
             'assets/img/11_Innova College/0152.png'
         ]
     },
@@ -145,12 +145,24 @@ const galleryBrands = [
         images: [
             'assets/img/14_Ver mas/01.png',
             'assets/img/14_Ver mas/0115.png',
+            'assets/img/14_Ver mas/0118.png',
+            'assets/img/14_Ver mas/0119.png',
             'assets/img/14_Ver mas/012.png',
+            'assets/img/14_Ver mas/0120.png',
+            'assets/img/14_Ver mas/0121.png',
+            'assets/img/14_Ver mas/0122.png',
+            'assets/img/14_Ver mas/0123.png',
             'assets/img/14_Ver mas/0126.png',
             'assets/img/14_Ver mas/0127.png',
             'assets/img/14_Ver mas/0129.png',
             'assets/img/14_Ver mas/0130.png',
             'assets/img/14_Ver mas/0131.png',
+            'assets/img/14_Ver mas/0135.png',
+            'assets/img/14_Ver mas/0136.png',
+            'assets/img/14_Ver mas/0137.png',
+            'assets/img/14_Ver mas/0138.png',
+            'assets/img/14_Ver mas/0153.png',
+            'assets/img/14_Ver mas/0154.png',
             'assets/img/14_Ver mas/0155.png'
         ]
     }
