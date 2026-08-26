@@ -87,7 +87,7 @@ body::before {
     background-color: var(--color-bg);
     background-image: url('../img/fondo-2.png');
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: left bottom -30px;
     background-size: cover;
     pointer-events: none;
     z-index: 0;
@@ -1999,7 +1999,7 @@ body::before {
     body::before {
         background-size: auto 100vh;
         background-size: auto 100dvh;
-        background-position: left bottom;
+        background-position: left bottom -15px;
     }
 
     .main-header {
