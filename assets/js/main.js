@@ -123,8 +123,8 @@ const galleryBrands = [
         desc: 'Branding.',
         category: 'PACKAGING',
         images: [
-            'assets/img/12_Clínica Iram/0141.png',
-            'assets/img/12_Clínica Iram/0142.png'
+            'assets/img/12_Clinica Iram/0141.png',
+            'assets/img/12_Clinica Iram/0142.png'
         ]
     },
     {
