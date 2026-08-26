@@ -332,11 +332,43 @@ body::before {
     animation: smoothDropIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s backwards;
 }
 
+.hero-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
 .hero-content {
     margin-left: 0;
     margin-top: 0;
     transform: translateY(-28px);
     z-index: 2;
+    flex-shrink: 0;
+}
+
+.hero-graphic-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(340px, 30vw, 480px);
+    max-width: 480px;
+    margin-right: 2%;
+    margin-top: -30px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+}
+
+.hero-graphic-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-anim-graphic {
+    animation: smoothDropIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.32s backwards;
 }
 
 .hero-text {
@@ -1758,6 +1790,10 @@ body::before {
     .section {
         padding: 110px 4.5% 60px 4.5%;
         scroll-margin-top: 75px;
+    }
+
+    .hero-graphic-desktop {
+        display: none !important;
     }
 
     /* Quiénes somos en Tablet */
