@@ -22,9 +22,10 @@ jobs:
           server: 186.64.119.40
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/
+          server-dir: public_html/
           protocol: ftp
           port: 21
+          timeout: 600000
           exclude: |
             **/.git*
             **/.git*/**
@@ -32,3 +33,4 @@ jobs:
             .github/**
             README.md
             vercel.json
+            scripts/**
