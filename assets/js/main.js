@@ -333,9 +333,9 @@ if (contactForm) {
 
             if (response.ok) {
                 if (submitBtn) {
-                    submitBtn.style.backgroundColor = '#25D366';
-                    submitBtn.style.color = '#ffffff';
-                    submitBtn.innerHTML = `<i class="fa-solid fa-check"></i> <span>¡MENSAJE ENVIADO!</span>`;
+                    submitBtn.style.backgroundColor = 'var(--color-yellow)';
+                    submitBtn.style.color = '#000000';
+                    submitBtn.innerHTML = `<i class="fa-solid fa-check" style="margin-right: 8px;"></i> <span class="submit-btn-bold">MENSAJE</span> <span class="submit-btn-regular">ENVIADO</span>`;
                 }
                 contactForm.reset();
                 setTimeout(() => {
