@@ -1228,11 +1228,10 @@ body::before {
 }
 
 .footer-top {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 40px;
-    flex-wrap: nowrap;
+    gap: 30px;
     width: 100%;
 }
 
@@ -1240,7 +1239,7 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    flex-shrink: 0;
+    justify-self: start;
 }
 
 .footer-brand {
@@ -1278,11 +1277,14 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    justify-self: center;
+    text-align: center;
 }
 
 .footer-team-col {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     gap: clamp(35px, 4vw, 65px);
 }
 
@@ -1339,15 +1341,17 @@ body::before {
     font-size: 13px;
     font-weight: 500;
     color: var(--color-yellow);
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     letter-spacing: 0.3px;
+    width: 100%;
 }
 
 .footer-social-col {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    justify-self: end;
     margin-right: 90px;
     flex-shrink: 0;
 }
