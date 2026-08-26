@@ -1,5 +1,6 @@
-# Forzar HTTPS
+# Forzar HTTPS (excepto validación Let's Encrypt)
 RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
