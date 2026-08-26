@@ -1348,6 +1348,7 @@ body::before {
     justify-content: flex-end;
     justify-self: end;
     margin-right: 0;
+    margin-bottom: 60px;
     flex-shrink: 0;
 }
 
@@ -1807,31 +1808,43 @@ body::before {
    14b. BREAKPOINT INTERMEDIO: LAPTOPS PEQUEÑAS (1025px a 1150px)
    ========================================================================== */
 @media (max-width: 1150px) {
+    .hacemos-left-box {
+        width: 25%;
+    }
+
     .hacemos-right-pyramid {
-        width: 65%;
-        max-width: 700px;
-        height: 460px;
+        width: 70%;
+        max-width: 680px;
+        height: 430px;
     }
 
     .circle-360 {
-        width: 255px;
-        height: 255px;
-        top: -100px;
-        left: 41.5%;
+        width: 240px;
+        height: 240px;
+        top: -85px;
+        left: 38%;
     }
 
     .circle-diseno {
-        width: 305px;
-        height: 305px;
-        left: -60px;
-        bottom: 40px;
+        width: 290px;
+        height: 290px;
+        left: -40px;
+        bottom: 30px;
     }
 
     .circle-rrss {
-        width: 340px;
-        height: 340px;
-        right: 0;
+        width: 320px;
+        height: 320px;
+        right: -10px;
         bottom: -10px;
+    }
+
+    .hacemos-right-pyramid h3 {
+        font-size: clamp(20px, 2vw, 28px);
+    }
+
+    .hacemos-right-pyramid p {
+        font-size: clamp(12px, 1.1vw, 15px);
     }
 }
 
