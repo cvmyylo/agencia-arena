@@ -1663,8 +1663,8 @@ body::before {
    ========================================================================= */
 .whatsapp-float {
     position: fixed;
-    bottom: 125px;
-    right: 8.5%;
+    bottom: 30px;
+    right: 30px;
     width: 68px;
     height: 68px;
     background-color: var(--color-yellow);
@@ -1800,6 +1800,38 @@ body::before {
     .galeria-grid-view {
         grid-template-columns: repeat(5, 1fr);
         gap: 10px 8px;
+    }
+}
+
+/* ==========================================================================
+   14b. BREAKPOINT INTERMEDIO: LAPTOPS PEQUEÑAS (1025px a 1150px)
+   ========================================================================== */
+@media (max-width: 1150px) {
+    .hacemos-right-pyramid {
+        width: 65%;
+        max-width: 700px;
+        height: 460px;
+    }
+
+    .circle-360 {
+        width: 255px;
+        height: 255px;
+        top: -100px;
+        left: 41.5%;
+    }
+
+    .circle-diseno {
+        width: 305px;
+        height: 305px;
+        left: -60px;
+        bottom: 40px;
+    }
+
+    .circle-rrss {
+        width: 340px;
+        height: 340px;
+        right: 0;
+        bottom: -10px;
     }
 }
 
@@ -3051,8 +3083,8 @@ body::before {
     }
 
     .whatsapp-float {
-        bottom: 105px;
-        right: 5%;
+        bottom: 20px;
+        right: 20px;
         width: 58px;
         height: 58px;
         font-size: 32px;
