@@ -1344,7 +1344,7 @@ body::before {
     align-items: center;
     justify-content: flex-end;
     justify-self: end;
-    margin-right: 90px;
+    margin-right: 0;
     flex-shrink: 0;
 }
 
