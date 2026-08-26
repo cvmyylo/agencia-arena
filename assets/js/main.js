@@ -305,15 +305,63 @@ window.addEventListener('scroll', updateActiveNav, { passive: true });
 window.addEventListener('resize', updateActiveNav, { passive: true });
 
 // =============================================
-// ENVÍO DE FORMULARIO DE CONTACTO (FORMSUBMIT)
+// ENVÍO DE FORMULARIO CON FORMSUBMIT AJAX + HONEYPOT
 // =============================================
 const contactForm = document.getElementById('contacto-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function () {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
         const submitBtn = document.getElementById('contacto-submit-btn');
+        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Procesando...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+            submitBtn.innerHTML = `<span>ENVIANDO...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+        }
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/pgonzalez@agenciarena.cl', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                if (submitBtn) {
+                    submitBtn.style.backgroundColor = '#25D366';
+                    submitBtn.style.color = '#ffffff';
+                    submitBtn.innerHTML = `<i class="fa-solid fa-check"></i> <span>¡MENSAJE ENVIADO!</span>`;
+                }
+                contactForm.reset();
+                setTimeout(() => {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.style.backgroundColor = '';
+                        submitBtn.style.color = '';
+                        submitBtn.innerHTML = originalBtnHTML;
+                    }
+                }, 4000);
+            } else {
+                throw new Error('Error al enviar el formulario');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            if (submitBtn) {
+                submitBtn.style.backgroundColor = '#e74c3c';
+                submitBtn.style.color = '#ffffff';
+                submitBtn.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> <span>ERROR AL ENVIAR</span>`;
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.style.color = '';
+                    submitBtn.innerHTML = originalBtnHTML;
+                }, 4000);
+            }
         }
     });
 }

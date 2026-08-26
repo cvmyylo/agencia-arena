@@ -201,11 +201,11 @@
 
         <div class="contacto-right-col">
             <form class="contacto-form" id="contacto-form" action="https://formsubmit.co/pgonzalez@agenciarena.cl" method="POST">
-                <!-- Configuración FormSubmit con Google reCAPTCHA activado -->
+                <!-- Configuración FormSubmit con Honeypot anti-spam (Sin redirecciones) -->
                 <input type="hidden" name="_subject" value="Nuevo requerimiento web - Agencia Arena">
-                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none">
+                <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off">
 
                 <div class="form-group">
                     <input type="text" class="contacto-input" placeholder="NOMBRE" id="contacto-nombre" name="nombre"
