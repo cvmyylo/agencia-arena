@@ -3,5 +3,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Limpiar URL: redirigir /index.html a /
+RewriteCond %{THE_REQUEST} /index\.html[\s?]
+RewriteRule ^index\.html$ / [R=301,L]
+
 # Evitar listado de directorios
 Options -Indexes
