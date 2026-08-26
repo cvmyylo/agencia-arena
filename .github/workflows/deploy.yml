@@ -26,6 +26,7 @@ jobs:
           protocol: ftp
           port: 21
           timeout: 600000
+          server-side-delete: true
           exclude: |
             **/.git*
             **/.git*/**
