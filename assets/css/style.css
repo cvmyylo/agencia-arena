@@ -1390,7 +1390,7 @@ body::before {
     align-items: center;
     justify-content: center;
     justify-self: center;
-    transform: translateX(45px);
+    transform: translateX(20px);
 }
 
 .footer-locations {
