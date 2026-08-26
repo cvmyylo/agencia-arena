@@ -1281,6 +1281,7 @@ body::before {
     align-items: center;
     justify-self: center;
     text-align: center;
+    transform: translateX(45px);
 }
 
 .footer-team-col {
@@ -1389,6 +1390,7 @@ body::before {
     align-items: center;
     justify-content: center;
     justify-self: center;
+    transform: translateX(45px);
 }
 
 .footer-locations {
@@ -2085,6 +2087,7 @@ body::before {
         width: 100% !important;
         align-items: center !important;
         justify-self: auto !important;
+        transform: none !important;
     }
 
     .footer-social-col {
@@ -2109,6 +2112,7 @@ body::before {
         justify-content: center !important;
         text-align: center !important;
         width: 100% !important;
+        transform: none !important;
     }
 }
 
