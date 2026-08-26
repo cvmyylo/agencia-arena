@@ -17,13 +17,12 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 186.64.119.40
+          server: agenciaarena.cl
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/
-          protocol: ftps
+          protocol: ftp
           port: 21
-          timeout: 60000
           exclude: |
             **/.git*
             **/.git*/**
