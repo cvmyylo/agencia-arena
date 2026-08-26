@@ -8,42 +8,42 @@ const galleryImages = [
         alt: 'Nicolaides',
         category: 'BRANDING',
         title: 'Nicolaides',
-        desc: 'Diseño de identidad corporativa.'
+        desc: 'Creación de logo, página web, packaging y branding.'
     },
     {
         src: 'assets/img/0150.png',
         alt: 'Nissan',
         category: 'TRADE MARKETING',
         title: 'Nissan',
-        desc: 'Activación Stand y POP.'
+        desc: 'Revista interna.'
     },
     {
         src: 'assets/img/015.png',
         alt: 'European Windows',
         category: 'TRADE MARKETING',
         title: 'European Windows',
-        desc: 'Diseño y desarrollo de stand para feria.'
+        desc: 'Creación de página web y Stand.'
     },
     {
         src: 'assets/img/0117.png',
         alt: 'BCI',
         category: 'RRSS',
         title: 'BCI',
-        desc: 'Diseño de campañas para redes sociales.'
+        desc: 'Campaña de tránsito.'
     },
     {
         src: 'assets/img/0113.png',
         alt: 'Jerry IP',
         category: 'BRANDING',
         title: 'Jerry IP',
-        desc: 'Desarrollo de identidad visual y naming.'
+        desc: 'Creación de página web y branding.'
     },
     {
         src: 'assets/img/017.png',
         alt: 'KGIUN+',
         category: 'BRANDING',
         title: 'KGIUN+',
-        desc: 'Rediseño de identidad visual y aplicaciones corporativas.'
+        desc: 'Creación de logo, packaging, branding y página web.'
     },
     {
         src: 'assets/img/0145.png',
@@ -57,42 +57,42 @@ const galleryImages = [
         alt: 'Shara',
         category: 'BRANDING',
         title: 'Shara',
-        desc: 'Diseño publicitario impreso.'
+        desc: 'Creación de logo y Packaging.'
     },
     {
         src: 'assets/img/0132.png',
         alt: 'AGRALIA',
         category: 'PUBLICIDAD',
         title: 'AGRALIA',
-        desc: 'Creatividad y vía pública.'
+        desc: 'Avisos de prensa y folletería.'
     },
     {
         src: 'assets/img/0144.png',
         alt: 'PACX',
         category: 'BRANDING',
         title: 'PACX',
-        desc: 'Imagen corporativa y flota.'
+        desc: 'Creación de logo, papelería, folletería y branding.'
     },
     {
         src: 'assets/img/0151.png',
         alt: 'INNOVACOLLEGE',
         category: 'EDITORIAL',
         title: 'INNOVACOLLEGE',
-        desc: 'Diseño editorial corporativo.'
+        desc: 'Mails y folletería.'
     },
     {
         src: 'assets/img/0141.png',
         alt: 'Clínica IRAM',
         category: 'PACKAGING',
         title: 'Clínica IRAM',
-        desc: 'Diseño y desarrollo sustentable.'
+        desc: 'Branding.'
     },
     {
         src: 'assets/img/0139.png',
         alt: 'VAI TEA',
         category: 'PACKAGING',
         title: 'VAI TEA',
-        desc: 'Línea de envases y etiquetas.'
+        desc: 'Creación de logo y merchandising.'
     },
     {
         src: 'assets/img/0110.png',
@@ -164,7 +164,6 @@ function renderGaleria() {
                 <img src="${data.src}" alt="${data.alt}" loading="lazy">
             </div>
             <div class="card-info">
-                <span class="card-category">${data.category || 'PROYECTO'}</span>
                 <h3 class="card-title">${data.title || data.alt}</h3>
                 <p class="card-desc">${data.desc || ''}</p>
             </div>
@@ -306,60 +305,77 @@ window.addEventListener('scroll', updateActiveNav, { passive: true });
 window.addEventListener('resize', updateActiveNav, { passive: true });
 
 // =============================================
-// CAPTCHA MATEMÁTICO ANTI-SPAM (FORMULARIO CONTACTO)
+// ENVÍO DE FORMULARIO DE CONTACTO (FORMSUBMIT)
 // =============================================
-let captchaAnswerCorrect = 0;
-
-function generarCaptchaMatematico() {
-    const questionEl = document.getElementById('captcha-question');
-    const answerInput = document.getElementById('captcha-answer');
-    const errorEl = document.getElementById('captcha-error');
-
-    if (!questionEl || !answerInput) return;
-
-    const num1 = Math.floor(Math.random() * 8) + 2;
-    const num2 = Math.floor(Math.random() * 7) + 1;
-    captchaAnswerCorrect = num1 + num2;
-
-    questionEl.textContent = `¿Cuánto es ${num1} + ${num2}?`;
-    answerInput.value = '';
-    if (errorEl) errorEl.style.display = 'none';
-}
-
 const contactForm = document.getElementById('contacto-form');
 if (contactForm) {
-    generarCaptchaMatematico();
-
-    contactForm.addEventListener('submit', function (e) {
-        const answerInput = document.getElementById('captcha-answer');
-        const errorEl = document.getElementById('captcha-error');
+    contactForm.addEventListener('submit', function () {
         const submitBtn = document.getElementById('contacto-submit-btn');
-
-        if (!answerInput) return;
-
-        const userVal = parseInt(answerInput.value.trim(), 10);
-        if (userVal !== captchaAnswerCorrect) {
-            e.preventDefault();
-            if (errorEl) {
-                errorEl.style.display = 'block';
-                errorEl.textContent = 'Respuesta de seguridad incorrecta. Inténtalo de nuevo.';
-            }
-            answerInput.focus();
-            generarCaptchaMatematico();
-            return false;
-        }
-
-        // Si es correcto, permitimos que FormSubmit procese el envío
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Enviando consulta...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+            submitBtn.innerHTML = `<span>Procesando...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
         }
     });
 }
 
+// =============================================
+// MENÚ MÓVIL HAMBURGUESA (DRAWER LATERAL)
+// =============================================
+function initMobileNav() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navContainer = document.querySelector('.nav-container');
+    const navBackdrop = document.getElementById('nav-backdrop');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (!navToggle || !navContainer) return;
+
+    function toggleMenu(forceOpen) {
+        const isOpen = typeof forceOpen === 'boolean' ? forceOpen : !navContainer.classList.contains('is-open');
+        navToggle.classList.toggle('is-active', isOpen);
+        navContainer.classList.toggle('is-open', isOpen);
+        if (navBackdrop) navBackdrop.classList.toggle('is-open', isOpen);
+        document.body.classList.toggle('nav-open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    navToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    if (navBackdrop) {
+        navBackdrop.addEventListener('click', function () {
+            toggleMenu(false);
+        });
+    }
+
+    // Cerrar al hacer clic en un enlace del menú
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            if (window.innerWidth <= 768) {
+                toggleMenu(false);
+            }
+        });
+    });
+
+    // Cerrar al presionar la tecla Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navContainer.classList.contains('is-open')) {
+            toggleMenu(false);
+        }
+    });
+
+    // Cerrar si la pantalla se redimensiona a escritorio
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && navContainer.classList.contains('is-open')) {
+            toggleMenu(false);
+        }
+    }, { passive: true });
+}
 
 // =============================================
 // INICIALIZACIÓN
 // =============================================
 renderGaleria();
 updateActiveNav();
+initMobileNav();

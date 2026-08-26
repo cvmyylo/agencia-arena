@@ -51,6 +51,12 @@
                 <img src="assets/img/logo.png" alt="Agencia Arena Logo" id="header-logo">
             </a>
         </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+        <div class="nav-backdrop" id="nav-backdrop"></div>
         <nav class="nav-container">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#inicio" class="nav-link active" id="nav-inicio">INICIO</a></li>
@@ -66,12 +72,12 @@
     <section id="inicio" class="section">
         <div class="hero-content">
             <h1 class="hero-text">
-                <span class="yellow">creatividad</span><br>
-                desde lo <br>
-                <span class="bold">simple</span>
+                <span class="yellow hero-anim-1">creatividad</span><br>
+                <span class="hero-anim-2">desde lo</span><br>
+                <span class="bold hero-anim-3">simple</span>
             </h1>
             <a href="https://www.instagram.com/p/DaiWSB1P_lP/" target="_blank" rel="noopener noreferrer"
-                class="hero-btn-presentacion" aria-label="Ver presentación en Instagram">
+                class="hero-btn-presentacion hero-anim-4" aria-label="Ver presentación en Instagram">
                 <span class="hero-btn-bold">VER</span> <span class="hero-btn-regular">PRESENTACIÓN</span>
             </a>
         </div>
@@ -89,7 +95,7 @@
                             <h3><span class="name-bold">Pamela</span> <span class="name-light">González R.</span></h3>
                             <p class="role">Directora de Cuentas</p>
                             <a href="mailto:pgonzalez@agenciarena.cl" class="email"><span
-                                    class="email-bold">pgonzalez</span>@agenciarena.cl</a>
+                                    class="email-bold">pgonzalez</span><span class="email-at">@</span>agenciarena.cl</a>
                             <p class="location"><span class="loc-bold">La Serena</span></p>
                         </div>
                     </div>
@@ -100,7 +106,7 @@
                             </h3>
                             <p class="role">Director Creativo</p>
                             <a href="mailto:agana@agenciarena.cl" class="email"><span
-                                    class="email-bold">agana</span>@agenciarena.cl</a>
+                                    class="email-bold">agana</span><span class="email-at">@</span>agenciarena.cl</a>
                             <p class="location"><span class="loc-bold">Santiago</span></p>
                         </div>
                     </div>
@@ -194,15 +200,15 @@
         </div>
 
         <div class="contacto-right-col">
-            <form class="contacto-form" id="contacto-form" action="https://formsubmit.co/pgonzalez@agenciarena.cl" method="POST">
-                <!-- Configuración FormSubmit (Listo para activación) -->
+            <form class="contacto-form" id="contacto-form" action="https://formsubmit.co/dres.16k@gmail.com" method="POST">
+                <!-- Configuración FormSubmit con Google reCAPTCHA activado -->
                 <input type="hidden" name="_subject" value="Nuevo requerimiento web - Agencia Arena">
-                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_captcha" value="true">
                 <input type="hidden" name="_template" value="table">
                 <input type="text" name="_honey" style="display:none">
 
                 <div class="form-group">
-                    <input type="text" class="contacto-input" placeholder="NOMRE" id="contacto-nombre" name="nombre"
+                    <input type="text" class="contacto-input" placeholder="NOMBRE" id="contacto-nombre" name="nombre"
                         required>
                 </div>
                 <div class="form-group">
@@ -214,18 +220,8 @@
                         name="telefono">
                 </div>
                 <div class="form-group">
-                    <textarea class="contacto-textarea" placeholder="CUENTANOS" id="contacto-mensaje" name="mensaje"
+                    <textarea class="contacto-textarea" placeholder="CUÉNTANOS" id="contacto-mensaje" name="mensaje"
                         rows="4" required></textarea>
-                </div>
-
-                <!-- SEGURIDAD: CAPTCHA MATEMÁTICO ANTI-SPAM -->
-                <div class="contacto-captcha-group">
-                    <label class="contacto-captcha-label" for="captcha-answer">Seguridad *</label>
-                    <div class="contacto-captcha-row">
-                        <div class="contacto-captcha-question" id="captcha-question">¿Cuánto es 3 + 4?</div>
-                        <input type="number" class="contacto-captcha-input" id="captcha-answer" name="captcha_respuesta" placeholder="Respuesta" required>
-                    </div>
-                    <span class="contacto-captcha-error" id="captcha-error" style="display: none;">Respuesta incorrecta. Inténtalo de nuevo.</span>
                 </div>
 
                 <!-- BOTÓN DE ENVÍO -->
@@ -233,74 +229,62 @@
                     <span class="submit-btn-bold">ENVIAR</span> <span class="submit-btn-regular">CONSULTA</span>
                 </button>
             </form>
-
-            <div class="contacto-team-row">
-                <div class="contacto-team-member">
-                    <div class="contacto-member-icons">
-                        <a href="mailto:pgonzalez@agenciarena.cl" class="contacto-icon-link"
-                            aria-label="Email Pamela"><i class="fa-regular fa-envelope"></i></a>
-                        <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer"
-                            class="contacto-icon-link" aria-label="Instagram Agencia Arena"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/56971888564" target="_blank" class="contacto-icon-link"
-                            aria-label="WhatsApp Pamela"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    <div class="contacto-member-details">
-                        <h3><span class="contact-bold">Pamela</span> <span class="contact-light">González R.</span></h3>
-                        <p class="role"><span class="contact-light">Directora de Cuentas</span></p>
-                        <a href="tel:+56971888564" class="detail-link"><span class="contact-bold">+56 9 7188
-                                8564</span></a>
-                        <a href="mailto:pgonzalez@agenciarena.cl" class="detail-link"><span
-                                class="contact-bold">pgonzalez</span><span
-                                class="contact-light">@agenciarena.cl</span></a>
-                        <p class="location"><span class="contact-bold">La Serena</span><span class="contact-light">,
-                                Chile</span></p>
-                    </div>
-                </div>
-
-                <div class="contacto-divider" aria-hidden="true"></div>
-
-                <div class="contacto-team-member">
-                    <div class="contacto-member-icons">
-                        <a href="mailto:agana@agenciarena.cl" class="contacto-icon-link" aria-label="Email Andrés"><i
-                                class="fa-regular fa-envelope"></i></a>
-                        <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer"
-                            class="contacto-icon-link" aria-label="Instagram Agencia Arena"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/56994371732" target="_blank" class="contacto-icon-link"
-                            aria-label="WhatsApp Andrés"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    <div class="contacto-member-details">
-                        <h3><span class="contact-bold">Andrés</span> <span class="contact-light">Gana G. de la T.</span>
-                        </h3>
-                        <p class="role"><span class="contact-light">Director Creativo</span></p>
-                        <a href="tel:+56994371732" class="detail-link"><span class="contact-bold">+56 9 9437
-                                1732</span></a>
-                        <a href="mailto:agana@agenciarena.cl" class="detail-link"><span
-                                class="contact-bold">agana</span><span class="contact-light">@agenciarena.cl</span></a>
-                        <p class="location"><span class="contact-bold">Santiago</span><span class="contact-light">,
-                                Chile</span></p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- 7. FOOTER -->
     <footer class="main-footer">
         <div class="footer-container">
-            <div class="footer-brand">
-                <img src="assets/img/favicon.png" alt="Agencia Arena" class="footer-logo">
-                <span class="footer-tagline">Creatividad desde lo simple</span>
+            <!-- Bloque Superior: Contacto Directo del Equipo -->
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <div class="footer-brand">
+                        <img src="assets/img/favicon.png" alt="Agencia Arena" class="footer-logo">
+                        <span class="footer-brand-title">Agencia Arena</span>
+                    </div>
+                    <span class="footer-tagline">Creatividad desde lo simple</span>
+                </div>
+
+                <div class="footer-team-col">
+                    <!-- Pamela -->
+                    <div class="footer-member">
+                        <div class="footer-member-info">
+                            <h4><span class="contact-bold">Pamela</span> <span class="contact-light">González R.</span></h4>
+                            <p class="role">Directora de Cuentas</p>
+                            <a href="tel:+56971888564" class="footer-contact-link">+56 9 7188 8564</a>
+                            <a href="mailto:pgonzalez@agenciarena.cl" class="footer-contact-link">pgonzalez@agenciarena.cl</a>
+                            <p class="location">La Serena, Chile</p>
+                        </div>
+                    </div>
+
+                    <!-- Divisor Vertical -->
+                    <div class="footer-team-divider" aria-hidden="true"></div>
+
+                    <!-- Andrés -->
+                    <div class="footer-member">
+                        <div class="footer-member-info">
+                            <h4><span class="contact-bold">Andrés</span> <span class="contact-light">Gana G. de la T.</span></h4>
+                            <p class="role">Director Creativo</p>
+                            <a href="tel:+56994371732" class="footer-contact-link">+56 9 9437 1732</a>
+                            <a href="mailto:agana@agenciarena.cl" class="footer-contact-link">agana@agenciarena.cl</a>
+                            <p class="location">Santiago, Chile</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="footer-center">
-                <p class="footer-copyright">&copy; 2026 Agencia Arena · <span class="footer-country">Santiago - La
-                        Serena, Chile</span></p>
-            </div>
-            <div class="footer-legal-links">
-                <a href="politica-de-privacidad.html" class="legal-btn">Política de Privacidad</a>
-                <span class="legal-separator">·</span>
-                <a href="terminos-de-uso.html" class="legal-btn">Términos de Uso</a>
+
+            <div class="footer-divider-line" aria-hidden="true"></div>
+
+            <!-- Bloque Inferior: Copyright y Legales -->
+            <div class="footer-bottom">
+                <div class="footer-center">
+                    <p class="footer-copyright">&copy; 2026 Agencia Arena · <a href="https://www.instagram.com/agenciarena_/" target="_blank" rel="noopener noreferrer" class="footer-instagram-link">Instagram</a></p>
+                </div>
+                <div class="footer-legal-links">
+                    <a href="politica-de-privacidad.html" class="legal-btn">Política de Privacidad</a>
+                    <span class="legal-separator">·</span>
+                    <a href="terminos-de-uso.html" class="legal-btn">Términos de Uso</a>
+                </div>
             </div>
         </div>
     </footer>
