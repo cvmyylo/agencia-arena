@@ -1248,20 +1248,20 @@ body::before {
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 15px;
 }
 
 .footer-brand-title {
     font-family: 'DINPro', sans-serif;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 0.5px;
 }
 
 .footer-logo {
-    height: 42px;
-    width: 42px;
+    height: 54px;
+    width: 54px;
     object-fit: contain;
     border-radius: 50%;
     display: block;
