@@ -1844,7 +1844,7 @@ body::before {
     .circle-360 {
         width: 245px;
         height: 245px;
-        top: -55px;
+        top: -65px;
         left: 47%;
         transform: translateX(-50%);
     }
@@ -1853,7 +1853,7 @@ body::before {
         width: 285px;
         height: 285px;
         left: 0;
-        bottom: 50px;
+        bottom: 75px;
         transform: none;
     }
 
@@ -1862,7 +1862,7 @@ body::before {
         height: 315px;
         right: 0;
         left: auto;
-        bottom: 30px;
+        bottom: 55px;
         transform: none;
     }
 
