@@ -610,12 +610,12 @@ body::before {
     flex-direction: column;
     justify-content: flex-start;
     align-self: flex-start;
-    margin-top: -20px;
+    margin-top: -65px;
     margin-left: 0;
 }
 
 .hacemos-left-box .section-title {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .hacemos-list {
@@ -626,10 +626,10 @@ body::before {
 
 .hacemos-list li {
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(14.5px, 1.25vw, 18.5px);
+    font-size: clamp(14px, 1.2vw, 17.5px);
     font-weight: 500;
     color: var(--color-yellow);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     user-select: none;
@@ -646,7 +646,7 @@ body::before {
 .hacemos-right-pyramid {
     width: 68%;
     max-width: 860px;
-    height: 600px;
+    height: 560px;
     position: relative;
     z-index: 2;
     align-self: center;
@@ -691,8 +691,8 @@ body::before {
     height: clamp(270px, 20vw, 340px);
     background-color: var(--color-white);
     color: #000000;
-    top: -60px;
-    left: 48%;
+    top: -25px;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -709,7 +709,7 @@ body::before {
     background-color: var(--color-yellow);
     color: #000000;
     bottom: 20px;
-    left: -30px;
+    left: 4%;
     z-index: 2;
 }
 
@@ -724,7 +724,7 @@ body::before {
     height: clamp(320px, 25vw, 410px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
-    bottom: -10px;
+    bottom: 0;
     right: 0;
     z-index: 3;
 }
@@ -1757,36 +1757,41 @@ body::before {
     }
 
     .hacemos-left-box {
-        width: 30%;
+        width: 29%;
+        margin-top: -55px;
+    }
+
+    .hacemos-list li {
+        margin-bottom: 10px;
     }
 
     .hacemos-right-pyramid {
-        width: 66%;
-        max-width: 700px;
-        height: 460px;
+        width: 67%;
+        max-width: 720px;
+        height: 480px;
         margin-left: auto;
     }
 
     .circle-360 {
-        width: 240px;
-        height: 240px;
-        top: -50px;
-        left: 48%;
+        width: 245px;
+        height: 245px;
+        top: -20px;
+        left: 50%;
         transform: translateX(-50%);
     }
 
     .circle-diseno {
-        width: 280px;
-        height: 280px;
-        left: 2%;
-        bottom: 15px;
+        width: 285px;
+        height: 285px;
+        left: 4%;
+        bottom: 20px;
     }
 
     .circle-rrss {
-        width: 300px;
-        height: 300px;
+        width: 305px;
+        height: 305px;
         right: 0;
-        bottom: -10px;
+        bottom: 5px;
     }
 
     #galeria .section-title {
