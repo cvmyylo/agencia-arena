@@ -1877,7 +1877,7 @@ body::before {
     .hacemos-left-box {
         width: 28%;
         max-width: 330px;
-        margin-top: -15px;
+        margin-top: -45px;
     }
 
     .hacemos-left-box .section-title {
@@ -1887,7 +1887,7 @@ body::before {
     .hacemos-list li {
         font-size: 15.5px;
         line-height: 1.35;
-        margin-bottom: 17px;
+        margin-bottom: 15px;
     }
 
     .hacemos-right-pyramid {
