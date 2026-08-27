@@ -104,12 +104,12 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 85px;
+    height: 76px;
     background-color: var(--color-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8.5%;
+    padding: 0 clamp(24px, 5vw, 60px);
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
@@ -133,8 +133,8 @@ body::before {
 }
 
 .logo-container img {
-    height: 135px;
-    max-height: 135px;
+    height: 105px;
+    max-height: 105px;
     width: auto;
     object-fit: contain;
     transform: translateY(2px);
@@ -172,10 +172,10 @@ body::before {
     color: var(--color-yellow);
     text-decoration: none;
     font-weight: 500;
-    font-size: clamp(12px, 0.9vw, 14px);
+    font-size: clamp(12px, 0.9vw, 13.5px);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 0 clamp(16px, 1.6vw, 28px);
+    padding: 0 clamp(14px, 1.4vw, 22px);
     height: 100%;
     display: flex;
     align-items: center;
@@ -250,26 +250,28 @@ body::before {
 
 /* 4. SECTION LAYOUTS */
 .section {
-    min-height: 100vh;
-    padding: 125px 8.5% 80px 8.5%;
+    min-height: calc(100vh - 76px);
+    padding: 90px clamp(24px, 5.5vw, 65px) 45px clamp(24px, 5.5vw, 65px);
     display: flex;
     position: relative;
     overflow: hidden;
     background-color: transparent;
     z-index: 1;
-    scroll-margin-top: 85px;
+    scroll-margin-top: 76px;
     box-sizing: border-box;
     width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
 }
 
 .section-title {
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(55px, 6vw, 95px);
+    font-size: clamp(45px, 4.5vw, 68px);
     font-weight: 800;
     text-transform: uppercase;
-    line-height: 0.9;
+    line-height: 0.92;
     color: var(--color-white);
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
     z-index: 10;
     margin: 0;
 }
@@ -280,9 +282,9 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 85px;
+    padding-top: 76px;
     padding-bottom: 40px;
-    min-height: 100vh;
+    min-height: calc(100vh - 76px);
 }
 
 /* =========================================================================
@@ -347,7 +349,7 @@ body::before {
 .hero-content {
     margin-left: 0;
     margin-top: 0;
-    transform: translateY(-28px);
+    transform: translateY(-15px);
     z-index: 2;
     flex-shrink: 0;
 }
@@ -356,10 +358,10 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(420px, 36vw, 580px);
-    max-width: 580px;
+    width: clamp(340px, 28vw, 450px);
+    max-width: 450px;
     margin-right: 0%;
-    margin-top: -35px;
+    margin-top: -15px;
     pointer-events: none;
     user-select: none;
     z-index: 2;
@@ -377,7 +379,7 @@ body::before {
 
 .hero-text {
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(38px, 4.8vw, 70px);
+    font-size: clamp(34px, 3.6vw, 52px);
     line-height: 0.95;
     font-weight: 300;
 }
@@ -385,18 +387,18 @@ body::before {
 .hero-text span.yellow {
     color: var(--color-yellow);
     font-weight: 300;
-    font-size: clamp(46px, 6vw, 88px);
-    margin-left: 17%;
+    font-size: clamp(40px, 4.4vw, 64px);
+    margin-left: 14%;
     display: inline-block;
 }
 
 .hero-text span.bold {
     font-weight: 700;
-    font-size: clamp(60px, 9vw, 130px);
+    font-size: clamp(52px, 6.2vw, 92px);
     display: block;
-    margin-top: -15px;
-    letter-spacing: -3px;
-    margin-left: 47%;
+    margin-top: -8px;
+    letter-spacing: -2px;
+    margin-left: 36%;
 }
 
 .hero-btn-presentacion {
@@ -407,14 +409,14 @@ body::before {
     background-color: var(--color-yellow);
     color: #000000;
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(17px, 1.7vw, 25px);
+    font-size: clamp(14.5px, 1.3vw, 17px);
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.5px;
-    padding: clamp(15px, 1.7vh, 22px) clamp(38px, 4vw, 62px);
+    padding: 12px 36px;
     border-radius: 50px;
-    margin-top: clamp(25px, 3.2vh, 42px);
-    margin-left: 47%;
+    margin-top: 24px;
+    margin-left: 36%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     animation: smoothBtnDrop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.52s backwards;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease;
@@ -437,21 +439,22 @@ body::before {
 
 /* 6. SECCIÓN: QUIÉNES SOMOS */
 #quienes-somos {
-    min-height: 100vh;
+    min-height: calc(100vh - 76px);
     align-items: center;
     justify-content: space-between;
 }
 
 #quienes-somos .section-title {
-    width: 25%;
-    align-self: center;
-    padding-top: 0;
-    margin-top: -200px;
+    width: 24%;
+    align-self: flex-start;
+    padding-top: 30px;
+    margin-top: 0;
     margin-left: 0;
 }
 
 .quienes-content-wrapper {
-    width: 80%;
+    width: 75%;
+    max-width: 820px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -460,68 +463,68 @@ body::before {
 }
 
 .quienes-yellow-circle {
-    width: min(730px, 46vw);
-    height: min(730px, 46vw);
-    max-width: 730px;
-    max-height: 730px;
+    width: min(480px, 36vw);
+    height: min(480px, 36vw);
+    max-width: 480px;
+    max-height: 480px;
     background-color: var(--color-yellow);
     border-radius: 50%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: min(65px, 4.5vw);
+    padding-right: 36px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    margin-top: -140px;
+    margin-top: 0;
 }
 
 .quienes-desc-text {
-    width: min(340px, 22vw);
+    width: 260px;
     color: #000000;
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(14.5px, 1.35vw, 21.5px);
-    line-height: 1.35;
+    font-size: clamp(14px, 1.15vw, 17px);
+    line-height: 1.42;
     font-weight: 300;
-    transform: translateX(10px);
+    transform: translateX(8px);
 }
 
 .creemos-text {
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .quienes-desc-text p {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .quienes-team {
     position: absolute;
-    left: calc(-0.78 * clamp(165px, 14.5vw, 230px));
+    left: calc(-0.78 * 140px);
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: clamp(70px, 10vw, 140px);
+    gap: 50px;
     z-index: 5;
 }
 
 .quienes-member:nth-child(1) .quienes-info {
-    transform: translateY(85px);
+    transform: translateY(55px);
 }
 
 .quienes-member:nth-child(2) .quienes-info {
-    transform: translateY(-85px);
+    transform: translateY(-55px);
 }
 
 .quienes-member {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
     position: relative;
 }
 
 .quienes-photo-circle {
-    width: clamp(165px, 14.5vw, 230px);
-    height: clamp(165px, 14.5vw, 230px);
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     background-color: var(--color-gray);
     flex-shrink: 0;
@@ -537,20 +540,20 @@ body::before {
 }
 
 .quienes-info h3 {
-    font-size: clamp(15.5px, 1.25vw, 19.5px);
+    font-size: 15.5px;
     line-height: 1.25;
     margin-bottom: 2px;
 }
 
 .quienes-info p.role {
-    font-size: clamp(13.5px, 1.1vw, 17.5px);
+    font-size: 13px;
     font-weight: 300;
     line-height: 1.25;
     margin-bottom: 2px;
 }
 
 .quienes-info a.email {
-    font-size: clamp(13px, 1.05vw, 16.5px);
+    font-size: 12.5px;
     color: #000000;
     text-decoration: none;
     display: block;
@@ -559,7 +562,7 @@ body::before {
 }
 
 .quienes-info p.location {
-    font-size: clamp(13px, 1.05vw, 16.5px);
+    font-size: 12.5px;
     color: #000000;
     line-height: 1.25;
 }
@@ -595,6 +598,7 @@ body::before {
 
 /* 7. SECCIÓN: QUÉ HACEMOS */
 #que-hacemos {
+    min-height: calc(100vh - 76px);
     align-items: center;
     justify-content: space-between;
 }
@@ -602,7 +606,7 @@ body::before {
 .hacemos-left-box {
     background-color: transparent;
     width: 28%;
-    max-width: 340px;
+    max-width: 300px;
     padding: 0;
     border-radius: 0;
     z-index: 2;
@@ -610,7 +614,8 @@ body::before {
     flex-direction: column;
     justify-content: flex-start;
     align-self: flex-start;
-    margin-top: -20px;
+    padding-top: 20px;
+    margin-top: 0;
     margin-left: 0;
 }
 
@@ -626,10 +631,10 @@ body::before {
 
 .hacemos-list li {
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(14.5px, 1.25vw, 18.5px);
+    font-size: clamp(13.5px, 1.1vw, 16px);
     font-weight: 500;
     color: var(--color-yellow);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     user-select: none;
@@ -645,8 +650,8 @@ body::before {
 
 .hacemos-right-pyramid {
     width: 68%;
-    max-width: 860px;
-    height: 600px;
+    max-width: 680px;
+    height: 440px;
     position: relative;
     z-index: 2;
     align-self: center;
@@ -663,7 +668,7 @@ body::before {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: clamp(25px, 3vw, 40px);
+    padding: clamp(20px, 2.5vw, 32px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
     cursor: pointer;
@@ -671,27 +676,27 @@ body::before {
 }
 
 .hacemos-right-pyramid h3 {
-    font-size: clamp(24px, 2.5vw, 37px);
+    font-size: 25px;
     font-weight: 300;
-    margin-bottom: -15px;
+    margin-bottom: -10px;
     text-transform: uppercase;
     margin-top: 0;
     position: relative;
-    top: -25px;
+    top: -15px;
 }
 
 .hacemos-right-pyramid p {
-    font-size: clamp(13px, 1.25vw, 19px);
-    line-height: 1.4;
+    font-size: 13px;
+    line-height: 1.35;
     font-weight: 500;
 }
 
 .circle-360 {
-    width: clamp(270px, 20vw, 340px);
-    height: clamp(270px, 20vw, 340px);
+    width: 225px;
+    height: 225px;
     background-color: var(--color-white);
     color: #000000;
-    top: -60px;
+    top: -45px;
     left: 48%;
     transform: translateX(-50%);
     z-index: 1;
@@ -704,24 +709,26 @@ body::before {
 }
 
 .circle-diseno {
-    width: clamp(300px, 23vw, 380px);
-    height: clamp(300px, 23vw, 380px);
+    width: 265px;
+    height: 265px;
     background-color: var(--color-yellow);
     color: #000000;
-    bottom: 20px;
+    bottom: 15px;
     left: 2%;
     z-index: 2;
 }
 
 .circle-diseno h3 {
     text-transform: none;
-    font-size: clamp(22px, 2.3vw, 35px);
+    font-size: 22px;
     font-weight: 300;
+    top: 0;
+    margin-bottom: 4px;
 }
 
 .circle-rrss {
-    width: clamp(320px, 25vw, 410px);
-    height: clamp(320px, 25vw, 410px);
+    width: 285px;
+    height: 285px;
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
     bottom: -10px;
@@ -743,39 +750,39 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 175px;
-    padding-bottom: 60px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     position: relative;
     min-height: auto !important;
-    scroll-margin-top: -20px;
+    scroll-margin-top: 76px;
 }
 
 #galeria .section-title {
-    width: 25%;
+    width: 24%;
     margin: 0;
     align-self: flex-start;
-    padding-top: 85px;
+    padding-top: 20px;
     line-height: 0.98;
     letter-spacing: -1px;
 }
 
 .galeria-container {
     width: 74%;
-    max-width: 1040px;
+    max-width: 920px;
     display: block;
     z-index: 5;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .galeria-grid-view {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 10px;
     width: 100%;
 }
 
 .grid-item.first-item {
-    grid-column-start: 2;
+    grid-column-start: auto;
 }
 
 .grid-item.gallery-card {
@@ -862,7 +869,7 @@ body::before {
 
 .card-title {
     font-family: 'DINPro', sans-serif;
-    font-size: clamp(12px, 0.95vw, 14.5px);
+    font-size: clamp(12px, 0.95vw, 14px);
     font-weight: 800;
     color: #ffffff;
     margin: 0;
@@ -904,7 +911,7 @@ body::before {
     color: #000000;
     font-family: 'DINPro', sans-serif;
     font-weight: 800;
-    font-size: clamp(12px, 0.95vw, 14.5px);
+    font-size: clamp(12px, 0.95vw, 14px);
     text-transform: uppercase;
     letter-spacing: 0.8px;
 }
@@ -927,19 +934,19 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 155px;
-    padding-bottom: 70px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     position: relative;
     z-index: 2;
-    scroll-margin-top: 85px;
+    scroll-margin-top: 76px;
 }
 
 .contacto-left-col {
-    width: 30%;
+    width: 28%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 25px;
+    padding-top: 20px;
     margin-left: 0;
 }
 
@@ -951,10 +958,10 @@ body::before {
 
 .contacto-right-col {
     width: 68%;
-    max-width: 600px;
+    max-width: 520px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 /* Contact Form */
@@ -971,17 +978,17 @@ body::before {
 
 .contacto-input {
     width: 100%;
-    height: 48px;
+    height: 44px;
     background-color: #ffffff;
     color: #000000;
     font-family: 'DINPro', sans-serif;
-    font-size: 14.5px;
+    font-size: 13.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border: none;
     border-radius: 50px;
-    padding: 0 26px;
+    padding: 0 22px;
     box-sizing: border-box;
     outline: none;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
@@ -1214,18 +1221,18 @@ body::before {
     width: 100%;
     background-color: #11110f;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 45px 8.5% 24px 8.5%;
+    padding: 35px clamp(24px, 5.5vw, 65px) 20px clamp(24px, 5.5vw, 65px);
     position: relative;
     z-index: 10;
     box-sizing: border-box;
 }
 
 .footer-container {
-    max-width: 1350px;
+    max-width: 1360px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .footer-top {
@@ -1663,17 +1670,17 @@ body::before {
    ========================================================================= */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 68px;
-    height: 68px;
+    bottom: 28px;
+    right: 28px;
+    width: 62px;
+    height: 62px;
     background-color: var(--color-yellow);
     color: #000000;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 38px;
+    font-size: 34px;
     box-shadow: 0 0 35px 8px rgba(255, 255, 255, 0.42), 0 10px 30px rgba(0, 0, 0, 0.55);
     z-index: 999;
     text-decoration: none;
@@ -1712,95 +1719,56 @@ body::before {
 }
 
 /* ==========================================================================
-   14. BREAKPOINT: LAPTOPS Y PANTALLAS MEDIANAS (1025px a 1280px)
+   14. PANTALLAS GRANDES Y MONITORES (>= 1600px / 1080p / 2K / 4K)
    ========================================================================== */
-@media (max-width: 1280px) {
-    .main-header {
-        height: 80px;
-        padding: 0 6.5%;
-    }
-
-    .logo-container img {
-        height: 120px;
-        max-height: 120px;
-    }
-
-    .nav-link {
-        padding: 0 16px;
-        font-size: 11.5px;
-    }
-
+@media (min-width: 1600px) {
     .section {
-        padding: 115px 6.5% 60px 6.5%;
-        scroll-margin-top: 80px;
+        max-width: 1500px;
+        padding: 110px clamp(40px, 4vw, 80px) 60px clamp(40px, 4vw, 80px);
     }
 
-    #quienes-somos .section-title,
-    #contacto .section-title {
-        font-size: 60px;
+    .footer-container {
+        max-width: 1500px;
+    }
+
+    .galeria-grid-view {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px 14px;
     }
 
     .quienes-yellow-circle {
         width: 540px;
         height: 540px;
-        padding-right: 40px;
-    }
-
-    .quienes-team {
-        left: calc(-0.78 * 185px);
-        gap: 75px;
+        max-width: 540px;
+        max-height: 540px;
     }
 
     .quienes-desc-text {
-        width: 275px;
-        font-size: 16.5px;
-    }
-
-    .hacemos-left-box {
-        width: 30%;
+        width: 290px;
+        font-size: 16px;
     }
 
     .hacemos-right-pyramid {
-        width: 66%;
-        max-width: 700px;
-        height: 460px;
-        margin-left: auto;
+        max-width: 760px;
+        height: 480px;
     }
 
     .circle-360 {
-        width: 240px;
-        height: 240px;
+        width: 250px;
+        height: 250px;
         top: -50px;
-        left: 48%;
-        transform: translateX(-50%);
     }
 
     .circle-diseno {
-        width: 280px;
-        height: 280px;
-        left: 2%;
-        bottom: 15px;
+        width: 295px;
+        height: 295px;
+        bottom: 20px;
     }
 
     .circle-rrss {
-        width: 300px;
-        height: 300px;
-        right: 0;
+        width: 320px;
+        height: 320px;
         bottom: -10px;
-    }
-
-    #galeria .section-title {
-        left: 5%;
-        font-size: 65px;
-    }
-
-    .galeria-container {
-        width: 70%;
-    }
-
-    .galeria-grid-view {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px 8px;
     }
 }
 
