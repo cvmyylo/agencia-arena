@@ -692,7 +692,7 @@ body::before {
     height: clamp(270px, 20vw, 340px);
     background-color: var(--color-white);
     color: #000000;
-    top: -25px;
+    top: -45px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -1777,7 +1777,7 @@ body::before {
     .circle-360 {
         width: 245px;
         height: 245px;
-        top: -20px;
+        top: -38px;
         left: 50%;
         transform: translateX(-50%);
     }
