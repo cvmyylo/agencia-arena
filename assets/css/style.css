@@ -652,6 +652,7 @@ body::before {
     align-self: center;
     overflow: visible;
     margin-left: auto;
+    margin-top: -55px;
 }
 
 .hacemos-right-pyramid .circle-item {
@@ -708,7 +709,7 @@ body::before {
     height: clamp(300px, 23vw, 380px);
     background-color: var(--color-yellow);
     color: #000000;
-    bottom: 20px;
+    bottom: 25px;
     left: 4%;
     z-index: 2;
 }
@@ -724,7 +725,7 @@ body::before {
     height: clamp(320px, 25vw, 410px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
-    bottom: 0;
+    bottom: 5px;
     right: 0;
     z-index: 3;
 }
@@ -1770,6 +1771,7 @@ body::before {
         max-width: 720px;
         height: 480px;
         margin-left: auto;
+        margin-top: -45px;
     }
 
     .circle-360 {
