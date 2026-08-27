@@ -744,18 +744,18 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 130px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 50px;
     position: relative;
     min-height: auto !important;
-    scroll-margin-top: 75px;
+    scroll-margin-top: 85px;
 }
 
 #galeria .section-title {
     width: 25%;
     margin: 0;
     align-self: flex-start;
-    padding-top: 35px;
+    padding-top: 0;
     line-height: 0.98;
     letter-spacing: -1px;
 }
@@ -765,7 +765,7 @@ body::before {
     max-width: 1040px;
     display: block;
     z-index: 5;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .galeria-grid-view {
@@ -2029,14 +2029,14 @@ body::before {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        padding-top: 150px;
+        padding-top: 45px;
     }
 
     #galeria .section-title {
         width: 25%;
         font-size: clamp(48px, 5.5vw, 65px);
         text-align: left;
-        padding-top: 60px;
+        padding-top: 0;
     }
 
     .galeria-container {
