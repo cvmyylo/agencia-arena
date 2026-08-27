@@ -687,12 +687,12 @@ body::before {
 }
 
 .circle-360 {
-    width: clamp(300px, 23vw, 380px);
-    height: clamp(300px, 23vw, 380px);
+    width: clamp(270px, 20vw, 340px);
+    height: clamp(270px, 20vw, 340px);
     background-color: var(--color-white);
     color: #000000;
-    top: -155px;
-    left: 41.5%;
+    top: -60px;
+    left: 48%;
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -704,12 +704,12 @@ body::before {
 }
 
 .circle-diseno {
-    width: clamp(350px, 27vw, 440px);
-    height: clamp(350px, 27vw, 440px);
+    width: clamp(300px, 23vw, 380px);
+    height: clamp(300px, 23vw, 380px);
     background-color: var(--color-yellow);
     color: #000000;
-    bottom: 55px;
-    left: -16%;
+    bottom: 20px;
+    left: 2%;
     z-index: 2;
 }
 
@@ -720,11 +720,11 @@ body::before {
 }
 
 .circle-rrss {
-    width: clamp(380px, 30vw, 490px);
-    height: clamp(380px, 30vw, 490px);
+    width: clamp(320px, 25vw, 410px);
+    height: clamp(320px, 25vw, 410px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
-    bottom: -15px;
+    bottom: -10px;
     right: 0;
     z-index: 3;
 }
@@ -1757,33 +1757,34 @@ body::before {
     }
 
     .hacemos-left-box {
-        width: 27%;
+        width: 30%;
     }
 
     .hacemos-right-pyramid {
-        width: 70%;
-        max-width: 750px;
-        height: 500px;
+        width: 66%;
+        max-width: 700px;
+        height: 460px;
         margin-left: auto;
     }
 
     .circle-360 {
-        width: 280px;
-        height: 280px;
-        top: -100px;
-        left: 42%;
+        width: 240px;
+        height: 240px;
+        top: -50px;
+        left: 48%;
+        transform: translateX(-50%);
     }
 
     .circle-diseno {
-        width: 330px;
-        height: 330px;
-        left: -35px;
-        bottom: 35px;
+        width: 280px;
+        height: 280px;
+        left: 2%;
+        bottom: 15px;
     }
 
     .circle-rrss {
-        width: 360px;
-        height: 360px;
+        width: 300px;
+        height: 300px;
         right: 0;
         bottom: -10px;
     }
@@ -1804,53 +1805,9 @@ body::before {
 }
 
 /* ==========================================================================
-   14b. BREAKPOINT INTERMEDIO: LAPTOPS PEQUEÑAS (1025px a 1150px)
+   12. BREAKPOINT: TABLETS / NOTEBOOKS (769px a 1120px)
    ========================================================================== */
-@media (max-width: 1150px) {
-    .hacemos-left-box {
-        width: 26%;
-    }
-
-    .hacemos-right-pyramid {
-        width: 72%;
-        max-width: 660px;
-        height: 430px;
-    }
-
-    .circle-360 {
-        width: 240px;
-        height: 240px;
-        top: -80px;
-        left: 40%;
-    }
-
-    .circle-diseno {
-        width: 280px;
-        height: 280px;
-        left: -20px;
-        bottom: 25px;
-    }
-
-    .circle-rrss {
-        width: 310px;
-        height: 310px;
-        right: 0;
-        bottom: -10px;
-    }
-
-    .hacemos-right-pyramid h3 {
-        font-size: clamp(19px, 2vw, 26px);
-    }
-
-    .hacemos-right-pyramid p {
-        font-size: clamp(11.5px, 1.1vw, 14px);
-    }
-}
-
-/* ==========================================================================
-   12. BREAKPOINT: TABLETS / NOTEBOOKS (769px a 1024px)
-   ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1120px) {
     .main-header {
         height: 75px;
         padding: 0 4.5%;
