@@ -1716,78 +1716,142 @@ body::before {
 }
 
 /* ==========================================================================
-   14. BREAKPOINT: LAPTOPS Y PANTALLAS MEDIANAS (1025px a 1280px)
+   FORMATO 2: LAPTOPS Y PANTALLAS DE 13" - 14" (1025px a 1440px)
    ========================================================================== */
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     .main-header {
-        height: 80px;
-        padding: 0 6.5%;
+        height: 76px;
+        padding: 0 5.5%;
     }
 
     .logo-container img {
-        height: 120px;
-        max-height: 120px;
+        height: 105px;
+        max-height: 105px;
     }
 
     .nav-link {
-        padding: 0 16px;
-        font-size: 11.5px;
+        padding: 0 14px;
+        font-size: 12px;
     }
 
     .section {
-        padding: 115px 6.5% 60px 6.5%;
-        scroll-margin-top: 80px;
+        min-height: calc(100vh - 76px);
+        padding: 85px 5.5% 40px 5.5%;
+        scroll-margin-top: 76px;
+        max-width: 1300px;
+        margin: 0 auto;
     }
 
-    #quienes-somos .section-title,
-    #contacto .section-title {
-        font-size: 60px;
+    .section-title {
+        font-size: 58px;
+        line-height: 0.92;
+        letter-spacing: -1.5px;
+    }
+
+    /* Inicio en Laptop */
+    #inicio {
+        min-height: calc(100vh - 76px);
+        padding-top: 76px;
+        padding-bottom: 30px;
+    }
+
+    /* Quiénes somos en Laptop */
+    #quienes-somos {
+        min-height: calc(100vh - 76px);
+    }
+
+    #quienes-somos .section-title {
+        width: 24%;
+        margin-top: -60px;
+        font-size: 58px;
+    }
+
+    .quienes-content-wrapper {
+        width: 76%;
+        max-width: 800px;
     }
 
     .quienes-yellow-circle {
-        width: 540px;
-        height: 540px;
-        padding-right: 40px;
-    }
-
-    .quienes-team {
-        left: calc(-0.78 * 185px);
-        gap: 75px;
+        width: 480px;
+        height: 480px;
+        max-width: 480px;
+        max-height: 480px;
+        margin-top: -30px;
+        padding-right: 36px;
     }
 
     .quienes-desc-text {
-        width: 275px;
-        font-size: 16.5px;
+        width: 260px;
+        font-size: 14.5px;
+        line-height: 1.38;
+    }
+
+    .quienes-team {
+        left: calc(-0.78 * 135px);
+        gap: 55px;
+    }
+
+    .quienes-photo-circle {
+        width: 135px;
+        height: 135px;
+    }
+
+    .quienes-member:nth-child(1) .quienes-info {
+        transform: translateY(55px);
+    }
+
+    .quienes-member:nth-child(2) .quienes-info {
+        transform: translateY(-55px);
+    }
+
+    .quienes-info h3 {
+        font-size: 14.5px;
+    }
+
+    .quienes-info p.role {
+        font-size: 12.5px;
+    }
+
+    .quienes-info a.email,
+    .quienes-info p.location {
+        font-size: 12px;
+    }
+
+    /* Qué hacemos en Laptop */
+    #que-hacemos {
+        min-height: calc(100vh - 76px);
     }
 
     .hacemos-left-box {
-        width: 29%;
-        margin-top: -55px;
+        width: 28%;
+        max-width: 300px;
+        margin-top: -50px;
     }
 
     .hacemos-list li {
+        font-size: 14px;
         margin-bottom: 10px;
     }
 
     .hacemos-right-pyramid {
-        width: 67%;
-        max-width: 700px;
+        width: 68%;
+        max-width: 680px;
         height: 480px;
         margin-left: auto;
         margin-top: -45px;
     }
 
     .circle-360 {
-        width: 250px;
-        height: 250px;
+        width: 245px;
+        height: 245px;
         top: -55px;
         left: 47%;
         transform: translateX(-50%);
     }
 
     .circle-diseno {
-        width: 290px;
-        height: 290px;
+        width: 285px;
+        height: 285px;
         left: 0;
         bottom: 20px;
         transform: none;
@@ -1802,25 +1866,148 @@ body::before {
         transform: none;
     }
 
+    .circle-item {
+        padding: 22px 20px;
+    }
+
+    .hacemos-right-pyramid h3 {
+        font-size: 24px;
+        margin-bottom: -10px;
+        top: -15px;
+    }
+
+    .circle-diseno h3 {
+        font-size: 21px;
+    }
+
+    .hacemos-right-pyramid p {
+        font-size: 12.5px;
+        line-height: 1.35;
+    }
+
+    /* Galería en Laptop */
+    #galeria {
+        padding-top: 35px;
+        padding-bottom: 40px;
+        scroll-margin-top: 76px;
+    }
+
     #galeria .section-title {
-        left: 5%;
-        font-size: 65px;
+        width: 24%;
+        padding-top: 0;
+        font-size: 58px;
     }
 
     .galeria-container {
-        width: 70%;
+        width: 74%;
+        max-width: 960px;
+        margin-top: 0;
     }
 
     .galeria-grid-view {
         grid-template-columns: repeat(5, 1fr);
         gap: 10px 8px;
     }
+
+    .card-info {
+        padding: 6px 8px 8px 8px;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-desc {
+        font-size: 10.5px;
+    }
+
+    /* Contacto en Laptop */
+    #contacto {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        scroll-margin-top: 76px;
+    }
+
+    #contacto .section-title {
+        width: 24%;
+        font-size: 58px;
+    }
+
+    .contacto-left-col {
+        width: 28%;
+        padding-top: 0;
+    }
+
+    .contacto-right-col {
+        width: 68%;
+        max-width: 520px;
+        gap: 14px;
+    }
+
+    .contacto-input {
+        height: 42px;
+        font-size: 13px;
+        padding: 0 20px;
+    }
+
+    .contacto-textarea {
+        min-height: 85px;
+        font-size: 13px;
+    }
+
+    /* Footer en Laptop */
+    .main-footer {
+        padding: 35px 5.5% 20px 5.5%;
+    }
+
+    .footer-container {
+        max-width: 1300px;
+        gap: 14px;
+    }
+
+    .footer-brand-title {
+        font-size: 18px;
+    }
+
+    .footer-logo {
+        height: 46px;
+        width: 46px;
+    }
+
+    .footer-tagline {
+        font-size: 12.5px;
+    }
+
+    .footer-member {
+        width: 155px;
+        min-width: 155px;
+    }
+
+    .footer-member-info h4 {
+        font-size: 13.5px;
+    }
+
+    .footer-member-info p.role {
+        font-size: 11.5px;
+    }
+
+    .footer-instagram-btn {
+        font-size: 38px;
+    }
+
+    .whatsapp-float {
+        bottom: 24px;
+        right: 24px;
+        width: 62px;
+        height: 62px;
+        font-size: 34px;
+    }
 }
 
 /* ==========================================================================
-   12. BREAKPOINT: TABLETS / NOTEBOOKS (769px a 1120px)
+   FORMATO 3A: TABLETS / NOTEBOOKS (769px a 1024px)
    ========================================================================== */
-@media (max-width: 1120px) {
+@media (max-width: 1024px) {
     .main-header {
         height: 75px;
         padding: 0 4.5%;
