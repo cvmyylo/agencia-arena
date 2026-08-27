@@ -744,18 +744,18 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 175px;
+    padding-top: 130px;
     padding-bottom: 60px;
     position: relative;
     min-height: auto !important;
-    scroll-margin-top: -20px;
+    scroll-margin-top: 75px;
 }
 
 #galeria .section-title {
     width: 25%;
     margin: 0;
     align-self: flex-start;
-    padding-top: 85px;
+    padding-top: 35px;
     line-height: 0.98;
     letter-spacing: -1px;
 }
