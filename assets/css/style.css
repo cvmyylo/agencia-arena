@@ -710,7 +710,8 @@ body::before {
     background-color: var(--color-yellow);
     color: #000000;
     bottom: 60px;
-    left: 4%;
+    left: calc(50% - 150px);
+    transform: translateX(-50%);
     z-index: 2;
 }
 
@@ -726,13 +727,14 @@ body::before {
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
     bottom: 40px;
-    right: 0;
+    left: calc(50% + 150px);
+    transform: translateX(-50%);
     z-index: 3;
 }
 
 .circle-diseno:hover,
 .circle-rrss:hover {
-    transform: scale(1.05);
+    transform: translateX(-50%) scale(1.05);
     box-shadow: 0 25px 55px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
@@ -1775,24 +1777,26 @@ body::before {
     }
 
     .circle-360 {
-        width: 245px;
-        height: 245px;
+        width: 250px;
+        height: 250px;
         top: -38px;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .circle-diseno {
-        width: 285px;
-        height: 285px;
-        left: 4%;
+        width: 290px;
+        height: 290px;
+        left: calc(50% - 125px);
+        transform: translateX(-50%);
         bottom: 48px;
     }
 
     .circle-rrss {
-        width: 305px;
-        height: 305px;
-        right: 0;
+        width: 310px;
+        height: 310px;
+        left: calc(50% + 125px);
+        transform: translateX(-50%);
         bottom: 32px;
     }
 
