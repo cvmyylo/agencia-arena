@@ -645,8 +645,8 @@ body::before {
 
 .hacemos-right-pyramid {
     width: 68%;
-    max-width: 860px;
-    height: 560px;
+    max-width: 760px;
+    height: 540px;
     position: relative;
     z-index: 2;
     align-self: center;
@@ -688,12 +688,12 @@ body::before {
 }
 
 .circle-360 {
-    width: clamp(270px, 20vw, 340px);
-    height: clamp(270px, 20vw, 340px);
+    width: clamp(270px, 20vw, 310px);
+    height: clamp(270px, 20vw, 310px);
     background-color: var(--color-white);
     color: #000000;
-    top: -45px;
-    left: 50%;
+    top: -40px;
+    left: 47%;
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -705,13 +705,13 @@ body::before {
 }
 
 .circle-diseno {
-    width: clamp(300px, 23vw, 380px);
-    height: clamp(300px, 23vw, 380px);
+    width: clamp(300px, 22vw, 350px);
+    height: clamp(300px, 22vw, 350px);
     background-color: var(--color-yellow);
     color: #000000;
-    bottom: 60px;
-    left: calc(50% - 150px);
-    transform: translateX(-50%);
+    bottom: 25px;
+    left: 0;
+    transform: none;
     z-index: 2;
 }
 
@@ -722,19 +722,20 @@ body::before {
 }
 
 .circle-rrss {
-    width: clamp(320px, 25vw, 410px);
-    height: clamp(320px, 25vw, 410px);
+    width: clamp(320px, 24vw, 380px);
+    height: clamp(320px, 24vw, 380px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
-    bottom: 40px;
-    left: calc(50% + 150px);
-    transform: translateX(-50%);
+    bottom: 0;
+    right: 0;
+    left: auto;
+    transform: none;
     z-index: 3;
 }
 
 .circle-diseno:hover,
 .circle-rrss:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
     box-shadow: 0 25px 55px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
@@ -1770,7 +1771,7 @@ body::before {
 
     .hacemos-right-pyramid {
         width: 67%;
-        max-width: 720px;
+        max-width: 700px;
         height: 480px;
         margin-left: auto;
         margin-top: -45px;
@@ -1779,25 +1780,26 @@ body::before {
     .circle-360 {
         width: 250px;
         height: 250px;
-        top: -38px;
-        left: 50%;
+        top: -30px;
+        left: 47%;
         transform: translateX(-50%);
     }
 
     .circle-diseno {
         width: 290px;
         height: 290px;
-        left: calc(50% - 125px);
-        transform: translateX(-50%);
-        bottom: 48px;
+        left: 0;
+        bottom: 20px;
+        transform: none;
     }
 
     .circle-rrss {
-        width: 310px;
-        height: 310px;
-        left: calc(50% + 125px);
-        transform: translateX(-50%);
-        bottom: 32px;
+        width: 315px;
+        height: 315px;
+        right: 0;
+        left: auto;
+        bottom: 0;
+        transform: none;
     }
 
     #galeria .section-title {
