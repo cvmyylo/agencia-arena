@@ -709,7 +709,7 @@ body::before {
     height: clamp(300px, 23vw, 380px);
     background-color: var(--color-yellow);
     color: #000000;
-    bottom: 25px;
+    bottom: 60px;
     left: 4%;
     z-index: 2;
 }
@@ -725,7 +725,7 @@ body::before {
     height: clamp(320px, 25vw, 410px);
     background-color: rgba(0, 0, 0, 0.91);
     color: var(--color-white);
-    bottom: 5px;
+    bottom: 40px;
     right: 0;
     z-index: 3;
 }
@@ -1786,14 +1786,14 @@ body::before {
         width: 285px;
         height: 285px;
         left: 4%;
-        bottom: 20px;
+        bottom: 48px;
     }
 
     .circle-rrss {
         width: 305px;
         height: 305px;
         right: 0;
-        bottom: 5px;
+        bottom: 32px;
     }
 
     #galeria .section-title {
