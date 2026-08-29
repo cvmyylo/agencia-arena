@@ -1,6 +1,6 @@
 // =============================================
 // CONFIGURACIÓN DE GALERÍA — MARCAS Y MINI LOOPS
-// 13 Marcas ordenadas de 1 a 13 con sus carpetas
+// Marcas ordenadas con sus carpetas y rutas WebP
 // =============================================
 const galleryBrands = [
     {
@@ -9,10 +9,10 @@ const galleryBrands = [
         desc: 'Creación de logo, página web, packaging y branding.',
         category: 'BRANDING',
         images: [
-            'assets/img/1_Nicolaides/019.png',
-            'assets/img/1_Nicolaides/0110.png',
-            'assets/img/1_Nicolaides/0111.png',
-            'assets/img/1_Nicolaides/0112.png'
+            'assets/img/1_Nicolaides/019.webp',
+            'assets/img/1_Nicolaides/0110.webp',
+            'assets/img/1_Nicolaides/0111.webp',
+            'assets/img/1_Nicolaides/0112.webp'
         ]
     },
     {
@@ -21,8 +21,9 @@ const galleryBrands = [
         desc: 'Revista interna.',
         category: 'TRADE MARKETING',
         images: [
-            'assets/img/2_Nissan/0150.png',
-            'assets/img/2_Nissan/0149.png'
+            'assets/img/2_Nissan/0150.webp',
+            'assets/img/2_Nissan/0149.webp',
+            'assets/img/2_Nissan/0151.webp'
         ]
     },
     {
@@ -31,10 +32,10 @@ const galleryBrands = [
         desc: 'Creación de página web y Stand.',
         category: 'TRADE MARKETING',
         images: [
-            'assets/img/3_European Windows/015.png',
-            'assets/img/3_European Windows/013.png',
-            'assets/img/3_European Windows/014.png',
-            'assets/img/3_European Windows/016.png'
+            'assets/img/3_European Windows/015.webp',
+            'assets/img/3_European Windows/013.webp',
+            'assets/img/3_European Windows/014.webp',
+            'assets/img/3_European Windows/016.webp'
         ]
     },
     {
@@ -43,8 +44,18 @@ const galleryBrands = [
         desc: 'Campaña de tránsito.',
         category: 'RRSS',
         images: [
-            'assets/img/4_BCI/0117.png',
-            'assets/img/4_BCI/0116.png'
+            'assets/img/4_BCI/0117.webp',
+            'assets/img/4_BCI/0116.webp'
+        ]
+    },
+    {
+        id: 'adidas',
+        title: 'Adidas Originals',
+        desc: 'Exhibidores y trade marketing.',
+        category: 'TRADE MARKETING',
+        images: [
+            'assets/img/5_Adidas/0153.webp',
+            'assets/img/5_Adidas/0154.webp'
         ]
     },
     {
@@ -53,8 +64,8 @@ const galleryBrands = [
         desc: 'Creación de página web y branding.',
         category: 'BRANDING',
         images: [
-            'assets/img/5_Jarry IP/0113.png',
-            'assets/img/5_Jarry IP/0114.png'
+            'assets/img/6_Jarry IP/0113.webp',
+            'assets/img/6_Jarry IP/0114.webp'
         ]
     },
     {
@@ -63,27 +74,8 @@ const galleryBrands = [
         desc: 'Creación de logo, packaging, branding y página web.',
         category: 'BRANDING',
         images: [
-            'assets/img/6_Kgiun/017.png',
-            'assets/img/6_Kgiun/018.png'
-        ]
-    },
-    {
-        id: 'hotel-haka-piri-mana',
-        title: 'Hotel Haka Piri Mana',
-        desc: 'Creación de logo, branding.',
-        category: 'BRANDING',
-        images: [
-            'assets/img/7_Hotel Haka Piri Mana/0124.png',
-            'assets/img/7_Hotel Haka Piri Mana/0125.png'
-        ]
-    },
-    {
-        id: 'shara',
-        title: 'Shara',
-        desc: 'Creación de logo y Packaging.',
-        category: 'BRANDING',
-        images: [
-            'assets/img/8_Shara/0140.png'
+            'assets/img/7_Kgiun/017.webp',
+            'assets/img/7_Kgiun/018.webp'
         ]
     },
     {
@@ -92,48 +84,61 @@ const galleryBrands = [
         desc: 'Avisos de prensa y folletería.',
         category: 'PUBLICIDAD',
         images: [
-            'assets/img/9_Agralia/0132.png',
-            'assets/img/9_Agralia/0133.png',
-            'assets/img/9_Agralia/0134.png'
+            'assets/img/8_Agralia/0132.webp',
+            'assets/img/8_Agralia/0133.webp',
+            'assets/img/8_Agralia/0134.webp'
         ]
     },
     {
-        id: 'pacx',
-        title: 'PACX',
-        desc: 'Creación de logo, papelería, folletería y branding.',
-        category: 'BRANDING',
+        id: 'sony-axn',
+        title: 'Sony AXN',
+        desc: 'Packaging y merchandising.',
+        category: 'PACKAGING',
         images: [
-            'assets/img/10_PACX/0144.png',
-            'assets/img/10_PACX/0143.png'
+            'assets/img/9_Sony AXN/0137.webp',
+            'assets/img/9_Sony AXN/0138.webp'
         ]
     },
     {
-        id: 'innova-college',
-        title: 'INNOVACOLLEGE',
-        desc: 'Mails y folletería.',
-        category: 'EDITORIAL',
+        id: 'vidrieria-lirquen',
+        title: 'Vidriería Lirquén',
+        desc: 'Catálogos, exhibidores y trade marketing.',
+        category: 'TRADE MARKETING',
         images: [
-            'assets/img/11_Innova College/0151.png',
-            'assets/img/11_Innova College/0152.png'
+            'assets/img/10_Vidrieria Lirquen/0118.webp',
+            'assets/img/10_Vidrieria Lirquen/0119.webp',
+            'assets/img/10_Vidrieria Lirquen/0120.webp',
+            'assets/img/10_Vidrieria Lirquen/0121.webp'
         ]
     },
     {
         id: 'clinica-iram',
         title: 'Clínica IRAM',
         desc: 'Branding.',
-        category: 'PACKAGING',
+        category: 'BRANDING',
         images: [
-            'assets/img/12_Clinica Iram/0141.png',
-            'assets/img/12_Clinica Iram/0142.png'
+            'assets/img/11_Clinica Iram/0141.webp',
+            'assets/img/11_Clinica Iram/0142.webp'
         ]
     },
     {
-        id: 'vai-tea',
-        title: 'VAI TEA',
-        desc: 'Creación de logo y merchandising.',
-        category: 'PACKAGING',
+        id: 'laboratorio-gdm',
+        title: 'Laboratorio GDM',
+        desc: 'Logotipo, imagen de marca y sitio web.',
+        category: 'BRANDING',
         images: [
-            'assets/img/13_Vai Tea/0139.png'
+            'assets/img/12_Laboratorio GDM/0126.webp',
+            'assets/img/12_Laboratorio GDM/0127.webp'
+        ]
+    },
+    {
+        id: 'u-andres-bello',
+        title: 'U. Andrés Bello',
+        desc: 'Diseño de gráficas para muros.',
+        category: 'DISEÑO',
+        images: [
+            'assets/img/12_U. Andres Bello/0122.webp',
+            'assets/img/12_U. Andres Bello/0123.webp'
         ]
     },
     {
@@ -143,27 +148,22 @@ const galleryBrands = [
         category: 'EXPERIENCIA',
         isVerMas: true,
         images: [
-            'assets/img/14_Ver mas/01.png',
-            'assets/img/14_Ver mas/0115.png',
-            'assets/img/14_Ver mas/0118.png',
-            'assets/img/14_Ver mas/0119.png',
-            'assets/img/14_Ver mas/012.png',
-            'assets/img/14_Ver mas/0120.png',
-            'assets/img/14_Ver mas/0121.png',
-            'assets/img/14_Ver mas/0122.png',
-            'assets/img/14_Ver mas/0123.png',
-            'assets/img/14_Ver mas/0126.png',
-            'assets/img/14_Ver mas/0127.png',
-            'assets/img/14_Ver mas/0129.png',
-            'assets/img/14_Ver mas/0130.png',
-            'assets/img/14_Ver mas/0131.png',
-            'assets/img/14_Ver mas/0135.png',
-            'assets/img/14_Ver mas/0136.png',
-            'assets/img/14_Ver mas/0137.png',
-            'assets/img/14_Ver mas/0138.png',
-            'assets/img/14_Ver mas/0153.png',
-            'assets/img/14_Ver mas/0154.png',
-            'assets/img/14_Ver mas/0155.png'
+            'assets/img/14_Ver mas/01.webp',
+            'assets/img/14_Ver mas/0115.webp',
+            'assets/img/14_Ver mas/012.webp',
+            'assets/img/14_Ver mas/0124.webp',
+            'assets/img/14_Ver mas/0125.webp',
+            'assets/img/14_Ver mas/0129.webp',
+            'assets/img/14_Ver mas/0130.webp',
+            'assets/img/14_Ver mas/0131.webp',
+            'assets/img/14_Ver mas/0135.webp',
+            'assets/img/14_Ver mas/0136.webp',
+            'assets/img/14_Ver mas/0139.webp',
+            'assets/img/14_Ver mas/0140.webp',
+            'assets/img/14_Ver mas/0143.webp',
+            'assets/img/14_Ver mas/0144.webp',
+            'assets/img/14_Ver mas/0152.webp',
+            'assets/img/14_Ver mas/0155.webp'
         ]
     }
 ];
