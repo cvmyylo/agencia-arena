@@ -51,10 +51,10 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preload" href="assets/fonts/DINPro-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/DINPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/img/fondo-2.png" as="image">
+    <link rel="preload" href="assets/img/trama-nueva-07.09.26.png" as="image">
 
     <!-- Stylesheet Principal con Cache-Busting -->
-    <link rel="stylesheet" href="assets/css/style.css?v=8.7">
+    <link rel="stylesheet" href="assets/css/style.css?v=10.1">
 
     <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -163,6 +163,24 @@
 
 <body>
 
+    <!-- Fondo Animado Global (Opción 3: Deriva continua + Puntos ascendentes de marca) -->
+    <div class="global-bg-container" aria-hidden="true">
+        <div class="bg-moving-layer"></div>
+        <div class="bg-particles-layer">
+            <div class="particle" style="--px:8%;  --size:13px; --dur:15.5s; --delay:0s;   --rise:-480px"></div>
+            <div class="particle" style="--px:15%; --size:8px;  --dur:14.5s; --delay:0.3s; --rise:-460px"></div>
+            <div class="particle" style="--px:22%; --size:8px;  --dur:18.0s; --delay:2.4s; --rise:-530px"></div>
+            <div class="particle" style="--px:30%; --size:9px;  --dur:16.0s; --delay:1.5s; --rise:-490px"></div>
+            <div class="particle" style="--px:38%; --size:17px; --dur:14.0s; --delay:1s;   --rise:-450px"></div>
+            <div class="particle" style="--px:46%; --size:11px; --dur:17.0s; --delay:2s;   --rise:-510px"></div>
+            <div class="particle" style="--px:55%; --size:9px;  --dur:19.5s; --delay:4s;   --rise:-560px"></div>
+            <div class="particle" style="--px:61%; --size:13px; --dur:18.0s; --delay:3.6s; --rise:-520px"></div>
+            <div class="particle" style="--px:68%; --size:12px; --dur:16.2s; --delay:0.6s; --rise:-480px"></div>
+            <div class="particle" style="--px:80%; --size:8px;  --dur:17.5s; --delay:3.2s; --rise:-530px"></div>
+            <div class="particle" style="--px:91%; --size:15px; --dur:15.0s; --delay:1.8s; --rise:-470px"></div>
+        </div>
+    </div>
+
     <!-- 1. HEADER & NAVEGACIÓN -->
     <header class="main-header" id="header">
         <div class="logo-container">
@@ -216,7 +234,12 @@
             <div class="quienes-yellow-circle">
                 <div class="quienes-team">
                     <div class="quienes-member">
-                        <div class="quienes-photo-circle"></div>
+                        <div class="quienes-photo-circle">
+                            <picture>
+                                <source srcset="assets/img/Caras/pamela.webp" type="image/webp">
+                                <img src="assets/img/Caras/pamela.jpeg" alt="Pamela González R. - Directora de Cuentas" class="quienes-photo-img" width="230" height="230" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
                         <div class="quienes-info">
                             <h3><span class="name-bold">Pamela</span> <span class="name-light">González R.</span></h3>
                             <p class="role">Directora de Cuentas</p>
@@ -226,7 +249,12 @@
                         </div>
                     </div>
                     <div class="quienes-member">
-                        <div class="quienes-photo-circle"></div>
+                        <div class="quienes-photo-circle">
+                            <picture>
+                                <source srcset="assets/img/Caras/Andres.webp" type="image/webp">
+                                <img src="assets/img/Caras/Andres.jpeg" alt="Andrés Gana G. de la T. - Director Creativo" class="quienes-photo-img" width="230" height="230" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
                         <div class="quienes-info">
                             <h3><span class="name-bold">Andrés</span> <span class="name-light">Gana G. de la T.</span>
                             </h3>
@@ -437,7 +465,7 @@
     </a>
 
     <!-- JAVASCRIPT con cache-busting y carga diferida -->
-    <script src="assets/js/main.js?v=2.5" defer></script>
+    <script src="assets/js/main.js?v=2.6" defer></script>
 </body>
 
 </html>

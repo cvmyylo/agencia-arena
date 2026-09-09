@@ -22,8 +22,7 @@ const galleryBrands = [
         category: 'TRADE MARKETING',
         images: [
             'assets/img/2_Nissan/0150.webp',
-            'assets/img/2_Nissan/0149.webp',
-            'assets/img/2_Nissan/0151.webp'
+            'assets/img/2_Nissan/0149.webp'
         ]
     },
     {
@@ -50,7 +49,7 @@ const galleryBrands = [
     },
     {
         id: 'adidas',
-        title: 'Adidas Originals',
+        title: 'Adidas',
         desc: 'Exhibidores y trade marketing.',
         category: 'TRADE MARKETING',
         images: [
@@ -162,6 +161,7 @@ const galleryBrands = [
             'assets/img/14_Ver mas/0140.webp',
             'assets/img/14_Ver mas/0143.webp',
             'assets/img/14_Ver mas/0144.webp',
+            'assets/img/14_Ver mas/0151.webp',
             'assets/img/14_Ver mas/0152.webp',
             'assets/img/14_Ver mas/0155.webp'
         ]
