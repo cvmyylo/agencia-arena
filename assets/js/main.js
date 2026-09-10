@@ -206,7 +206,7 @@ function renderGaleria() {
             const hasMultiple = brand.images.length > 1;
             item.innerHTML = `
                 <div class="card-img-wrap">
-                    <img src="${brand.images[0]}" alt="${brand.title}" loading="lazy" class="card-thumb-img">
+                    <img src="${brand.images[0]}" alt="${brand.title} - ${brand.desc} | Agencia Arena" loading="lazy" class="card-thumb-img">
                     ${hasMultiple ? `<span class="card-multi-badge" title="${brand.images.length} imágenes"><i class="fa-regular fa-images"></i> ${brand.images.length}</span>` : ''}
                 </div>
                 <div class="card-info">
