@@ -1,0 +1,54 @@
+PÁGINA PRIVADA DE TRABAJOS · AgenciArena
+=========================================
+
+Qué es
+------
+Página para mostrar a clientes prospectos una selección de trabajos del equipo
+hechos en otras agencias. No debe aparecer en el sitio público ni en buscadores.
+
+Contenido de la carpeta
+-----------------------
+index.html     La página completa (estilos, textos y lógica en un solo archivo).
+img/           81 piezas optimizadas en WebP (versión grande + miniatura) y logos.
+video/         5 reels comprimidos en MP4 (H.264, 720 px).
+.htaccess      Reglas para servidores Apache (ver punto 3).
+
+Cómo publicarla para que quede oculta
+-------------------------------------
+1. Súbanla a una ruta difícil de adivinar, por ejemplo:
+   agenciarena.cl/seleccion-k7q2m/
+   (no usar nombres obvios como /portafolio-privado o /trabajos).
+
+2. NO la enlacen desde ninguna parte del sitio, NO la agreguen al sitemap.xml
+   y NO la mencionen en robots.txt (robots.txt es público y revelaría la ruta).
+
+3. La página ya trae etiquetas "noindex" para que Google no la indexe.
+   Si el servidor es Apache, el archivo .htaccess incluido además envía la
+   cabecera X-Robots-Tag para imágenes y videos. Si es Nginx, agreguen:
+     add_header X-Robots-Tag "noindex, nofollow, noarchive, noimageindex";
+
+4. Clave de acceso. La página pide una clave antes de mostrar los trabajos.
+   Clave inicial: arena2026  (cámbienla antes de compartir el link)
+   Para cambiarla: abran la página, en la consola del navegador ejecuten
+     hashClave("nueva-clave").then(console.log)
+   y peguen el resultado en CLAVE_SHA256, al inicio del <script> de index.html.
+
+   IMPORTANTE: esta clave es una barrera liviana (filtra visitas casuales),
+   no una protección real: quien sepa la ruta de una imagen puede abrirla.
+   Para protección real, activen además una clave a nivel de servidor:
+   - Apache: descomenten el bloque "AuthType Basic" del .htaccess y creen
+     el archivo .htpasswd (htpasswd -c /ruta/segura/.htpasswd arena).
+   - Netlify: Site settings > Access control > Password protection.
+   - cPanel: "Privacidad del directorio" sobre la carpeta.
+
+Cómo editar
+-----------
+Al inicio del <script> de index.html están:
+- CREDITO         texto del bloque amarillo de cierre.
+- CLIENTES        nombre, período, descripción y marcas de cada cliente.
+- PIEZAS          listado de piezas (título, tipo, año, archivo).
+
+Colores: misma proporción que el mailing "Conversemos cómo hacemos crecer tu marca":
+fondo negro dominante, texto blanco, amarillo #FFDD00 en titulares, trama y bloque de cierre.
+
+Tipografía: usa DIN Pro si está instalada; si no, carga Barlow desde Google Fonts.

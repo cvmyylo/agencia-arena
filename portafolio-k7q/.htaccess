@@ -1,0 +1,14 @@
+# Evita que buscadores indexen la página, imágenes y videos de esta carpeta
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
+  Header set Referrer-Policy "no-referrer"
+</IfModule>
+
+# Sin listado de archivos de la carpeta
+Options -Indexes
+
+# Protección real con usuario y clave (recomendado). Descomentar y ajustar la ruta:
+# AuthType Basic
+# AuthName "Acceso privado AgenciArena"
+# AuthUserFile /ruta/fuera/de/public_html/.htpasswd
+# Require valid-user

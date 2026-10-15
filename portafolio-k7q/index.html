@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Página privada: no indexar, no seguir enlaces, no guardar copia, no mostrar imágenes en buscadores -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Selección de trabajos | AgenciArena</title>
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Carga de tipografía oficial DIN Pro desde el proyecto */
+@font-face {
+  font-family: 'DIN Pro';
+  src: url('../assets/fonts/DINPro-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DIN Pro';
+  src: url('../assets/fonts/DINPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DIN Pro';
+  src: url('../assets/fonts/DINPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Tokens de marca AgenciArena (proporción del mailing: negro dominante, amarillo de acento) ===== */
+:root{
+  --amarillo:#FFDD00;
+  --negro:#000000;
+  --blanco:#FFFFFF;
+  --texto-suave:#D6D6D6;
+  --gris:#A8A8A8;
+  --linea:#262626;
+  --tarjeta:#161616;
+  --tipo:"DIN Pro","DIN","D-DIN","Barlow",Arial,Helvetica,sans-serif;
+  --ancho:1240px;
+  --gutter:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;background:var(--negro)}
+body{margin:0;background:var(--negro);color:var(--blanco);font-family:var(--tipo);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Acceso ===== */
+.acceso{position:fixed;inset:0;z-index:50;background:var(--negro);display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;align-items:center;padding:var(--gutter)}
+.acceso[hidden]{display:none}
+.acceso form{width:100%;max-width:380px}
+.acceso img{width:190px;margin-bottom:40px}
+.acceso h1{font-size:30px;font-weight:300;line-height:1.1;margin:0 0 10px}
+.acceso h1 b{font-weight:700;color:var(--amarillo)}
+.acceso p{margin:0 0 24px;color:var(--texto-suave)}
+.acceso label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+.acceso .fila{display:flex;gap:8px}
+.acceso input{flex:1;min-width:0;font:inherit;padding:12px 16px;border:0;border-radius:40px;background:var(--blanco);color:var(--negro)}
+.acceso button{font:inherit;font-weight:700;padding:12px 24px;border:0;border-radius:40px;background:var(--amarillo);color:var(--negro);cursor:pointer}
+.acceso .error{min-height:24px;margin-top:10px;font-size:15px;font-weight:600;color:var(--amarillo)}
+
+/* ===== Hero ===== */
+.hero{background:var(--negro);overflow:hidden}
+.hero .marco{max-width:var(--ancho);margin:0 auto;padding:40px var(--gutter) 56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 40px;align-items:center;min-height:min(84vh,720px)}
+.hero .logo{width:160px;grid-column:1/-1;justify-self:end;align-self:start;margin-bottom:24px}
+.hero h1{font-size:clamp(44px,5.8vw,80px);line-height:.95;font-weight:300;letter-spacing:-.02em;margin:0 0 32px}
+.hero h1 span{display:block}
+.hero h1 .acento{font-weight:700;color:var(--amarillo)}
+.hero .bajada{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--texto-suave);max-width:42ch;margin:0}
+.puntos{position:relative;aspect-ratio:1/1;width:100%;max-width:520px;justify-self:end}
+.punto{position:absolute;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--amarillo)}
+.punto img{width:100%;height:100%;object-fit:cover}
+/* Proporciones tomadas del isotipo */
+.p1{width:53%;left:15%;top:6%;box-shadow:0 0 0 6px var(--amarillo)}
+.p2{width:32%;left:57%;top:40%;box-shadow:0 0 0 5px var(--amarillo)}
+.p3{width:9.5%;left:23%;top:60%}
+.p4{width:17%;left:40%;top:76%;box-shadow:0 0 0 4px var(--amarillo)}
+@media (prefers-reduced-motion:no-preference){
+  .punto{animation:cae .9s cubic-bezier(.2,.9,.25,1.15) both}
+  .p1{animation-delay:.1s}.p2{animation-delay:.3s}.p3{animation-delay:.45s}.p4{animation-delay:.6s}
+  @keyframes cae{from{transform:translateY(-60px) scale(.4);opacity:0}to{transform:none;opacity:1}}
+}
+/* Trama de puntos (misma que el mailing) */
+.trama{display:block;width:100%;height:clamp(84px,8.4vw,120px)}
+
+/* ===== Navegación por cliente ===== */
+.nav{position:sticky;top:0;z-index:20;background:var(--negro);border-bottom:1px solid var(--linea)}
+.nav .marco{max-width:var(--ancho);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:24px;height:60px;overflow-x:auto;scrollbar-width:none}
+.nav .marco::-webkit-scrollbar{display:none}
+.nav img{width:96px;flex:none}
+.nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.nav a{display:block;white-space:nowrap;text-decoration:none;font-weight:600;font-size:15px;padding:7px 14px;border-radius:40px;color:var(--blanco)}
+.nav a:hover{background:var(--linea)}
+.nav a[aria-current="true"]{background:var(--amarillo);color:var(--negro)}
+
+/* ===== Secciones de cliente ===== */
+.cliente{max-width:var(--ancho);margin:0 auto;padding:88px var(--gutter) 24px}
+.cliente header{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;align-items:start;margin-bottom:40px}
+.cliente h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;line-height:1;letter-spacing:-.015em;margin:0}
+.cliente .periodo{display:block;font-size:17px;font-weight:300;letter-spacing:0;margin-top:12px;color:var(--amarillo)}
+.cliente .alcance{margin:0;font-size:18px;line-height:1.6;color:var(--texto-suave);max-width:56ch}
+.cliente .marcas{margin:16px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px}
+.cliente .marcas li{font-size:15px;display:flex;align-items:center;gap:8px}
+.cliente .marcas li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--amarillo);flex:none}
+
+.grilla{columns:4 260px;column-gap:20px}
+.pieza{break-inside:avoid;margin:0 0 28px}
+.pieza button{all:unset;display:block;width:100%;cursor:zoom-in;position:relative;border-radius:4px;overflow:hidden;background:var(--tarjeta)}
+.pieza button:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+.pieza img{width:100%;height:auto;transition:transform .5s ease}
+.pieza button:hover img{transform:scale(1.025)}
+.pieza figcaption{padding-top:10px;font-size:15px;line-height:1.35}
+.pieza .titulo{font-weight:600;display:block}
+.pieza .meta{color:var(--gris)}
+.play{position:absolute;left:12px;bottom:12px;width:48px;height:48px;border-radius:50%;background:var(--amarillo);display:grid;place-items:center}
+.play svg{width:18px;margin-left:3px}
+
+/* ===== Cierre ===== */
+/* Huincha legal */
+.cierre{margin-top:72px}
+.cierre .bloque{background:var(--amarillo);color:var(--negro)}
+.cierre .bloque p{max-width:var(--ancho);margin:0 auto;padding:12px var(--gutter);font-size:13px;line-height:1.4;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:860px){.cierre .bloque p{white-space:normal;font-size:12px}}
+
+/* ===== Visor ===== */
+.lightbox{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.97);color:var(--blanco);display:grid;grid-template-rows:1fr auto;padding:56px 72px 20px}
+.lightbox[hidden]{display:none}
+.lightbox .medio{position:relative;display:grid;place-items:center;min-height:0}
+.lightbox .medio img,.lightbox .medio video{max-width:100%;max-height:calc(100vh - 150px);object-fit:contain;user-select:none;-webkit-user-drag:none}
+.lightbox .sello{position:absolute;right:12px;bottom:12px;font-size:12px;font-weight:600;color:rgba(255,255,255,.55);pointer-events:none}
+.lightbox .pie{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding-top:14px;font-size:16px}
+.lightbox .pie .meta{color:#aaa}
+.lightbox .ctrl{position:absolute;border:0;background:transparent;color:var(--blanco);cursor:pointer;width:52px;height:52px;border-radius:50%;display:grid;place-items:center}
+.lightbox .ctrl:hover{background:#222}
+.lightbox .ctrl svg{width:26px}
+.lightbox .cerrar{top:6px;right:10px}
+.lightbox .ant{left:10px;top:50%;transform:translateY(-50%)}
+.lightbox .sig{right:10px;top:50%;transform:translateY(-50%)}
+
+@media (max-width:860px){
+  .hero .marco{grid-template-columns:1fr;padding-top:28px;min-height:auto;gap:8px}
+  .hero .logo{width:130px;margin-bottom:32px}
+  .puntos{max-width:300px;justify-self:center;margin-top:32px}
+  .cliente header{grid-template-columns:1fr}
+  .grilla{columns:2 150px;column-gap:14px}
+  .lightbox{padding:56px 8px 16px}
+  .lightbox .ant,.lightbox .sig{top:auto;bottom:-6px;transform:none}
+  .lightbox .pie{padding:14px 60px 0;flex-direction:column;gap:2px;text-align:center;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pieza img{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== Pantalla de acceso ===== -->
+<div class="acceso" id="acceso">
+  <form id="form-acceso" autocomplete="off">
+    <img src="img/logo-amarillo.png" alt="AgenciArena">
+    <h1>Selección de <b>trabajos</b></h1>
+    <p>Esta página es privada. Ingresa la clave que te compartimos.</p>
+    <label for="clave">Clave de acceso</label>
+    <div class="fila">
+      <input id="clave" type="password" required autofocus>
+      <button type="submit">Entrar</button>
+    </div>
+    <div class="error" id="error" role="alert"></div>
+  </form>
+</div>
+
+<main id="contenido" hidden>
+  <section class="hero">
+    <div class="marco">
+      <img class="logo" src="img/logo-amarillo.png" alt="AgenciArena">
+      <div>
+        <h1><span>Lo que ya</span><span>hemos hecho</span><span class="acento">por grandes</span><span class="acento">marcas.</span></h1>
+        <p class="bajada">Una selección de trabajos a lo largo de nuestra experiencia en redes sociales, campañas, digital y punto de venta para diversos rubros.</p>
+      </div>
+      <div class="puntos" aria-hidden="true">
+        <div class="punto p1"><img src="img/hero-1-sparta.webp" alt=""></div>
+        <div class="punto p2"><img src="img/hero-2-colgate.webp" alt=""></div>
+        <div class="punto p3"></div>
+        <div class="punto p4"><img src="img/hero-3-zentrum.webp" alt=""></div>
+      </div>
+    </div>
+    <svg class="trama" id="trama" aria-hidden="true"></svg>
+  </section>
+
+  <nav class="nav" aria-label="Clientes">
+    <div class="marco">
+      <img src="img/logo-amarillo.png" alt="AgenciArena">
+      <ul id="nav-clientes"></ul>
+    </div>
+  </nav>
+
+  <div id="clientes"></div>
+
+  <footer class="cierre">
+    <div class="bloque">
+      <p id="credito"></p>
+    </div>
+  </footer>
+</main>
+
+<!-- ===== Visor ===== -->
+<div class="lightbox" id="visor" hidden role="dialog" aria-modal="true" aria-label="Visor de piezas">
+  <div class="medio" id="visor-medio"></div>
+  <div class="pie"><span class="titulo" id="visor-titulo"></span><span class="meta" id="visor-meta"></span></div>
+  <button class="ctrl cerrar" id="v-cerrar" aria-label="Cerrar visor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="ctrl ant" id="v-ant" aria-label="Pieza anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="ctrl sig" id="v-sig" aria-label="Pieza siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN (editar aquí)
+   ========================================================= */
+// Clave de acceso guardada como hash SHA-256 (nunca en texto plano).
+// Para cambiarla: abre la consola del navegador en esta página y ejecuta
+//   hashClave("tu-nueva-clave").then(console.log)
+// y pega el resultado aquí.
+const CLAVE_SHA256 = "c9a9a52fd65190f5121c8055c8c0aa67b1ea71c27b677a9c67158499addfb0db";
+
+const CREDITO = "Material de uso exclusivo de Agencia Arena para presentaciones comerciales. Por favor no compartir ni publicar.";
+
+const CLIENTES = [
+  {id:"colgate", nombre:"Colgate Profesional", periodo:"2023 a 2025",
+   alcance:"Gestión mensual de redes sociales para la línea profesional de Colgate, dirigida a odontólogos: grilla de contenidos, carruseles, reels, difusión de webinars y piezas para congresos.",
+   marcas:["Colgate Total","elmex","PerioGard","OrthoGard","Duraphat"]},
+  {id:"sparta", nombre:"Sparta", periodo:"2022",
+   alcance:"Campañas de temporada y contenido de redes para el retail deportivo: lanzamientos de producto, Navidad, sale, material de punto de venta y la convención anual de ventas.",
+   marcas:["Altitude","Trek","New Balance","Sparta"]},
+  {id:"zentrum", nombre:"Zentrum", periodo:"2023 y 2024",
+   alcance:"Comunicación integral para un grupo automotriz de camiones y autos: campañas comerciales, ferias, banners web, mailings, pendones y gráfica para sucursales.",
+   marcas:["Volkswagen Camiones y Buses","MAN","Audi","SEAT","CUPRA"]},
+  {id:"credelio", nombre:"Credelio", periodo:"2026",
+   alcance:"Conceptos creativos para redes sociales del antiparasitario para perros de Elanco: reels y carruseles con un tono lúdico y cercano.",
+   marcas:["Credelio","Elanco"]}
+];
+
+const PIEZAS = [{"id": "colgate-v5", "cliente": "colgate", "titulo": "Colgate Total: Reel", "tipo": "Audiovisual", "anio": 2024, "w": 640, "h": 1138, "img": null, "video": "video/colgate-v5.mp4", "thumb": "img/colgate-v5-t.webp"}, {"id": "credelio-v0", "cliente": "credelio", "titulo": "Más calma: Reel", "tipo": "Audiovisual", "anio": 2026, "w": 640, "h": 1138, "img": null, "video": "video/credelio-v0.mp4", "thumb": "img/credelio-v0-t.webp"}, {"id": "colgate-v1", "cliente": "colgate", "titulo": "OrthoGard enjuague: Reel", "tipo": "Audiovisual", "anio": 2025, "w": 640, "h": 1138, "img": null, "video": "video/colgate-v1.mp4", "thumb": "img/colgate-v1-t.webp"}, {"id": "colgate-v2", "cliente": "colgate", "titulo": "PerioGard cuidado de encías: Reel", "tipo": "Audiovisual", "anio": 2025, "w": 640, "h": 1138, "img": null, "video": "video/colgate-v2.mp4", "thumb": "img/colgate-v2-t.webp"}, {"id": "sparta-v3", "cliente": "sparta", "titulo": "Pedalovers MTB: Campaña ciclismo", "tipo": "Audiovisual", "anio": 2022, "w": 640, "h": 640, "img": null, "video": "video/sparta-v3.mp4", "thumb": "img/sparta-v3-t.webp"}, {"id": "sparta-v4", "cliente": "sparta", "titulo": "Pedalovers Ruta: Campaña ciclismo", "tipo": "Audiovisual", "anio": 2022, "w": 640, "h": 640, "img": null, "video": "video/sparta-v4.mp4", "thumb": "img/sparta-v4-t.webp"}, {"id": "colgate-069", "cliente": "colgate", "titulo": "Nuevo año, nuevas sonrisas: Colgate Total", "tipo": "RRSS", "anio": 2025, "w": 640, "h": 640, "img": "img/colgate-069.webp", "thumb": "img/colgate-069-t.webp"}, {"id": "colgate-070", "cliente": "colgate", "titulo": "elmex Sensitive blanqueamiento", "tipo": "RRSS", "anio": 2025, "w": 640, "h": 640, "img": "img/colgate-070.webp", "thumb": "img/colgate-070-t.webp"}, {"id": "colgate-072", "cliente": "colgate", "titulo": "Colgate XL: Casas comerciales", "tipo": "RRSS", "anio": 2025, "w": 640, "h": 640, "img": "img/colgate-072.webp", "thumb": "img/colgate-072-t.webp"}, {"id": "colgate-076", "cliente": "colgate", "titulo": "elmex: Alivio inmediato", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-076.webp", "thumb": "img/colgate-076-t.webp"}, {"id": "colgate-079", "cliente": "colgate", "titulo": "Cepillado regular en vacaciones", "tipo": "RRSS", "anio": 2025, "w": 640, "h": 640, "img": "img/colgate-079.webp", "thumb": "img/colgate-079-t.webp"}, {"id": "colgate-082", "cliente": "colgate", "titulo": "Enamorados de la salud dental", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-082.webp", "thumb": "img/colgate-082-t.webp"}, {"id": "colgate-084", "cliente": "colgate", "titulo": "Colgate OrthoGard", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-084.webp", "thumb": "img/colgate-084-t.webp"}, {"id": "colgate-085", "cliente": "colgate", "titulo": "Lo nuevo de Colgate Total", "tipo": "Campaña", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-085.webp", "thumb": "img/colgate-085-t.webp"}, {"id": "colgate-086", "cliente": "colgate", "titulo": "Duraphat: Barniz de flúor", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-086.webp", "thumb": "img/colgate-086-t.webp"}, {"id": "colgate-088", "cliente": "colgate", "titulo": "Planificación anual de controles", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-088.webp", "thumb": "img/colgate-088-t.webp"}, {"id": "colgate-089", "cliente": "colgate", "titulo": "OrthoGard: Inicio de ortodoncia", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-089.webp", "thumb": "img/colgate-089-t.webp"}, {"id": "colgate-091", "cliente": "colgate", "titulo": "PerioGard Gum Expert", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-091.webp", "thumb": "img/colgate-091-t.webp"}, {"id": "colgate-092", "cliente": "colgate", "titulo": "Cambio de estación, cambio de cepillo", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-092.webp", "thumb": "img/colgate-092-t.webp"}, {"id": "colgate-093", "cliente": "colgate", "titulo": "elmex Anticaries", "tipo": "RRSS", "anio": 2025, "w": 512, "h": 640, "img": "img/colgate-093.webp", "thumb": "img/colgate-093-t.webp"}, {"id": "colgate-041", "cliente": "colgate", "titulo": "Colgate Sensitive Pro Alivio: Verano", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-041.webp", "thumb": "img/colgate-041-t.webp"}, {"id": "colgate-042", "cliente": "colgate", "titulo": "Red Era by Colgate: Congreso", "tipo": "Campaña", "anio": 2024, "w": 512, "h": 640, "img": "img/colgate-042.webp", "thumb": "img/colgate-042-t.webp"}, {"id": "colgate-044", "cliente": "colgate", "titulo": "elmex: Rutina de prevención", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-044.webp", "thumb": "img/colgate-044-t.webp"}, {"id": "colgate-049", "cliente": "colgate", "titulo": "Saludo navideño", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-049.webp", "thumb": "img/colgate-049-t.webp"}, {"id": "colgate-053", "cliente": "colgate", "titulo": "Temporada de cambio de cepillo", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-053.webp", "thumb": "img/colgate-053-t.webp"}, {"id": "colgate-055", "cliente": "colgate", "titulo": "Día de la Tierra: Reciclaje", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-055.webp", "thumb": "img/colgate-055-t.webp"}, {"id": "colgate-057", "cliente": "colgate", "titulo": "Día sin tabaco", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-057.webp", "thumb": "img/colgate-057-t.webp"}, {"id": "colgate-062", "cliente": "colgate", "titulo": "Nuevo invierno, nuevo cepillo", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-062.webp", "thumb": "img/colgate-062-t.webp"}, {"id": "colgate-063", "cliente": "colgate", "titulo": "Tips financieros para odontólogos", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-063.webp", "thumb": "img/colgate-063-t.webp"}, {"id": "colgate-064", "cliente": "colgate", "titulo": "Laberinto elmex", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-064.webp", "thumb": "img/colgate-064-t.webp"}, {"id": "colgate-065", "cliente": "colgate", "titulo": "elmex: Frío de montaña", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-065.webp", "thumb": "img/colgate-065-t.webp"}, {"id": "colgate-067", "cliente": "colgate", "titulo": "Día del Chocolate", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/colgate-067.webp", "thumb": "img/colgate-067-t.webp"}, {"id": "colgate-000", "cliente": "colgate", "titulo": "Dentista: prioridades del año", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-000.webp", "thumb": "img/colgate-000-t.webp"}, {"id": "colgate-003", "cliente": "colgate", "titulo": "Colgate Total 12", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-003.webp", "thumb": "img/colgate-003-t.webp"}, {"id": "colgate-004", "cliente": "colgate", "titulo": "Temporada de renovación: elmex", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-004.webp", "thumb": "img/colgate-004-t.webp"}, {"id": "colgate-005", "cliente": "colgate", "titulo": "Día Mundial de la Salud Bucal", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-005.webp", "thumb": "img/colgate-005-t.webp"}, {"id": "colgate-012", "cliente": "colgate", "titulo": "PerioGard: Sangrado de encías", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-012.webp", "thumb": "img/colgate-012-t.webp"}, {"id": "colgate-024", "cliente": "colgate", "titulo": "Lanzamiento Total 12 Carbón Activado", "tipo": "Campaña", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-024.webp", "thumb": "img/colgate-024-t.webp"}, {"id": "colgate-029", "cliente": "colgate", "titulo": "Renueva sonrisas: elmex", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-029.webp", "thumb": "img/colgate-029-t.webp"}, {"id": "colgate-031", "cliente": "colgate", "titulo": "Cepillo de bambú", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-031.webp", "thumb": "img/colgate-031-t.webp"}, {"id": "colgate-035", "cliente": "colgate", "titulo": "Jornadas Internacionales AOA", "tipo": "BTL / Punto de venta", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-035.webp", "thumb": "img/colgate-035-t.webp"}, {"id": "colgate-037", "cliente": "colgate", "titulo": "Halloween: Total 12", "tipo": "RRSS", "anio": 2023, "w": 640, "h": 640, "img": "img/colgate-037.webp", "thumb": "img/colgate-037-t.webp"}, {"id": "sparta-099", "cliente": "sparta", "titulo": "Altitude: Esenciales", "tipo": "Campaña", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-099.webp", "thumb": "img/sparta-099-t.webp"}, {"id": "sparta-101", "cliente": "sparta", "titulo": "Altitude: Doble adrenalina", "tipo": "Campaña", "anio": 2022, "w": 639, "h": 640, "img": "img/sparta-101.webp", "thumb": "img/sparta-101-t.webp"}, {"id": "sparta-103", "cliente": "sparta", "titulo": "Altitude: Adrenalina MTB", "tipo": "Campaña", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-103.webp", "thumb": "img/sparta-103-t.webp"}, {"id": "sparta-106", "cliente": "sparta", "titulo": "Altitude: En la ruta R30", "tipo": "Campaña", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-106.webp", "thumb": "img/sparta-106-t.webp"}, {"id": "sparta-107", "cliente": "sparta", "titulo": "Bolso porta celular Altitude", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-107.webp", "thumb": "img/sparta-107-t.webp"}, {"id": "sparta-108", "cliente": "sparta", "titulo": "Cascos niños Altitude", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-108.webp", "thumb": "img/sparta-108-t.webp"}, {"id": "sparta-109", "cliente": "sparta", "titulo": "Fin de semana del Mountain Bike", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-109.webp", "thumb": "img/sparta-109-t.webp"}, {"id": "sparta-111", "cliente": "sparta", "titulo": "Altitude K30", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-111.webp", "thumb": "img/sparta-111-t.webp"}, {"id": "sparta-112", "cliente": "sparta", "titulo": "Día Mundial de la Bicicleta", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-112.webp", "thumb": "img/sparta-112-t.webp"}, {"id": "sparta-114", "cliente": "sparta", "titulo": "Altitude Woody", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-114.webp", "thumb": "img/sparta-114-t.webp"}, {"id": "sparta-115", "cliente": "sparta", "titulo": "Navidad Altitude", "tipo": "Campaña", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-115.webp", "thumb": "img/sparta-115-t.webp"}, {"id": "sparta-117", "cliente": "sparta", "titulo": "Promo Altitude: Atril punto de venta", "tipo": "BTL / Punto de venta", "anio": 2022, "w": 480, "h": 640, "img": "img/sparta-117.webp", "thumb": "img/sparta-117-t.webp"}, {"id": "sparta-121", "cliente": "sparta", "titulo": "Navidad Sparta: Es tiempo de compartir", "tipo": "Campaña", "anio": 2022, "w": 640, "h": 359, "img": "img/sparta-121.webp", "thumb": "img/sparta-121-t.webp"}, {"id": "sparta-123", "cliente": "sparta", "titulo": "Sale Sparta: Cubre alarmas", "tipo": "BTL / Punto de venta", "anio": 2022, "w": 452, "h": 640, "img": "img/sparta-123.webp", "thumb": "img/sparta-123-t.webp"}, {"id": "sparta-124", "cliente": "sparta", "titulo": "Desafío Trek Subaru", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 639, "img": "img/sparta-124.webp", "thumb": "img/sparta-124-t.webp"}, {"id": "sparta-126", "cliente": "sparta", "titulo": "Convención de Ventas: Reencontrémonos", "tipo": "Campaña", "anio": 2022, "w": 640, "h": 360, "img": "img/sparta-126.webp", "thumb": "img/sparta-126-t.webp"}, {"id": "sparta-130", "cliente": "sparta", "titulo": "Trek: Every day is a MTB day", "tipo": "RRSS", "anio": 2022, "w": 640, "h": 640, "img": "img/sparta-130.webp", "thumb": "img/sparta-130-t.webp"}, {"id": "zentrum-131", "cliente": "zentrum", "titulo": "Audi Zentrum: Servicio pre vacaciones", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-131.webp", "thumb": "img/zentrum-131-t.webp"}, {"id": "zentrum-132", "cliente": "zentrum", "titulo": "Audi Care: Banner web", "tipo": "Digital", "anio": 2023, "w": 640, "h": 300, "img": "img/zentrum-132.webp", "thumb": "img/zentrum-132-t.webp"}, {"id": "zentrum-133", "cliente": "zentrum", "titulo": "SEAT Arona: Banner web", "tipo": "Digital", "anio": 2023, "w": 640, "h": 234, "img": "img/zentrum-133.webp", "thumb": "img/zentrum-133-t.webp"}, {"id": "zentrum-136", "cliente": "zentrum", "titulo": "CUPRA Formentor: auto.cl", "tipo": "Digital", "anio": 2023, "w": 640, "h": 167, "img": "img/zentrum-136.webp", "thumb": "img/zentrum-136-t.webp"}, {"id": "zentrum-139", "cliente": "zentrum", "titulo": "Oktoberfest Volkswagen", "tipo": "RRSS", "anio": 2024, "w": 360, "h": 640, "img": "img/zentrum-139.webp", "thumb": "img/zentrum-139-t.webp"}, {"id": "zentrum-140", "cliente": "zentrum", "titulo": "Bonus Trucks: VW Delivery", "tipo": "Campaña", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-140.webp", "thumb": "img/zentrum-140-t.webp"}, {"id": "zentrum-141", "cliente": "zentrum", "titulo": "Campaña de posicionamiento", "tipo": "Campaña", "anio": 2024, "w": 640, "h": 360, "img": "img/zentrum-141.webp", "thumb": "img/zentrum-141-t.webp"}, {"id": "zentrum-143", "cliente": "zentrum", "titulo": "Agenda online: PMax", "tipo": "Digital", "anio": 2024, "w": 512, "h": 640, "img": "img/zentrum-143.webp", "thumb": "img/zentrum-143-t.webp"}, {"id": "zentrum-146", "cliente": "zentrum", "titulo": "Gran Feria Zentrum", "tipo": "Campaña", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-146.webp", "thumb": "img/zentrum-146-t.webp"}, {"id": "zentrum-147", "cliente": "zentrum", "titulo": "Gran Feria: División usados", "tipo": "Campaña", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-147.webp", "thumb": "img/zentrum-147-t.webp"}, {"id": "zentrum-149", "cliente": "zentrum", "titulo": "Gran Feria: Servicio técnico", "tipo": "Campaña", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-149.webp", "thumb": "img/zentrum-149-t.webp"}, {"id": "zentrum-151", "cliente": "zentrum", "titulo": "Feria Fetran Talca", "tipo": "BTL / Punto de venta", "anio": 2023, "w": 640, "h": 640, "img": "img/zentrum-151.webp", "thumb": "img/zentrum-151-t.webp"}, {"id": "zentrum-153", "cliente": "zentrum", "titulo": "Sala de componentes: Emailing", "tipo": "Digital", "anio": 2023, "w": 444, "h": 640, "img": "img/zentrum-153.webp", "thumb": "img/zentrum-153-t.webp"}, {"id": "zentrum-154", "cliente": "zentrum", "titulo": "Recorre fresco y seguro: Aire acondicionado", "tipo": "Campaña", "anio": 2023, "w": 640, "h": 640, "img": "img/zentrum-154.webp", "thumb": "img/zentrum-154-t.webp"}, {"id": "zentrum-156", "cliente": "zentrum", "titulo": "Repuestos 70% dcto.", "tipo": "RRSS", "anio": 2023, "w": 360, "h": 640, "img": "img/zentrum-156.webp", "thumb": "img/zentrum-156-t.webp"}, {"id": "zentrum-158", "cliente": "zentrum", "titulo": "Bonus Truck Volkswagen", "tipo": "Campaña", "anio": 2023, "w": 640, "h": 638, "img": "img/zentrum-158.webp", "thumb": "img/zentrum-158-t.webp"}, {"id": "zentrum-160", "cliente": "zentrum", "titulo": "Pendón: Pack de mantenimiento", "tipo": "BTL / Punto de venta", "anio": 2023, "w": 320, "h": 640, "img": "img/zentrum-160.webp", "thumb": "img/zentrum-160-t.webp"}, {"id": "zentrum-161", "cliente": "zentrum", "titulo": "Zentrum Sale: Repuestos", "tipo": "Campaña", "anio": 2023, "w": 414, "h": 640, "img": "img/zentrum-161.webp", "thumb": "img/zentrum-161-t.webp"}, {"id": "zentrum-163", "cliente": "zentrum", "titulo": "Pendón Fedequinta", "tipo": "BTL / Punto de venta", "anio": 2023, "w": 320, "h": 640, "img": "img/zentrum-163.webp", "thumb": "img/zentrum-163-t.webp"}, {"id": "zentrum-165", "cliente": "zentrum", "titulo": "Feria de Repuestos Talca", "tipo": "Campaña", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-165.webp", "thumb": "img/zentrum-165-t.webp"}, {"id": "zentrum-168", "cliente": "zentrum", "titulo": "25% dcto. en plumillas", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-168.webp", "thumb": "img/zentrum-168-t.webp"}, {"id": "zentrum-169", "cliente": "zentrum", "titulo": "Servicio de lavado", "tipo": "RRSS", "anio": 2024, "w": 640, "h": 640, "img": "img/zentrum-169.webp", "thumb": "img/zentrum-169-t.webp"}, {"id": "credelio-094", "cliente": "credelio", "titulo": "Se reunió la banda", "tipo": "RRSS", "anio": 2026, "w": 512, "h": 640, "img": "img/credelio-094.webp", "thumb": "img/credelio-094-t.webp"}, {"id": "credelio-095", "cliente": "credelio", "titulo": "Credelio ya actuó: Carrusel", "tipo": "RRSS", "anio": 2026, "w": 512, "h": 640, "img": "img/credelio-095.webp", "thumb": "img/credelio-095-t.webp"}, {"id": "credelio-096", "cliente": "credelio", "titulo": "Elimina pulgas y garrapatas", "tipo": "RRSS", "anio": 2026, "w": 512, "h": 640, "img": "img/credelio-096.webp", "thumb": "img/credelio-096-t.webp"}, {"id": "credelio-097", "cliente": "credelio", "titulo": "Game over: Bye bye pulgas", "tipo": "RRSS", "anio": 2026, "w": 512, "h": 640, "img": "img/credelio-097.webp", "thumb": "img/credelio-097-t.webp"}, {"id": "credelio-098", "cliente": "credelio", "titulo": "Game over 3D", "tipo": "RRSS", "anio": 2026, "w": 512, "h": 640, "img": "img/credelio-098.webp", "thumb": "img/credelio-098-t.webp"}];
+
+/* ========================================================= */
+
+async function hashClave(t){
+  const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));
+  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+}
+window.hashClave=hashClave;
+
+function guardar(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}
+function leer(k){try{return sessionStorage.getItem(k)}catch(e){return null}}
+
+const acceso=document.getElementById("acceso"),contenido=document.getElementById("contenido");
+function abrir(){acceso.hidden=true;contenido.hidden=false;construir()}
+if(leer("arena-ok")===CLAVE_SHA256){abrir()}
+document.getElementById("form-acceso").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const h=await hashClave(document.getElementById("clave").value.trim());
+  if(h===CLAVE_SHA256){guardar("arena-ok",h);abrir()}
+  else{document.getElementById("error").textContent="La clave no es correcta. Revísala e inténtalo de nuevo.";document.getElementById("clave").select()}
+});
+
+/* Trama de puntos amarillos: crecen hacia abajo, con ondas, como en el mailing */
+function dibujarTrama(){
+  const svg=document.getElementById("trama"),paso=15,cols=96,filas=8,W=cols*paso,H=filas*paso;
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.setAttribute("preserveAspectRatio","xMidYMax slice");
+  let c="";
+  for(let f=0;f<filas;f++)for(let k=0;k<cols;k++){
+    const onda=(Math.sin(k*.21+f*.5)+Math.sin(k*.07-f*.3)+2)/4;
+    const r=Math.max(.6,((f+1)/filas)*(1.2+onda*4.6));
+    c+=`<circle cx="${k*paso+paso/2}" cy="${f*paso+paso/2}" r="${r.toFixed(2)}"/>`;
+  }
+  svg.innerHTML=`<g fill="#FFDD00">${c}</g>`;
+}
+
+let construido=false,orden=[];
+function construir(){
+  if(construido)return;construido=true;
+  document.getElementById("credito").textContent=CREDITO;
+  dibujarTrama();
+  const nav=document.getElementById("nav-clientes"),cont=document.getElementById("clientes");
+  CLIENTES.forEach(c=>{
+    const piezas=PIEZAS.filter(p=>p.cliente===c.id);
+    nav.insertAdjacentHTML("beforeend",`<li><a href="#${c.id}">${c.nombre}</a></li>`);
+    const sec=document.createElement("section");sec.className="cliente";sec.id=c.id;sec.setAttribute("aria-labelledby","t-"+c.id);
+    sec.innerHTML=`<header><h2 id="t-${c.id}">${c.nombre}<span class="periodo">${c.periodo}</span></h2>
+      <div><p class="alcance">${c.alcance}</p><ul class="marcas">${c.marcas.map(m=>`<li>${m}</li>`).join("")}</ul></div></header>
+      <div class="grilla"></div>`;
+    const g=sec.querySelector(".grilla");
+    piezas.forEach(p=>{
+      const n=orden.push(p)-1;
+      g.insertAdjacentHTML("beforeend",`<figure class="pieza"><button data-n="${n}" aria-label="Ver ${p.titulo}">
+        <img src="${p.thumb}" width="${p.w}" height="${p.h}" loading="lazy" alt="${p.titulo}" draggable="false">
+        ${p.video?'<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>':""}
+        </button><figcaption><span class="titulo">${p.titulo}</span><span class="meta">${p.tipo}, ${p.anio}</span></figcaption></figure>`);
+    });
+    cont.appendChild(sec);
+  });
+  cont.addEventListener("click",e=>{const b=e.target.closest("button[data-n]");if(b)verPieza(+b.dataset.n,b)});
+  // Resaltar el cliente visible en la barra
+  const links=[...nav.querySelectorAll("a")];
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.setAttribute("aria-current",a.hash==="#"+en.target.id))}),{rootMargin:"-40% 0px -55% 0px"});
+  document.querySelectorAll(".cliente").forEach(s=>io.observe(s));
+}
+
+// Disuasión básica: sin menú contextual ni arrastre sobre las piezas
+document.addEventListener("contextmenu",e=>{if(e.target.closest(".pieza,.lightbox .medio"))e.preventDefault()});
+
+/* ===== Visor ===== */
+const visor=document.getElementById("visor"),medio=document.getElementById("visor-medio");
+let actual=0,origen=null;
+function pintar(){
+  const p=orden[actual],c=CLIENTES.find(c=>c.id===p.cliente);
+  medio.innerHTML=(p.video
+    ?`<video src="${p.video}" poster="${p.thumb}" controls autoplay playsinline controlslist="nodownload" disablepictureinpicture></video>`
+    :`<img src="${p.img}" alt="${p.titulo}" draggable="false">`)+`<span class="sello">AgenciArena · uso confidencial</span>`;
+  document.getElementById("visor-titulo").textContent=p.titulo;
+  document.getElementById("visor-meta").textContent=`${c.nombre}, ${p.tipo}, ${p.anio}`;
+}
+function verPieza(n,btn){origen=btn;actual=n;pintar();visor.hidden=false;document.body.style.overflow="hidden";document.getElementById("v-cerrar").focus()}
+function cerrar(){visor.hidden=true;medio.innerHTML="";document.body.style.overflow="";if(origen)origen.focus()}
+function mover(d){actual=(actual+d+orden.length)%orden.length;pintar()}
+document.getElementById("v-cerrar").onclick=cerrar;
+document.getElementById("v-ant").onclick=()=>mover(-1);
+document.getElementById("v-sig").onclick=()=>mover(1);
+visor.addEventListener("click",e=>{if(e.target===visor||e.target===medio)cerrar()});
+document.addEventListener("keydown",e=>{if(visor.hidden)return;
+  if(e.key==="Escape")cerrar();if(e.key==="ArrowLeft")mover(-1);if(e.key==="ArrowRight")mover(1);
+  if(e.key==="Tab"){const f=[...visor.querySelectorAll("button,video")];const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});
+let x0=null;visor.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+visor.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)mover(dx<0?1:-1);x0=null});
+</script>
+</body>
+</html>
